@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACCORDION</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/accordion.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">ACCORDION</h1>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="select.html">Select</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="slides.html">Slides</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li><br>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <p style="color: navy;">Содежание страницы:</p>
+          </li>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <a class="menu__link" style="color: #000;" href="#plagin">&bull; ACCORDION (плагин)</a>
+          </li>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <a class="menu__link" style="color: #000;" href="#accord">&bull; ACCORDION (jquery 1)</a>
+          </li>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <a class="menu__link" style="color: #000;" href="#jquery">&bull; ACCORDION (jquery 2 - фрилансер по
+              жизни)</a>
+          </li>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <a class="menu__link" style="color: #000;" href="#js">&bull; ACCORDION (javascript 1)</a>
+          </li>
+          <li class="menu__item" style="background-color: rgba(220, 220, 220, .5);">
+            <a class="menu__link" style="color: #000;" href="#js-two">&bull; ACCORDION (javascript 2 - фрилансер по
+              жизни)</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="plagin" id="plagin">
+    <div class="plagin__container">
+      <h2 class="plagin__title">PLAGIN</h2>
+      <ul class="plagin__accordion accordion">
+        <li>
+          <h3 class="accordion__title">Текст-превью</h3>
+          <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.Далеко-далеко за
+            словесными горами в стране гласных и согласных живут рыбные тексты.Далеко-далеко за словесными горами в
+            стране гласных и согласных живут рыбные тексты.Далеко-далеко за словесными горами в стране гласных и
+            согласных живут рыбные тексты.Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные
+            тексты.</p>
+        </li>
+        <li>
+          <h3 class="accordion__title">Текст-превью</h3>
+          <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+        </li>
+        <li>
+          <h3 class="accordion__title">Текст-превью</h3>
+          <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+        </li>
+      </ul><br><br>
+      <div class="plagin__descr">
+        <p class="plagin__text">
+          <b>Подключение CSS</b>
+        <pre>
+&lt;link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"&gt;
+          </pre>
+        </p><br>
+        <p class="plagin__text">
+          <b>Подключение JS</b>
+        <pre>
+&lt;script src="https://code.jquery.com/jquery-1.12.4.js"&gt;&lt;/script&gt;
+&lt;script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"&gt;&lt;/script&gt;
+          </pre>
+        </p><br>
+        <div class="plagin__code code" style="display: flex; column-gap: 20px;">
+          <div class="code__text">
+            <h3>HTML</h3>
+            <pre>
+&lt;ul class="accordion"&gt;
+  &lt;li&gt;
+    &lt;h3&gt;Текст-превью&lt;/h3&gt;
+    &lt;p&gt;Далеко-далеко за словесными горами в стране гласных и
+    согласных живут рыбные тексты.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3&gt;Текст-превью&lt;/h3&gt;
+    &lt;p&gt;Далеко-далеко за словесными горами в стране гласных и
+    согласных живут рыбные тексты.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3&gt;Текст-превью&lt;/h3&gt;
+    &lt;p&gt;Далеко-далеко за словесными горами в стране гласных и
+    согласных живут рыбные тексты.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+              </pre>
+          </div>
+          <div class="code__text">
+            <h3>CSS</h3>
+          </div>
+          <div class="code__text">
+            <h3>JS</h3>
+            <pre>
+$(".accordion").accordion({
+  heightStyle: "content",
+});
+            </pre>
+          </div>
+        </div>
+      </div><br><br>
+      <div class="plagin__descr" style="display: inline-block; padding: 20px; background-color: lightgrey;">
+        <p class="plagin__text">
+          <b>Классы</b><br>
+          <code>
+            .ui-accordion = главный контейнер (.accordion)
+          </code><br><br>
+          <code>
+            .ui-accordion-header = заголовок (h3)
+          </code><br>
+          <code>
+            .ui-accordion-header-active = активный заголовок (h3)
+          </code><br>
+          <code>
+            .ui-accordion-header-collapsed = неактивный заголовок (h3)
+          </code><br>
+          <code>
+            .ui-accordion-icons = заголовок (h3), содержащий icons
+          </code><br>
+          <code>
+            .ui-accordion-header-icon = элемент внутри заголовка для иконки
+          </code><br><br>
+          <code>
+            .ui-accordion-content = контент (p)
+          </code><br>
+          <code>
+            .ui-accordion-content-active = доп класс контента (p)
+          </code>
+        </p>
+      </div>
+    </div>
+  </section><br>
+  <section class="accord" id="jquery-one">
+    <div class="accord__container">
+      <h2 class="accord__heading">Jquery 1</h2>
+      <ul class="accord__list" data-accord="open">
+        <li class="accord__item">
+          <h2 class="accord__title">First</h2>
+          <p class="accord__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quis soluta eaque repellat vitae id,
+            error sed autem minima. Enim praesentium libero aut, tempore recusandae dignissimos atque facere repellendus
+            fugiat.
+          </p>
+        </li>
+        <li class="accord__item">
+          <h2 class="accord__title">Second</h2>
+          <p class="accord__text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus dolorum distinctio vel minus amet
+            cupiditate mollitia eius, aut beatae ab pariatur recusandae. Error obcaecati mollitia veniam ut eius
+            perferendis sint.
+          </p>
+        </li>
+        <li class="accord__item">
+          <h2 class="accord__title">Third</h2>
+          <p class="accord__text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni fugit quas non earum quam consequatur
+            architecto eligendi? Quos, sequi reiciendis. Recusandae quo tempora placeat tenetur earum esse blanditiis
+            similique facilis?
+          </p>
+        </li>
+      </ul><br><br>
+      <p class="accord__text">
+      <pre>
+<b style="color: #000;">Подключение jquery</b><br>
+&lt;script src="https://code.jquery.com/jquery-1.12.4.js"&gt;&lt;/script&gt;
+        </pre><br><br>
+      </p>
+      <div class="accord__descr" style="display: flex; column-gap: 20px;">
+        <div class="accord__wrapper wrapper" style="display: block;">
+          <h3 class="wrapper__title">HTML</h3>
+          <pre>
+&lt;ul class="accordion__list" data-accordion="open"&gt;
+  &lt;li class="accordion__link"&gt;
+    &lt;h2 class="accordion__title"&gt;First&lt;/h2&gt;
+    &lt;p class="accordion__text"&gt;
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__link"&gt;
+    &lt;h2 class="accordion__title"&gt;Second&lt;/h2&gt;
+    &lt;p class="accordion__text"&gt;
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__link"&gt;
+    &lt;h2 class="accordion__title"&gt;Third&lt;/h2&gt;
+    &lt;p class="accordion__text"&gt;
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+          </pre>
+        </div>
+        <div class="accord__wrapper wrapper" style="display: block;">
+          <h3 class="wrapper__title">CSS</h3>
+          <pre>
+.accordion__list {
+  margin: 0.5rem 0.1rem 0;
+  padding-left: 0;
+  width: 30%;
+  list-style: none;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+.accordion__title {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  min-height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+}
+.accordion__title::after {
+  content: "\02795"; /*ПЛЮС*/
+  font-size: 1rem;
+  color: #777;
+  float: right;
+}
+.accordion__title.active::after {
+  content: "\02796"; /*МИНУС*/
+}
+.accordion__text {
+  display: none;
+  padding: 1rem;
+  border-bottom: 1px solid #777;
+}
+          </pre>
+        </div>
+        <div class="accord__wrapper wrapper" style="display: block;">
+          <h3 class="wrapper__title">JS</h3>
+          <pre>
+// Подключить библиотеку
+// Проверить её готовность
+$(document).ready(function () {
+  var accordion = function () {
+    // отслеживание у accordion__list с помощью метода attr атрибут data-accordion
+    var data = $(".accordion__list").attr("data-accordion");
+
+    // отслеживание  события on"click" у селектора accrodion__title
+    $(".accordion__title").on("click", function () {
+
+      // если значение будет "close"
+      if (data === "close") {
+        // открыть accordion__text с помощью метода slideUp
+        // slideUp (показывает элемент на странице за счёт плавного разворачивания)
+
+        $(".accordion__text").slideUp();
+
+        // если данный элемент (accordion__text) имеет класс active (true и false, если нет)
+        if ($(this).hasClass("active")) {
+
+          // если отсутствует класс active, то он добавляется помощью метода toggleClass
+          $(this).toggleClass("active");
+        }
+
+        // если есть класс active, то удаляем с помощью метода removeClass
+        else {
+          $(".accordion__title").removeClass("active");
+          $(this).toggleClass("active");
+        }
+      }
+
+      // добавление или удаление класса active
+      else {
+        $(this).toggleClass("active");
+      }
+
+      // отслеживание с помощью метода next после заданных элементов, исключая элементы,
+      // которые имеют значение animated и делаем skideToggle
+      $(this).next(".accordion__text").not(":animated").slideToggle();
+    });
+  };
+  // вызов функции
+  accordion();
+});
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section><br>
+  <section class="jquery" id="jquery">
+    <div class="jquery__container">
+      <h2 class="jquery__title">Jquery 2 (фрилансер по жизни)</h2>
+      <div class="jquery__primer">
+        <div class="jquery__wrapper one">
+          <div class="wrapper__item">
+            <div class="wrapper__title">Заголовок №1</div>
+            <div class="wrapper__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+            </div>
+          </div>
+          <div class="wrapper__item">
+            <div class="wrapper__title">Заголовок №2</div>
+            <div class="wrapper__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+            </div>
+          </div>
+          <div class="wrapper__item">
+            <div class="wrapper__title">Заголовок №3</div>
+            <div class="wrapper__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jquery__info">
+        <div class="jquery__html html">
+          <h3 class="html__title">HTML</h3>
+          <pre>
+&lt;div class="jquery__wrapper one"&gt;
+  &lt;div class="wrapper__item"&gt;
+    &lt;div class="wrapper__title"&gt;Заголовок №1&lt;/div&gt;
+    &lt;div class="wrapper__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper__item"&gt;
+    &lt;div class="wrapper__title"&gt;Заголовок №2&lt;/div&gt;
+    &lt;div class="wrapper__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper__item"&gt;
+    &lt;div class="wrapper__title"&gt;Заголовок №3&lt;/div&gt;
+    &lt;div class="wrapper__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div><br>
+        <div class="jquery__css css">
+          <h3 class="css__title">CSS</h3>
+          <pre>
+.jquery__wrapper {
+  margin: 0 0 20px;
+  padding: 20px;
+  background-color: powderblue;
+}
+.wrapper__item:not(:last-child) {
+  margin: 0 0 20px;
+}
+.wrapper__title {
+  position: relative;
+  padding: 0 0 0 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.wrapper__title::before,
+.wrapper__title::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 10px;
+  height: 1px;
+  background-color: navy;
+  transition: all 0.3s ease 0s;
+}
+.wrapper__title::before {
+  transform: rotate(40deg);
+  left: 0;
+}
+.wrapper__title::after {
+  transform: rotate(-40deg);
+  left: 8px;
+}
+.wrapper__title.active:before,
+.wrapper__title.active:after {
+  top: 2px;
+  background-color: green;
+}
+.wrapper__title.active::before {
+  transform: rotate(-40deg);
+}
+.wrapper__title.active::after {
+  transform: rotate(40deg);
+}
+.wrapper__text {
+  display: none;
+  padding: 10px 0 0;
+}
+          </pre>
+        </div><br>
+        <div class="jquery__js js">
+          <h3 class="js__title">JS</h3>
+          <pre>
+$(document).ready(function () {
+  $('.wrapper__title').click(function (event) {
+    if ($('.jquery__wrapper').hasClass('one')) {
+      $('.wrapper__title').not($(this)).removeClass('active');
+      $('.wrapper__text').not($(this).next()).slideUp(300);
+    }
+    $(this).toggleClass('active').next().slideToggle(300);
+  });
+});
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section><br>
+  <section class="java" id="js">
+    <div class="java__container">
+      <h2 class="java__title">Javascript 1</h2>
+      <ul class="java__accordion">
+        <li class="java__item java-item">
+          <h3 class="java-item__heading">ONE</h3>
+          <p class="java-item__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, labore!
+          </p>
+        </li>
+        <li class="java__item java-item">
+          <h3 class="java-item__heading">TWO</h3>
+          <p class="java-item__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem veritatis doloribus a?
+          </p>
+        </li>
+        <li class="java__item java-item">
+          <h3 class="java-item__heading">THREE</h3>
+          <p class="java-item__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos esse vel amet velit voluptas ea, ullam
+            veritatis temporibus ducimus numquam perspiciatis molestiae eligendi dolorem, sequi quas in modi ipsam
+            deleniti sunt eum corporis! Suscipit nulla distinctio voluptatibus, error minima ipsum, quia, unde totam vel
+            fugiat incidunt ad aliquid necessitatibus officiis?
+          </p>
+        </li>
+        <li class="java__item java-item">
+          <h3 class="java-item__heading">FOUR</h3>
+          <p class="java-item__text">
+            Lorem ipsum dolor sit amet.
+          </p>
+        </li>
+        <li class="java__item java-item">
+          <h3 class="java-item__heading">FIVE</h3>
+          <p class="java-item__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo veniam voluptatibus soluta praesentium
+            totam, pariatur at ad. Distinctio, quibusdam consequuntur?
+          </p>
+        </li>
+      </ul>
+      <div class="java__info">
+        <div class="java__html html">
+          <p class="html__text">
+            <b>HTML</b>
+          <pre>
+&lt;ul class="accordion"&gt;
+  &lt;li class="javaaccordion__item item"&gt;
+    &lt;h3 class="item__heading"&gt;ONE&lt;/h3&gt;
+    &lt;p class="item__text"&gt;
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, labore!
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__item item"&gt;
+    &lt;h3 class="item__heading"&gt;TWO&lt;/h3&gt;
+    &lt;p class="item__text"&gt;
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem veritatis doloribus a?
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__item item"&gt;
+    &lt;h3 class="item__heading"&gt;THREE&lt;/h3&gt;
+    &lt;p class="item__text"&gt;
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos esse vel amet velit voluptas ea, ullam
+      veritatis temporibus ducimus numquam perspiciatis molestiae eligendi dolorem, sequi quas in modi ipsam
+      deleniti sunt eum corporis! Suscipit nulla distinctio voluptatibus, error minima ipsum, quia, unde totam vel
+      fugiat incidunt ad aliquid necessitatibus officiis?
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__item item"&gt;
+    &lt;h3 class="item__heading"&gt;FOUR&lt;/h3&gt;
+    &lt;p class="item__text"&gt;
+      Lorem ipsum dolor sit amet.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class="accordion__item item"&gt;
+    &lt;h3 class="item__heading"&gt;FIVE&lt;/h3&gt;
+    &lt;p class="item__text"&gt;
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo veniam voluptatibus soluta praesentium
+      totam, pariatur at ad. Distinctio, quibusdam consequuntur?
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+          </p>
+        </div>
+        <div class="java__css css">
+          <p class="css__text">
+            <b>CSS</b>
+          <pre>
+.accordion {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.item {
+  border: 1px solid #000;
+}
+.java__item:not(:last-child) {
+  border-bottom: none;
+}
+.item__heading {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(33, 154, 175, 1);
+  color: #fff;
+  cursor: pointer;
+}
+.item__text {
+  display: none;
+  padding: 20px 10px;
+}
+.item__text.active {
+  display: block;
+}
+            </pre>
+          </p>
+        </div>
+        <div class="java__js js">
+          <p class="js__text">
+            <b>JS</b>
+          <pre>
+var headingElem = document.querySelectorAll('.item__heading');
+
+headingElem.forEach((el) =&gt; {
+  el.addEventListener('click', function () {
+
+    /*удаление класса active, если открыть другую вкладку*/
+    var textActive = document.querySelectorAll('.item__text.active');
+    textActive.forEach((el) =&gt; {
+      el.classList.remove('active');
+    });
+
+    var parentElem = this.parentNode;
+    var contentBlock = parentElem.querySelector('.java-item__text');
+    if (contentBlock.classList.contains('active')) {
+      contentBlock.classList.remove('active');
+    }
+    else {
+      contentBlock.classList.add('active');
+    }
+  });
+});
+            </pre>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section><br>
+  <section class="javascript" id="js-two">
+    <div class="javascript__container">
+      <h2 class="javascript__title">Javascript 2 (фрилансер по жизни)</h2>
+      <div class="javascript__primer">
+        <div data-spollers data-one-spoller class="block block-1">
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Обычный спойлер №1</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+              reprehenderit. Numquam et eveniet dignissimos ipsa!
+            </div>
+          </div>
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Обычный спойлер №2</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+              reprehenderit. Numquam et eveniet dignissimos ipsa!
+            </div>
+          </div>
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Обычный спойлер №3</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+              reprehenderit. Numquam et eveniet dignissimos ipsa!
+            </div>
+          </div>
+        </div>
+        <div data-spollers="650,min" class="block block-2">
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Спойлер работает на экранах шириной
+              больше или ровно 650px</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni quas provident, vero atque sequi
+              eum dolores quam quasi nemo?
+            </div>
+          </div>
+        </div>
+        <div data-spollers="800,max" class="block block-3">
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Спойлер №1 работает на экранах на
+              экранах шириной меньше или ровно 800px</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fuga neque expedita, reiciendis cum
+              commodi. Odio labore quae quaerat dolor.
+            </div>
+          </div>
+          <div class="block__item">
+            <button tabindex="-1" type="button" data-spoller class="block__title">Спойлер №2 работает на экранах на
+              экранах шириной меньше или ровно 800px</button>
+            <div class="block__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fuga neque expedita, reiciendis cum
+              commodi. Odio labore quae quaerat dolor.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="javascript__spollers">
+        <div class="javascript__html html">
+          <h3 class="html__title">HTML</h3>
+          <pre>
+&lt;div data-spollers data-one-spoller class="block block-1"&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Обычный спойлер №1&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+      reprehenderit. Numquam et eveniet dignissimos ipsa!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Обычный спойлер №2&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+      reprehenderit. Numquam et eveniet dignissimos ipsa!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Обычный спойлер №3&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, suscipit, aut? Distinctio quisquam rerum
+      reprehenderit. Numquam et eveniet dignissimos ipsa!
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div data-spollers="650,min" class="block block-2"&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Спойлер работает на экранах шириной
+      больше или ровно 650px&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni quas provident, vero atque sequi
+      eum dolores quam quasi nemo?
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div data-spollers="800,max" class="block block-3"&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Спойлер №1 работает на экранах на
+      экранах шириной меньше или ровно 800px&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fuga neque expedita, reiciendis cum
+      commodi. Odio labore quae quaerat dolor.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="block__item"&gt;
+    &lt;button tabindex="-1" type="button" data-spoller class="block__title"&gt;Спойлер №2 работает на экранах на
+      экранах шириной меньше или ровно 800px&lt;/button&gt;
+    &lt;div class="block__text"&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fuga neque expedita, reiciendis cum
+      commodi. Odio labore quae quaerat dolor.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div><br>
+        <div class="javascript__css css">
+          <h3 class="css__title">CSS</h3>
+          <pre>
+.block {
+  margin: 0 0 30px;
+}
+.block__item {
+  margin: 0 0 10px;
+}
+.block__title {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  background: transparent;
+  color: var(--color);
+}
+.block._init .block__title {
+  cursor: pointer;
+}
+.block._init .block__title {
+  padding: 10px 40px 10px 10px;
+}
+.block._init .block__title::before,
+.block._init .block__title::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  transition: transform 0.3s ease 0s;
+}
+
+.block._init .block__title::after {
+  transform: rotate(-90deg);
+}
+.block._init .block__title._active::after {
+  transform: rotate(0deg);
+}
+.block__text {
+  padding: 0 10px 10px;
+  line-height: 130%;
+}
+.block-1 .block__item {
+  background-color: #77608d;
+}
+.block-2 .block__item {
+  background-color: #794f45;
+}
+.block-3 .block__item {
+  background-color: #7a956b;
+}
+          </pre>
+        </div><br>
+        <div class="javascript__js js">
+          <h3 class="js__title">JS</h3>
+          <pre>
+const spollersArray = document.querySelectorAll('[data-spollers]');
+if (spollersArray.length &gt; 0) {
+  // массив обычных спойлеров
+  const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
+    return !item.dataset.spollers.split(",")[0];
+  });
+  // инициализация обычных спойлеров
+  if (spollersRegular.length &gt; 0) {
+    initSpollers(spollersRegular);
+  }
+
+  // массив спойлеров с медиа-запросами
+  const spollersMedia = Array.from(spollersArray).filter(function (item, index, self) {
+    return item.dataset.spollers.split(",")[0];
+  });
+
+  // инициализация спойлеров с медиа-запросами
+  if (spollersMedia.length &gt; 0) { // проверка на существование таких блоков
+    const breakpointsArray = []; // пустой массив для заполнения
+    spollersMedia.forEach(item =&gt; {
+      const params = item.dataset.spollers; // получаем параметры, обращаясь к data-spollers
+      const breakpoint = {}; // пустой объект для заполнения
+      const paramsArray = params.split(","); // преобразование строки params в массив ("650,min")
+      breakpoint.value = paramsArray[0]; // для пустого объекта breakpoint присваиваем значение (пример: 650) нулевую ячейку массива
+      breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max"; // также для breakpoint присваиваем значение (пример: min). max по умолчанию, если не присвоили в HTML-разметке
+      breakpoint.item = item; // сюда присваиваем сам объект breakpoint
+      breakpointsArray.push(breakpoint); // добавляем объект breakpoint в массив breakpointsArray
+    });
+
+    // Получаем уникальные брейкпоинты
+    let mediaQueries = breakpointsArray.map(function (item) {
+      return '(' + item.type + "-width: " + item.value + "px)," + item.value + ',' + item.type;
+    }); // В СКОБКАХ УКАЗЫВАЕМ МИНИМАЛЬНОЕ ЗНАЧЕНИЕ: + item.type - добавляем тип пример: min. К min прибавляем -width.
+    // Прибавляем значение, которое указывали ранее, пример: 650 и также прибавялем единциу измерения пример: px.
+    // После скобок добавляем числовое значение и тип, т.е. ("650,min")
+
+    mediaQueries = mediaQueries.filter(function (item, index, self) {
+      return self.indexOf(item) === index;
+    }); // отфильтровываем и указываем, чтобы все блоки работали с одинаковыми параметрами
+
+    // Работаем с каждым брейкпоинтом
+    mediaQueries.forEach(breakpoint =&gt; {
+      const paramsArray = breakpoint.split(","); // преобразование строки в массив
+      const mediaBreakpoint = paramsArray[1]; // получает первый параметр (пример: 650)
+      const mediaType = paramsArray[2]; // получает второй параметр (пример: min)
+      const matchMedia = window.matchMedia(paramsArray[0]); // метод слушает ширину экрана обрабатывать, если сработал нужный брейкпоинт
+
+      // Объекты с нужными условиями
+      const spollersArray = breakpointsArray.filter(function (item) { // фильтрация главного массива
+        if (item.value === mediaBreakpoint && item.type === mediaType) { // сбор объектов, которые соответствуют нужным условиям
+          return true;
+        }
+      });
+      // Событие
+      // открытие самого спойлера
+      matchMedia.addListener(function () {
+        initSpollers(spollersArray, matchMedia); // собираем две константы
+      });
+      initSpollers(spollersArray, matchMedia); // чтобы заработало сразу при загрузке страницы
+    });
+  }
+
+  // Инициализация
+  function initSpollers(spollersArray, matchMedia = false) { // массив объектов и константа
+    spollersArray.forEach(spollersBlock =&gt; { // spollersBlock каждый элемент массива
+      spollersBlock = matchMedia ? spollersBlock.item : spollersBlock; // если matchMedia чему то равно тогда присваиваем имя объекта spollersBlock
+      if (matchMedia.matches || !matchMedia) { // matchMedia.matches вернёт true, если ширина экрана больше или равен пример: 650px
+        spollersBlock.classList.add('_init'); // присваиваем технический класс
+        initSpollerBody(spollersBlock);
+        spollersBlock.addEventListener("click", setSpollerAction); // событие клик
+      }
+      else {
+        spollersBlock.classList.remove('_init');
+        initSpollerBody(spollersBlock, false); // передаём в spollersBlock объект
+        spollersBlock.removeEventListener("click", setSpollerAction); // убираем событие клик
+      }
+    });
+  }
+
+  // Работа с контентом
+  function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+    const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]'); // получаем все загловки спойлеров
+    if (spollerTitles.length &gt; 0) {
+      spollerTitles.forEach(spollerTitle =&gt; {
+        if (hideSpollerBody) { // если hideSpollerBody true, тогда у заголовка убираем tabindex
+          spollerTitle.removeAttribute('tabindex');
+          if (!spollerTitle.classList.contains('_active')) { // если нет класса _active
+            spollerTitle.nextElementSibling.hidden = true; // тогда скрываем контентную часть с помощью nextElementSibling (т.е., следующий элемент после заголовка)
+          }
+        } else {
+          spollerTitle.setAttribute('tabindex', '-1'); // tabindex добавляем, чтобы спойлеры были обычными блоками при недостижения нужного брейкпоинта
+          spollerTitle.nextElementSibling.hidden = false;
+        }
+      });
+    }
+  }
+  function setSpollerAction(e) { // клик по кнопке
+    const el = e.target; // нажатый объект
+    if (el.hasAttribute('data-spoller') || el.closest('[data-spoller]')) { // если у объекта есть data-spoller || у ближайшего родителя
+      const spollerTitle = el.hasAttribute('data-spoller') ? el : el.closest('[data-spoller]'); // элемент с data-spoller || ближайший родитель
+      const spollersBlock = spollerTitle.closest('[data-spollers]'); // получаем родительский блок выбранного спойлера
+      const oneSpoller = spollersBlock.hasAttribute('data-one-spoller') ? true : false; // если у оболочки есть data-one-spoller, то true
+      if (!spollersBlock.querySelectorAll('._slide').length) { // проверка родителей спойлера на наличие класса _slide
+        if (oneSpoller && !spollerTitle.classList.contains('_active')) { // если у гл блока есть data-one-spoller и у нажатой кнопки нет класс _active
+          hideSpollersBody(spollersBlock); // все остальные спойлеры скрыть
+        }
+        spollerTitle.classList.toggle('_active'); // спойлеру добавляем или убираем класс _active
+        _slideToggle(spollerTitle.nextElementSibling, 500);
+      }
+      e.preventDefault();
+    }
+  }
+  function hideSpollersBody(spollersBlock) {
+    const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._active'); // у активного и открытого спойлера
+    if (spollerActiveTitle) {
+      spollerActiveTitle.classList.remove('_active'); // убираем класс _active
+      _slideUp(spollerActiveTitle.nextElementSibling, 500);
+    }
+  }
+}
+
+/*===============================================================*/
+// SlideToggle
+let _slideUp = (target, duration = 500) =&gt; {
+  if (!target.classList.contains('_slide')) { // если у объекта нет тех. класса _slide
+    target.classList.add('_slide'); // добавляет класс _slide
+    target.style.transitionProperty = 'height, margin, padding';
+    target.style.transitionDuration = duration + 'ms';
+    target.style.height = target.offsetHeight + 'px';
+    target.offsetHeight;
+    target.style.overflow = 'hidden';
+    target.style.height = 0;
+    target.style.paddingTop = 0;
+    target.style.paddingBottom = 0;
+    target.style.marginTop = 0;
+    target.style.marginBottom = 0;
+    window.setTimeout(() =&gt; {
+      target.hidden = true;
+      target.style.removeProperty('height');
+      target.style.removeProperty('padding-top');
+      target.style.removeProperty('padding-bottom');
+      target.style.removeProperty('margin-top');
+      target.style.removeProperty('margin-bottom');
+      target.style.removeProperty('overflow');
+      target.style.removeProperty('transition-duration');
+      target.style.removeProperty('transition-property');
+      target.classList.remove('_slide');
+    }, duration);
+  }
+}
+let _slideDown = (target, duration = 500) =&gt; {
+  if (!target.classList.contains('_slide')) {
+    target.classList.add('_slide');
+    if (target.hidden) {
+      target.hidden = false;
+    }
+    let height = target.offsetHeight;
+    target.style.overflow = 'hidden';
+    target.style.height = 0;
+    target.style.paddingTop = 0;
+    target.style.paddingBottom = 0;
+    target.style.marginTop = 0;
+    target.style.marginBottom = 0;
+    target.offsetHeight;
+    target.style.transitionProperty = 'height, margin, padding';
+    target.style.transitionDuration = duration + 'ms';
+    target.style.height = height + 'px';
+    target.style.removeProperty('padding-top');
+    target.style.removeProperty('padding-bottom');
+    target.style.removeProperty('margin-top');
+    target.style.removeProperty('margin-bottom');
+    window.setTimeout(() =&gt; {
+      target.style.removeProperty('height');
+      target.style.removeProperty('overflow');
+      target.style.removeProperty('transition-duration');
+      target.style.removeProperty('transition-property');
+      target.classList.remove('_slide');
+    }, duration);
+  }
+}
+let _slideToggle = (target, duration = 500) =&gt; {
+  if (target.hidden) {
+    return _slideDown(target, duration); // открыто - скрыть
+  } else {
+    return _slideUp(target, duration); // закрыто - показать
+  }
+}
+
+/*===============================================================*/
+/*
+Для родителя спойлеров пишем атрибут data-spollers
+Для заголовков спойлеров пишем атрибут data-spoller
+Если нужно включить/выключить работу спойлеров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
+Например:
+data-spollers-"992,max" -спойлеры будут рабоать только на экранах меньше или равно 992px
+data-spollers-"768,max" -спойлеры будут рабоать только на экранах меньше или равно 768px
+
+Если нужно чтобы в блоке открывался только один спойлер добавялем атрибут data-one-spoller
+*/
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/accordion.js"></script>
+</body>
+
+</html>

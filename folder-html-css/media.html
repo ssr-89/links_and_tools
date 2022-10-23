@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta specialized="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/html2.css">
+  <title>HTML: часть 2</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <ul class="list list-reset header-list flex">
+        <li class="item header-item">
+          <a href="../index.html">Главная страница</a>
+        </li>
+        <li class="item header-item">
+          <a href="article.html">HTML</a>
+        </li>
+        <li class="item header-item">
+          <a href="css.html">CSS</a>
+        </li>
+        <li class="item header-item">
+          <a class="main__link" href="../folder-git/git.html">Git</a>
+        </li>
+        <li class="item header-item">
+          <a class="main__link" href="../folder-javascript/js.html">JS</a>
+        </li>
+        <li class="item header-item">
+          <a class="main__link" href="../folder-tools/tools.html">ИНСТРУМЕНТЫ</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="container nav-container">
+      <h1 class="title nav-title">СОДЕРЖАНИЕ</h1>
+      <ul class="list list-reset">
+        <li class="item nav-item">
+          <a href="#media">Медиа-контент</a>
+        </li>
+        <li class="item nav-item">
+          <a href="#specialized">Узконаправленные теги</a>
+        </li>
+        <li class="item nav-item">
+          <a href="#forms">Формы</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="main">
+    <section class="section media">
+      <div class="container media-container">
+        <h2 id="media" class="title media-title">Элементы медиа-контента и их атрибуты</h2>
+        <div class="block media-block">
+          <h3 class="title media-block-title">Элемент: &lt;video&gt;&lt;/video&gt;</h3>
+          <pre class="pre">
+            <code>
+              <span class="span">&lt;!-- Простой пример видео --&gt;</span>
+              <span class="span">&lt;video src="videofile.ogg" autoplay poster="posterimage.jpg"&gt;</span>
+                <span class="span"><i>Sorry, your browser doesn't support embedded videos, but don't worry, you can</i>
+                  &lt;a href="videofile.ogg"&gt;download it&lt;/a&gt;</span>
+                <span class="span"><i>and watch it with your favorite video player!</i></span>
+              <span class="span">&lt;/video&gt;</span>
+
+              <span class="span">&lt;!-- Видео с субтитратми --&gt;</span>
+              <span class="span">&lt;video src="foo.ogg"&gt;</span>
+                <span class="span">&lt;track kind="subtitles" src="foo.en.vtt" srclang="en" label="English"&gt;</span>
+                <span class="span">&lt;track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska"&gt;</span>
+              <span class="span">&lt;/video&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <div class="block media-block">
+          <h3 class="title media-block-title">Элемент: &lt;audio&gt;&lt;/audio&gt;</h3>
+          <p class="text">Не все браузеры поддерживают одинаковые форматы аудио. Вы можете предоставить множество
+            источников внутри вложенных элементов
+            <source> и тогда браузер будет использовать первый, который он понимает:
+          </p>
+          <pre class="pre">
+            <code>
+              <span class="span">&lt;audio controls&gt;</span>
+                <span class="span">&lt;source src="myAudio.mp3" type="audio/mpeg"&gt;</span>
+                <span class="span">&lt;source src="myAudio.ogg" type="audio/ogg"&gt;</span>
+                <span class="span">&lt;p&gt;<i>Ваш браузер не поддерживает HTML5 аудио. Вот взамен</i></span>
+                  <span class="span">&lt;a href="myAudio.mp4"&gt;<i>ссылка на аудио</i>&lt;/a&gt;&lt;/p&gt;</span>
+              <span class="span">&lt;/audio&gt;</span>
+            </code>
+          </pre>
+          <p class="text">В нижнем примере указывается, какой аудиотрек будет добавлен с помощью атрибута src во
+            вложенный
+            элемент &lt;source&gt;, а не в непосредственно элемент &lt;audio&gt;. Всегда полезно включать MIME-тип
+            файла
+            в атрибут type, так как браузер может немедленно определить, может ли он воспроизвести этот файл, и не
+            тратить на него время, если не может.</p>
+          <pre class="pre">
+            <code>
+              <span class="span">&lt;audio controls="controls"&gt;</span>
+                <span class="span">&lt;source src="foo.wav" type="audio/wav"&gt;</span>
+                <span class="span"><i>Ваш браузер не поддерживает элемент</i> &lt;code&gt;audio&lt;/code&gt;.</span>
+              <span class="span">&lt;/audio&gt;</span>
+            </code>
+          </pre>
+          <p class="text">Далее пример включает множество элементов &lt;source&gt;. Браузер попытается загрузить
+            источник
+            из первого элемента &lt;source&gt; (Opus), если он не в состоянии воспроизвести его, тогда он перейдёт ко
+            второму (Vorbis) и, наконец, к третьему (MP3), если все предыдущие по каким-либо причинам не могут быть
+            воспроизведены браузером:</p>
+          <pre class="pre">
+            <code>
+              <span class="span">&lt;audio controls=""&gt;</span>
+                <span class="span">&lt;source src="foo.opus" type="audio/ogg; codecs=opus"/&gt;</span>
+                <span class="span">&lt;source src="foo.ogg" type="audio/ogg; codecs=vorbis"/&gt;</span>
+                <span class="span">&lt;source src="foo.mp3" type="audio/mpeg"/&gt;</span>
+               <span class="span">&lt;/audio&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <div class="block media-block">
+          <table class="table">
+            <caption class="tcaption">Атрибуты</caption>
+            <thead class="thead">
+
+            </thead>
+            <tbody class="tbody">
+              <tr class="tbody-tr">
+                <th class="cell">
+                  autoplay
+                </th>
+                <td class="cell">
+                  автоматическое воспроизведение видео
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  buffered
+                </th>
+                <td class="cell">
+                  атрибут для определения временных диапазонов буферизованных носителей. Этот атрибут содержит объект
+                  TimeRanges (en-US)
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  controls
+                </th>
+                <td class="cell">
+                  для контроля видео: звук, качество и перемотка
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  width
+                </th>
+                <td class="cell">
+                  ширина области отображения видео в пикселях
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  height
+                </th>
+                <td class="cell">
+                  высота области отображения видео в пикселях
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  loop
+                </th>
+                <td class="cell">
+                  заново воспроизводит видео после окончания
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  muted
+                </th>
+                <td class="cell">
+                  звук не воспроизводится, пока не включат видео
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  preload
+                </th>
+                <td class="cell">
+                  <p class="text">preload=”none” – видео не будет предварительно загружено</p>
+                  <p class="text">preload=”metadata” – предварительно загружаются метаданные видео (к примеру, длина)
+                  </p>
+                  <p class="text">preload=”auto” – видео будет загружено, даже, если пользователь не будет его смотреть
+                  </p>
+                  <p class="text">preload=”” – пустое место означает auto </p>
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  poster
+                </th>
+                <td class="cell">
+                  <p class="text">В &lt;vudeo&gt; создаёт preview-картинку.</p>
+                  <p class="text">(пример: poster="posterimage.jpg")</p>
+                  <p class="text">URL-адрес. Указывает путь на файл изображения для постера пока видео не было
+                    воспроизведено или
+                    пользователь не включил его. В случае отсутствия атрибута, то первым изображением до воспроизведения
+                    будет первый кадр видео.</p>
+                </td>
+              </tr>
+              <tr class="tbody-tr">
+                <th class="cell">
+                  src
+                </th>
+                <td class="cell">
+                  указывает путь на файл видео. (пример: <i>src="videofile.ogg"</i>)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="block media-block">
+          <h3 class="title media-block-title">Элемент: &lt;picture&gt;&lt;/picture&gt;</h3>
+          <p class="text picture-text">
+            HTML-элемент &lt;picture&gt; служит контейнером для одного или более элементов &lt;source&gt; и одного
+            элемента &lt;img&gt; для обеспечения оптимальной версии изображения для различных размеров экрана. Браузер
+            рассмотрит каждый из дочерних элементов &lt;source&gt; и выберет один, соответствующий лучшему совпадению;
+            если совпадений среди элементов &lt;source&gt; найдено не будет, то будет выбран файл, указанный атрибутом
+            src элемента &lt;img&gt;. Затем выбранное изображение отображается в пространстве, занятом элементом
+            &lt;img&gt;.
+          </p>
+          <p class="text picture-text">
+            Чтобы выбрать оптимальное изображение, user agent анализирует атрибуты srcset, media, и type элемента
+            &lt;source&gt; и выбирает совместимое изображение, которое наилучшим образом соответствует текущему макету
+            страницы, характеристикам устройства отображения и т. д.
+          </p>
+          <p class="text picture-text">
+            Элемент &lt;picture&gt; часто используют для того, чтобы обеспечить HiDPI (Retina)-версию изображений для
+            дисплеев с высоким разрешением, а также для добавления других форматов изображений, не поддерживаемых всеми
+            браузерами.
+          </p>
+          <h4 class="title title-text">Атрибут media</h4>
+          <p class="text">
+            Атрибут media позволяет определить медиавыражение, которое веб-браузер будет анализировать для выбора
+            элемента &lt;source&gt;. Если медиавыражение определяется как ложное (false), то элемент &lt;source&gt;
+            пропускается.
+          </p>
+          <pre class="pre">
+         <code>
+          <span class="span">&lt;picture&gt;</span>
+            <span class="span">&lt;source srcset="mdn-logo-wide.png" media="(min-width: 600px)"&gt;</span>
+            <span class="span">&lt;img src="mdn-logo-narrow.png" alt="MDN"&gt;</span>
+          <span class="span">&lt;/picture&gt;</span>
+         </code>
+        </pre>
+          <h4 class="title title-text">Атрибут type</h4>
+          <p class="text">Атрибут type позволяет вам обозначить MIME-тип данных, указанных в атрибуте srcset элемента
+            &lt;source&gt;. Если браузер не поддерживает данный тип, то элемент &lt;source&gt; опускается.</p>
+          <pre class="pre">
+          <code>
+          <span class="span">&lt;picture&gt;</span>
+            <span class="span">&lt;source srcset="mdn-logo.svg" type="image/svg+xml"&gt;</span>
+            <span class="span">&lt;img src="mdn-logo.png" alt="MDN"&gt;</span>
+          <span class="span">&lt;/picture&gt;</span>
+          </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section class="section specialized">
+      <div class="container specialized-container">
+        <h2 id="specialized" class="title specialized-title">Узконаправленные теги</h2>
+        <div class="block specialized-block">
+          <h3 class="title specialized-block-title">
+            Элементы: &lt;details&gt;&lt;/details&gt; и &lt;summary&gt;&lt;/summary&gt; (аккордеон)
+          </h3>
+          <pre class="pre">
+            <code>
+              <span class="span">&lt;details&gt;</span>
+                <span class="span">&lt;summary&gt;Кто убийца?&lt;/summary&gt;</span>
+                <span class="span">Убийца - дворецкий</span>
+              <span class="span">&lt;/details&gt;</span>
+            </code>
+          </pre>
+          <p class="text">Результат:</p>
+          <details class="details">
+            <summary>Кто убийца?</summary>
+            Убийца - дворецкий
+          </details>
+        </div>
+        <div class="block specialized-block">
+          <h3 class="title specialized-block-title">
+            Элемент: &lt;mark&gt;&lt;/mark&gt;
+          </h3>
+          <pre class="pre">
+            <code>
+              &lt;p&gt;Какой-то текст, и &lt;mark&gt;выделенный&lt;/mark&gt; в нём фрагмент&lt;/p&gt;
+            </code>
+          </pre>
+          <p class="text">
+            Результат:
+          </p>
+          <p class="text example">
+            Какой-то текст, и <mark>выделенный</mark> в нём фрагмент
+          </p>
+        </div>
+        <div class="block specialized-block">
+          <h3 class="title specialized-block-title">
+            Элементы: &lt;blockquote&gt;&lt;/blockquote&gt; и &lt;q&gt;&lt;/q&gt;
+          </h3>
+          <h4 class="title title-text">
+            1. &lt;blockquote&gt;&lt;/blockquote&gt;
+          </h4>
+          <p class="text">
+            <b>HTML-элемент &lt;blockquote&gt;</b> (от англ. Block Quotation) указывает на то, что заключённый в нем
+            текст является развёрнутой цитатой. Обычно он (текст) визуально выделяется наклонным (смотри Примечание, где
+            говорится о том, как это изменить). URI на источник цитаты можно указать в атрибуте <b>cite</b>, тогда как
+            текстовое представление источника может быть задано элементом <i>&lt;cite&gt;</i>.
+          </p>
+          <pre class="pre">
+            <code>
+              <b>HTML</b>
+              &lt;p&gt;Алиса в Стране Чудес&lt;/p&gt;
+                &lt;blockquote cite="#ссылка на источник"&gt;
+                  &lt;p&gt;- Зачем мне всякие безумные, полоумные да сдвинутые? - возмутилась Алиса. - Что я, ненормальная?&lt;/p&gt;
+                  &lt;p&gt;- Конечно! - воскликнул Кот. - Как и мы все. Иначе ты сюда бы не попала!&lt;/p&gt;
+                &lt;/blockquote&gt;
+                &lt;cite&gt;Льюис Кэрролл&lt;/cite&gt;
+
+              <b>CSS</b>
+              blockquote, p {
+                margin: 0;
+              }
+
+              blockquote p {
+                margin-bottom: 10px;
+                padding: 15px;
+                background: #eee;
+                border-radius: 5px;
+              }
+            </code>
+          </pre>
+          <p class="text">
+            Результат:
+          </p>
+          <div class="example">
+            <p>Алиса в Стране Чудес</p>
+            <blockquote cite="#ссылка на источник">
+              <p>- Зачем мне всякие безумные, полоумные да сдвинутые? - возмутилась Алиса. - Что я, ненормальная?</p>
+              <p>- Конечно! - воскликнул Кот. - Как и мы все. Иначе ты сюда бы не попала!</p>
+            </blockquote>
+            <cite>Льюис Кэрролл</cite>
+          </div>
+          <h4 class="title title-text">
+            2. &lt;q&gt;&lt;/q&gt;
+          </h4>
+          <p class="text">
+            Элемент q (от англ. "quotation" ‒ «цитата, высказывание») выделяет небольшую цитату в тексте. Он применяется
+            для выделения цитаты, объём которой не должен превышать больше одного абзаца.
+          </p>
+          <br>
+          <p class="text">
+            <b>Примечание:</b>
+            Содержимое элемента q браузеры выделяют кавычками. Для изменения вида кавычек используется глобальный
+            атрибут «lang» или CSS свойство «quotes».
+          </p>
+          <pre class="pre">
+            <code>
+              &lt;p&gt;В данном тексте выделена цитата: &lt;q&gt;Научите жить!&lt;/q&gt;&lt;/p&gt;
+            </code>
+          </pre>
+          <p class="text">
+            Результат:
+          </p>
+          <p class="text example">
+            В данном тексте выделена цитата: <q>Научите жить!</q>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section forms">
+      <div class="container forms-container">
+        <h2 id="forms" class="title forms-title">Формы<sup>1</sup>: &lt;form&gt;&lt;/form&gt;</h2>
+        <h3 class="title forms-block-title"><sup>1</sup>Для форм, выполняющих какие-то функции должны быть запущены
+          соответствующие CGI скрипты на сервере. HTML создает только внешний интерфейс формы.</h3>
+        <div class="block forms-block block-table">
+          <p class="text form-table-block">
+            &lt;form&gt;&lt;/form&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает формы
+          </p>
+          <p class="text form-table-block">
+            &lt;select multiple name="NAME" size=?&gt;&lt;/select&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает скролируемое меню. Size устанавливает кол-во пунктов меню, которое будет показано на экране,
+            остальные будут доступны при использовании прокрутки
+          </p>
+          <p class="text form-table-block">
+            &lt;option&gt;
+          </p>
+          <p class="text form-table-block">
+            Указывает каждый отдельный элемент меню
+          </p>
+          <p class="text form-table-block">
+            &lt;select name="NAME"&gt;&lt;/select&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает ниспадающее меню
+          </p>
+          <p class="text form-table-block">
+            &lt;textarea name="NAME" cols=40 rows=8&gt;&lt;/textarea&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает окно для ввода текста. Columns указывает ширину окна; rows указывает его высоту
+          </p>
+          <p class="text form-table-block">
+            &lt;input type="checkbox" name="NAME"&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает checkbox. За тегом следует текст
+          </p>
+          <p class="text form-table-block">
+            &lt;input type="radio" name="NAME" value="x"&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает radio кнопку. За тегом следует текст
+          </p>
+          <p class="text form-table-block">
+            &lt;input type=text name="foo" size=20&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает строку для ввода текста. Параметром Size указывается длина в символах
+          </p>
+          <p class="text form-table-block">
+            &lt;input type="submit" value="NAME"&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает кнопку "Принять"
+          </p>
+          <p class="text form-table-block">
+            &lt;input type="image" border=0 name="NAME" src="name.gif"&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает кнопку "Принять" - для этого используется изображение
+          </p>
+          <p class="text form-table-block">
+            &lt;input type="reset"&gt;
+          </p>
+          <p class="text form-table-block">
+            Создает кнопку "Отмена"
+          </p>
+        </div>
+        <div class="block forms-block">
+          <p class="text forms-text">
+            В элементе &lt;form&gt;&lt;/form&gt; прописываются следующие атрибуты:
+            action="адрес места, куда форма отправится"
+            method="определяет метод отправки: get - по умолчанию или post - данные включаются в тело формы",
+            enctype="определяет способ кодирования данных при отправке: по умолчанию aplication..."
+          </p>
+          <p class="text">
+            Ниже наглядный пример:
+          </p>
+          <pre class="pre">
+    <code>
+      &lt;form action="https://jsonplaceholder.typicode.com/posts" method="post"&gt;
+        &lt;input type="text" required&gt;<i>&lt;!--reguired делает обязательным ввод поля--&gt;</i>
+        &lt;input type="text" maxlength="10"&gt;<i>&lt;!--maxlength максимальное кол-во символов--&gt;</i>
+        &lt;input type="text" placeholder="Введите хоть что-нибудь"&gt;
+        &lt;input type="number" min="10" max="100"&gt;<i>&lt;!--минимальное и максимальное значение ввода--&gt;</i>
+        &lt;input type="email"&gt;<i>&lt;!--электронка--&gt;</i>
+        &lt;input type="tel"&gt;<i>&lt;!--телефон--&gt;</i>
+        &lt;input type="password"&gt;<i>&lt;!--пароль--&gt;</i>
+        &lt;input type="date"&gt;<i>&lt;!--дата--&gt;</i>
+        &lt;input type="search"&gt;<i>&lt;!--поиск--&gt;</i>
+        &lt;input type="file" accept="image/*"&gt;<i>&lt;!--accept ищет файлы только формата image--&gt;</i>
+        &lt;input type="hidden"&gt;<i>&lt;!--в нём хранится мета-информация, к примеру: данные о теме формы, которую пользователь не увидит,
+        но при отправке на БЭК будет учитываться--&gt;</i>
+        &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+      &lt;/form&gt;
+  </code>
+</pre>
+          <p class="text">
+            Результат:
+          </p>
+          <div class="example">
+            <form class="block-forms" action="https://jsonplaceholder.typicode.com/posts" method="post">
+              <input type="text" required placeholder="required">
+              <!--reguired делает обязательным ввод поля-->
+              <input type="text" maxlength="10" placeholder="maxlength">
+              <!--maxlength максимальное кол-во символов-->
+              <input type="text" placeholder="Введите хоть что-нибудь">
+              <input type="number" min="10" max="100" placeholder="number">
+              <!--минимальное и максимальное значение ввода-->
+              <input type="email" placeholder="email">
+              <input type="tel" placeholder="tel">
+              <input type="password" placeholder="password">
+              <input type="date">
+              <input type="search" placeholder="search">
+              <input type="file" accept="image/*">
+              <!--accept ищет файлы только формата image-->
+              <input type="hidden">
+              <!--в нём хранится мета-информация, к примеру: данные о теме формы, которую пользователь не увидит,
+                  но при отправке на БЭК будет учитываться-->
+              <button type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+        <div class="block forms-block">
+          <h3 class="title forms-block-title">Атрибуты</h3>
+          <p class="text forms-text">
+            <b>accept-charset</b> - Разделённые пробелами символьные кодировки, которые принимает сервер. Браузер
+            использует их в том порядке, в котором они перечислены. Значение по умолчанию означает ту же кодировку что и
+            у страницы.
+            (В предыдущей версии HTML, различные кодировки могли быть разделены запятыми.)
+          </p>
+          <p class="text forms-text">
+            <b>1. action</b> - URI-адрес программы, которая обрабатывает информацию переданную через форму. Это значение
+            может быть переписано с помощью атрибута formaction на &lt;button&gt; или &lt;input&gt; элементе.
+          </p>
+          <p class="text">
+            <b>2. autocomplete HTML5</b> - Указывает, могут ли элементы управления автоматически быть дописаны в форме
+            браузером. Эта настройка может быть переписана с помощью атрибута autocomplete на элементе
+            формы.<br><br>Возможные
+            значения:<br>
+            <b>off:</b> Пользователь должен явно ввести значение в каждое поле или документ предоставит свой собственный
+            метод
+            автодополнения; браузер автоматически не дополняет записи.<br>
+            <b>on:</b> Браузер может автоматически дополнить значения, основанные на значениях, которые пользователь уже
+            вводил, в течение предыдущего использования формы.
+          </p>
+          <p class="text forms-text" style="background-color: powderblue;">
+            <b><u>Примечание:</u></b> Если вы установили значение off для autocomplete атрибута ​​​​​формы, из-за того,
+            что документ предоставляет своё собственное автодополнение, то вам следует также установить значение off для
+            autocomplete каждого &lt;input&gt; элемента формы, которые документ может автоматически дополнить.<br>
+            Подробнее, смотрите <a
+              href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form#google_chrome_notes" alt="#">Google
+              Chrome notes</a>.
+          </p>
+          <p class="text forms-text">
+            <b>3. enctype</b> - Когда значение атрибута method равно post, атрибут - MIME тип содержимого, которое
+            используется, чтобы передать форму на сервер. Возможные значения:
+            application/x-www-form-urlencoded: Значение по умолчанию, если атрибут не задан.
+            multipart/form-data: Используйте это значение, если пользуетесь элементом &lt;input&gt; атрибутом type
+            установленным в "file".
+            text/plain (HTML5)
+            Это значение может быть переписано атрибутом formenctype на элементе &lt;button&gt; или &lt;input&gt;.
+          </p>
+          <p class="text forms-text">
+            <b>4. method</b> - HTTP метод, который браузер использует, для отправки формы. Возможные значения:
+            post: Соответствует HTTP POST методу ; данные из формы включаются в тело формы и посылаются на сервер.
+            get: Соответствует GET методу; данные из формы добавляются к URI атрибута action, их разделяет '?', и
+            полученный URI посылается на сервер. Используйте этот метод, когда форма содержит только ASCII символы и не
+            имеет побочного эффекта.
+            Это значение может быть переписано атрибутом formmethod на &lt;button&gt; или &lt;input&gt; элементе.
+          </p>
+          <p class="text forms-text">
+            <b>5. name</b> - Имя формы. В HTML 4 его использование запрещено (id следует использовать взамен). Оно
+            должно
+            быть уникальным и не пустым среди всех форм в документе в HTML 5.
+          </p>
+          <p class="text forms-text">
+            <b>6. novalidate HTML5</b> - Это Boolean атрибут показывает, что форма не проверяется на валидность, когда
+            отправляется серверу. Если атрибут пропущен (и поэтому форма проверяется), эта настройка по умолчанию, может
+            быть переписана атрибутом formnovalidate на &lt;button&gt; или &lt;input&gt; элементе, принадлежащем форме.
+          </p>
+          <p class="text forms-text">
+            <b>7. target</b> - Имя или ключевое слово, показывающее где отображать ответ, который будет получен, после
+            отправки формы. В HTML 4, это имя или ключевое слово для фрейма. В HTML5, это имя или ключевое слово,
+            контекста просмотра (например, вкладка, окно, или линейный фрейм).<br><br>Следующие ключевые слова имеют
+            специальное значение:<br>
+            <b>_self:</b> Загружает ответ в том же самом фрейме HTML 4 (или HTML5 контексте просмотра) как текущий. Это
+            значение по умолчанию, если атрибут не указан.<br>
+            <b>_blank:</b> Загружает ответ в новом безымянном окне HTML 4 или HTML5 контексте просмотра.<br>
+            <b>_parent:</b> Загружает ответ HTML 4 в родительском наборе фрейма для текущего фрейма или HTML5
+            родительский
+            контекст просмотра для текущего просмотра. Если нет предка, эта опция действует точно так же как as
+            _self.<br>
+            <b>_top:</b> HTML 4: Загружает ответ в полное, оригинальное окно, закрывая все другие фреймы. HTML5:
+            Загружает
+            ответ в верхний уровень контекста просмотра (т.е., контекст просмотра это предок текущего и не имеет других
+            предков). Если нет предка, эта опция действует точно так же как as _self.<br>
+            HTML5: Это значение может быть перезаписано formtarget атрибутом на &lt;button&gt; или &lt;input&gt;
+            элементе.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section foto">
+      <div class="container foto-container">
+        <span class="text foto-descr">
+          Мордочки
+        </span>
+      </div>
+    </section>
+  </main>
+  <a href="#" title="Вернуться к началу" class="topbutton">^Наверх</a>
+  <footer class="footer">
+    <small>&copy;
+      Салават С.Р., 2021
+    </small>
+  </footer><!-- в конце страницы с указанием автора -->
+</body>
+
+</html>

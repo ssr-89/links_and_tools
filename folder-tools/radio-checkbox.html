@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio, Checkbox</title>
+  <link rel="stylesheet" href="css/radio-checkbox.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">RADIO CHECKBOX</h1>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="select.html">Select</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="slides.html">Slides</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="accordion.html">Accordion</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li><br>
+          <li class="menu__item" style="color: rgb(13, 240, 25);">
+            <p>Содежание страницы:</p>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#checkbox">CHECKBOX</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#radio">RADIO</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="checkbox" id="checkbox">
+    <div class="checkbox__container">
+      <h2 class="checkbox__title">CHECKBOX</h2>
+      <form class="form" action="#" method="post">
+        <label class="check block">
+          <input class="check__input" name="address" type="checkbox" checked>
+          <span class="check__box"></span>
+          <span class="check__descr">
+            Первый активный при открытии страницы
+          </span>
+        </label>
+        <label class="check block">
+          <input class="check__input" name="address" type="checkbox">
+          <span class="check__box"></span>
+          <span class="check__descr">
+            Второй неактивный
+          </span>
+        </label>
+        <label class="check block">
+          <input class="check__input" name="address" type="checkbox" disabled>
+          <span class="check__box"></span>
+          <span class="check__descr">
+            Третий неактивный и недоступный
+          </span>
+        </label>
+        <label class="check block">
+          <input class="check__input" name="address" type="checkbox" checked disabled>
+          <span class="check__box"></span>
+          <span class="check__descr">
+            Четвёртый активный и недоступный
+          </span>
+        </label>
+      </form><br><br>
+      <div class="checkbox__wrapper wrapper">
+        <div class="wrapper__html html">
+          <h3 class="html__title">HTML</h3>
+          <p class="html__text">
+          <pre>
+&lt;form class="form" action="#" method="post"&gt;
+  &lt;label class="check block"&gt;
+    &lt;input class="check__input" name="address" type="checkbox" checked&gt;
+    &lt;span class="check__box"&gt;&lt;/span&gt;
+    &lt;span class="check__descr"&gt;
+      Первый
+    &lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="check block"&gt;
+    &lt;input class="check__input" name="address" type="checkbox"&gt;
+    &lt;span class="check__box"&gt;&lt;/span&gt;
+    &lt;span class="check__descr"&gt;
+      Второй
+    &lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="check block"&gt;
+    &lt;input class="check__input" name="address" type="checkbox" disabled&gt;
+    &lt;span class="check__box"&gt;&lt;/span&gt;
+    &lt;span class="check__descr"&gt;
+      Третий
+    &lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label class="check block"&gt;
+    &lt;input class="check__input" name="address" type="checkbox" checked disabled&gt;
+    &lt;span class="check__box"&gt;&lt;/span&gt;
+    &lt;span class="check__descr"&gt;
+      Четвёртый
+    &lt;/span&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+            </pre>
+          </p>
+        </div>
+        <div class="wrapper__css css">
+          <h3 class="css__title">CSS</h3>
+          <p class="css__text">
+          <pre>
+.block {
+  display: block;
+}
+
+.check {
+  padding-left: 1.2em;
+  max-width: 200px;
+  min-height: 20px;
+}
+
+.check__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*   width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); спрятать для IE 11*/
+}
+
+.check__box {
+  position: absolute;
+  margin-top: 0.2em;
+  margin-left: -1em;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 0.05em;
+  background-color: #fff;
+  box-shadow: 0 0 0 0.1em #4a90e2;
+}
+
+.check__input:checked + .check__box {
+  background-color: #4a90e2;
+  /*background-image: url(''); - загрузить img галочку*/
+}
+
+.check__input:focus + .check__box {
+  box-shadow: 0 0 0 0.1em #4a90e2, 0 0 0 0.2em #7ed321;
+}
+
+.check__input:disabled + .check__box {
+  box-shadow: 0 0 0 0.1em #9b9b9b;
+}
+
+.check__input:checked:disabled + .check__box {
+  background-color: #9b9b9b;
+}
+            </pre>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="radio" id="radio">
+    <div class="radio__container">
+      <h2 class="radio__title">RADIO</h2>
+      <label>
+        <input type="radio" name="carradio" value="yes">
+        <div class="stlradio"></div>Да
+      </label>
+      <label>
+        <input type="radio" name="carradio" value="no">
+        <div class="stlradio"></div>Нет
+      </label><br><br>
+      <div class="radio__wrapper wrapper">
+        <div class="wrapper__html html">
+          <h3 class="html__title">HTML</h3>
+          <p class="html__text">
+          <pre>
+&lt;label&gt;
+  &lt;input type="radio" name="carradio" value="yes"&gt;
+  &lt;div class="stlradio"&gt;&lt;/div&gt;Да
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="carradio" value="no"&gt;
+  &lt;div class="stlradio"&gt;&lt;/div&gt;Нет
+&lt;/label&gt;
+            </pre>
+          </p>
+        </div>
+        <div class="wrapper__css css">
+          <h3 class="css__title">CSS</h3>
+          <p class="css__text">
+          <pre>
+/* = стилизуем текст */
+label {
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* = скрываем input */
+input {
+  display: none;
+}
+
+/* = стилизуем кнопку, которая работает вместе с input */
+.stlradio {
+  display: inline-block;
+  border: 2px solid #b2b1b1;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin-right: 4px;
+  border-radius: 300px;
+  background-color: #ffffff;
+}
+
+/* = делаем скрытую точку в нашем div */
+.stlradio:before {
+  content: "";
+  background-color: #1c1e25;
+  width: 8px;
+  height: 8px;
+  opacity: 0;
+  transition: 0.3s;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 300px;
+}
+
+/* = включаем точку если input активен */
+input:checked + .stlradio:before {
+  opacity: 1;
+}
+            </pre>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

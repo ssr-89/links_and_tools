@@ -1,0 +1,28 @@
+<div data-spollers data-one-spoller class="functions-block block-accordion">
+  <div class="block-accrodion__item">
+    <button class="block-accordion__btn btn" id="">ЗАГОЛОВОК</button>
+    <div class="block-accrodion__AAA AAA" id="AAA">
+      <a target="_blank" class="AAA__link link reset-link" href="!#">Источник</a>
+      <div class="AAA__wrapper">
+        <p class="AAA__descr accordion__descr text">ОПИСАНИЕ</p>
+        <p class="AAA__descr text">КОНТЕНТ</p>
+        <br><br><br>
+        <p class="AAA__descr accordion__descr text">ОПИСАНИЕ</p>
+        <p class="AAA__descr text">КОНТЕНТ</p>
+      </div>
+    </div>
+  </div>
+  <div class="block-accrodion__item">
+    <button class="block-accordion__btn btn" id="">ЗАГОЛОВОК</button>
+    <div class="block-accrodion__AAA AAA" id="AAA">
+      <a class="AAA__link link reset-link" href="!#">Источник</a>
+      <div class="AAA__wrapper">
+        <p class="AAA__descr accordion__descr text">ОПИСАНИЕ</p>
+        <p class="AAA__descr text">КОНТЕНТ</p>
+        <br><br><br>
+        <p class="AAA__descr accordion__descr text">ОПИСАНИЕ</p>
+        <p class="AAA__descr text">КОНТЕНТ</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,452 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Light"), url("../fonts/MullerLight.woff2") format("woff2"), url("../fonts/MullerLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Regular"), url("../fonts/MullerRegular.woff2") format("woff2"), url("../fonts/MullerRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Medium"), url("../fonts/MullerMedium.woff2") format("woff2"), url("../fonts/MullerMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Bold"), url("../fonts/MullerBold.woff2") format("woff2"), url("../fonts/MullerBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+body {
+  font-weight: normal;
+  font-family: "Muller", Verdana, Tahoma, sans-serif;
+  font-size: 100%;
+  line-height: 1;
+  background-color: Gainsboro;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: lightgray;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 50px 100px;
+  max-width: 1400px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 56px;
+  text-align: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+h2 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-size: 36px;
+  background-color: lightgray;
+}
+
+.menu__item {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.menu__item:not(:last-child) {
+  margin: 0 0 20px 0;
+}
+
+.menu__link {
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu__link:focus {
+  outline: 2px solid lightgray;
+  outline-offset: 2px;
+}
+
+.menu__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: lightgray;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.menu__link:hover::after {
+  -webkit-transform: scaleX(100%);
+          transform: scaleX(100%);
+}
+
+.menu__link:active::after {
+  background-color: #fff;
+}
+
+.menu__link:active {
+  outline: none;
+  color: #fff;
+}
+
+pre {
+  display: inline-block;
+  padding: 20px;
+  background-color: lightgrey;
+  color: navy;
+}
+
+code {
+  color: red;
+}
+
+/*FOOTER*/
+.footer__container {
+  position: fixed;
+  right: 50px;
+  bottom: 0;
+  z-index: 10;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer__topbutton {
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.footer__topbutton:hover {
+  background-color: #fff;
+  border: none;
+  color: #000;
+}
+
+/*HEADER*/
+.header {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-2.9%, rgba(48, 64, 89, 0.84)), color-stop(65.7%, rgba(53, 65, 83, 0))), url("../img/accordion/background.jpg");
+  background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url("../img/accordion/background.jpg");
+}
+
+/*PLAGIN*/
+.plagin__container {
+  padding: 20px;
+}
+
+.ui-accordion .ui-accordion-header {
+  margin: 0 auto;
+}
+
+.ui-state-active {
+  border: 1px solid navy;
+  background-color: navy;
+}
+
+.ui-widget-content .ui-icon {
+  right: 0;
+}
+
+/*ACCORD*/
+.accord__container {
+  padding: 20px;
+}
+
+.accord__list {
+  margin: 0.5rem 0.1rem 0;
+  padding-left: 0;
+  width: 30%;
+  list-style: none;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.accord__title {
+  margin: 0;
+  padding: 0 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  cursor: pointer;
+  min-height: 3rem;
+  line-height: 3rem;
+}
+
+.accord__title::after {
+  content: "\02795";
+  /*ПЛЮС*/
+  font-size: 1rem;
+  color: #777;
+  float: right;
+}
+
+.accord__title.active::after {
+  content: "\02796";
+  /*МИНУС*/
+}
+
+.accord__text {
+  display: none;
+  padding: 1rem;
+  border-bottom: 1px solid #777;
+}
+
+/*JAVA*/
+.java__accordion {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.java-item {
+  border: 1px solid #000;
+}
+
+.java__item:not(:last-child) {
+  border-bottom: none;
+}
+
+.java-item__heading {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  background-color: #219aaf;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*
+.java-item__heading::before,
+.java-item__heading::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+}
+.java-item__heading::before {
+  top: 20px;
+}
+.java-item__heading::after {
+  bottom: 16px;
+  transform: rotate(90deg);
+}
+.java-item__heading.actived::after {
+  transform: rotate(0);
+}*/
+.java-item__text {
+  display: none;
+  padding: 20px 10px;
+}
+
+.java-item__text.actived {
+  display: block;
+}
+
+/*JQUERY 2*/
+.jquery__wrapper {
+  margin: 0 0 20px;
+  padding: 20px;
+  background-color: powderblue;
+}
+
+.wrapper__item {
+  border: 1px solid #000;
+}
+
+.wrapper__item:not(:last-child) {
+  border-bottom: none;
+}
+
+.wrapper__title {
+  position: relative;
+  padding: 15px 15px 15px 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.wrapper__title::before,
+.wrapper__title::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  width: 10px;
+  height: 1px;
+  background-color: navy;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.wrapper__title::before {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  left: 15px;
+}
+
+.wrapper__title::after {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  left: 23px;
+}
+
+.wrapper__title.active:before,
+.wrapper__title.active:after {
+  top: 17px;
+  background-color: green;
+}
+
+.wrapper__title.active::before {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+.wrapper__title.active::after {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.wrapper__text {
+  display: none;
+  padding: 15px;
+  background-color: #fff;
+}
+
+/*JAVASCRIPT 2*/
+.block {
+  margin: 0 0 30px;
+}
+
+.block__item {
+  margin: 0 0 10px;
+}
+
+.block__title {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  background: transparent;
+  color: var(--color);
+}
+
+.block._init .block__title {
+  cursor: pointer;
+}
+
+.block._init .block__title {
+  padding: 10px 40px 10px 10px;
+}
+
+.block._init .block__title::before,
+.block._init .block__title::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.block._init .block__title::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.block._init .block__title._active::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.block__text {
+  padding: 0 10px 10px;
+  line-height: 130%;
+}
+
+.block-1 .block__item {
+  background-color: #77608d;
+}
+
+.block-2 .block__item {
+  background-color: #794f45;
+}
+
+.block-3 .block__item {
+  background-color: #7a956b;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELECT</title>
+  <link rel="stylesheet" href="links/css/choices.min.css">
+  <link rel="stylesheet" href="css/select.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">SELECT</h1>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="slides.html">Slides</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="accordion.html">Accordion</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li><br>
+          <li class="menu__item">
+            <p style="color: #000;">Содежание страницы:</p>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#select" style="color: #000;">SELECT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="select" id="select">
+    <div class="select__container">
+      <h2 class="select__title">SELECT</h2>
+      <select name="list">
+        <option value="">ВЫБОР 1</option>
+        <option value="">ВЫБОР 2</option>
+        <option value="">ВЫБОР 3</option>
+        <option value="">ВЫБОР 4</option>
+        <option value="">ВЫБОР 5</option>
+      </select>
+      <p class="select__text">
+        1 Скачать по ссылке <a class="select__text-link" href="https://github.com/Choices-js/Choices"
+          style="color: blue; border-bottom: 1px solid blue;">Ссылка на плагин</a>: <span class="select__text"><i>Code
+            =&gt; Download ZIP =&gt; <b>choices.min.js choices.min.css</b> и
+            подключить</i></span>
+      </p><br>
+      <p class="select__text">
+        2 Прописать код в JS-файле:
+      <pre>
+const element = document.querySelector('.js-choice');
+const choices = new Choices(element);
+        </pre><br>
+      или с добавлением функции поиска<br>
+      <pre>
+const element = document.querySelector('.js-choice');
+const choices = new Choices(element, {
+  searchEnabled: true; // добавление строки поиска
+});
+        </pre>
+      </p>
+    </div>
+  </section>
+  <script src="links/js/choices.min.js"></script>
+  <script src="js/select.js"></script>
+</body>
+
+</html>

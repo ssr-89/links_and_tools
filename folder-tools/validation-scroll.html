@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM VALIDATION, SCROLL</title>
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="css/validation-scroll.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">FORM VALIDATION, SCROLL</h1>
+      <nav class="row-top__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="select.html">Select</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="slides.html">Slides</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="accordion.html">Accordion</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li><br>
+          <li class="menu__item">
+            <p style="color: rgb(27, 245, 27);">Содежание страницы:</p>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#validation">FORM VALIDATION</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#scroll">SCROLL</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="validation" id="validation">
+    <div class="validation__container">
+      <h2 class="validation__title">FORM VALIDATION</h2>
+      <div class="validation__wrapper wrapper">
+        <div class="wrapper__different different">
+          <h3 class="different__title">HTML</h3><br>
+          <ul class="different__list">
+            <li class="item">
+              <form class="form" action="#" method="post">
+                <div class="form__input-wrapper">
+                  <input class="form__input form__name" type="text" placeholder="Имя" name="name"
+                    data-validate-field="name">
+                </div>
+                <div class="form__input-wrapper">
+                  <input class="form__input form__tel" type="tel" placeholder="Телефон" name="tel"
+                    data-validate-field="tel" data-validate-rules="phone">
+                </div>
+                <div class="form__input-wrapper">
+                  <input class="form__input form__email" type="email" placeholder="Email" name="mail"
+                    data-validate-field="mail">
+                </div>
+                <button class="form__btn">Заказать</button>
+              </form>
+              <p class="different__text">
+                <b>1 Создаётся форма</b>
+              <pre>
+&lt;form class="form" action="#" method="post"&gt;
+  &lt;div class="form__input-wrapper"&gt;
+    &lt;input class="form__input form__name" type="text" placeholder="Имя" name="name" data-validate-field="name"&gt;
+  &lt;/div&gt;
+  &lt;div class="form__input-wrapper"&gt;
+    &lt;input class="form__input form__tel" type="tel" placeholder="Телефон" name="tel" data-validate-field="tel" data-validate-rules="phone"&gt;
+  &lt;/div&gt;
+  &lt;div class="form__input-wrapper"&gt;
+    &lt;input class="form__input form__email" type="email" placeholder="Email" name="mail" data-validate-field="mail"&gt;
+  &lt;/div&gt;
+  &lt;button class="form__btn"&gt;Заказать&lt;/button&gt;
+&lt;/form&gt;
+                </pre>
+              </p>
+              <span style="color: red;">Примечание: каждый input оборачивается в <em>div</em></span>
+            </li><br><br>
+            <li class="item">
+              <h3 class="different__title">JS</h3><br>
+              <b>2 Скачать JS-файлы по ссылкам и подключить их:</b><br>
+              <a href="https://github.com/horprogs/Just-validate/tree/v1/dist/js"
+                style="color: blue; border-bottom: 1px solid blue;">just-validate.min.js</a><br>
+              <a href="https://github.com/RobinHerbots/Inputmask/tree/5.x/dist"
+                style="color: blue; border-bottom: 1px solid blue;">inputmask.min.js</a><br><br>
+              <span>Также можно создать JS-файлы и перекопировать в них код с файлов по ссылкам</span>
+            </li><br><br>
+            <li class="item">
+              <b>3 В script.js или в &lt;script&gt;&lt;/script&gt; разметки HTML прописать следующий код:</b>
+              <pre>
+// маска для инпута телефона
+var selector = document.querySelector("input[type='tel']");
+var im = new Inputmask("+7 (999)-999-99-99"); // здесь указывается вариант порядка ввода телефона
+
+im.mask(selector);
+
+// валидация инпутов
+new JustValidate('.form' , {
+  rules: {
+    name: {
+      required: true,
+      minLength: 2,
+      maxLength: 10
+    },
+    tel: {
+      required: true,
+      function: (name, value) =&gt; {
+        const phone = selector.inputmask.unmaskedvalue()
+        return Number(phone) && phone.length === 10
+      }
+    },
+    mail: {
+      required: true,
+      email: true
+    },
+  },
+});
+              </pre><br>
+              <span style="color: red;">ВАЖНО!!! Данный код должен быть прописан после подключённых JS-файлов</span>
+            </li><br><br>
+            <li class="item">
+              <b>4 Текст ошибки лучше позиционировать абсолютно.</b><br>
+              <span>Сам текст можно изменить в <b>script.js</b> функцией:</span><br>
+              <pre>
+messages: {
+  name: {
+    required: 'Введите Ваше имя',
+    minLength: 'Минимальное значение 2 символа',
+    maxLength: 'Максимальное значение 10 символов'
+  },
+  tel: {
+    required: 'Введите Ваш телефон',
+    function: 'Минимальное значение 10 символов'
+  },
+  mail: {
+    required: 'Введите Ваш E-mail',
+    email: 'Ути! Хулиган!'
+  },
+};
+              </pre>
+            </li><br><br>
+            <li class="item">
+              <span>5 За стилизацию текста ошибки отвечает класс <b>js-validate-error-label</b></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="scroll" id="scroll">
+    <div class="scroll__container">
+      <h2 class="scroll__title">SCROLL</h2>
+      <div data-simplebar
+        style="width: 400px; height: 195px; background-color: rgb(176, 223, 245); border: 1px solid #000;">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis mollitia rerum, recusandae impedit velit maxime
+        dolorum qui quidem adipisci consequatur corrupti voluptates repellendus quos reprehenderit laborum! Maxime ullam
+        suscipit harum? Tempora quam beatae, fuga sit error, quos placeat ipsum rem labore voluptates, odit quae minus
+        iure modi fugiat illum delectus et? Similique nesciunt quaerat iste libero voluptas recusandae ad? Blanditiis?
+        Soluta culpa dicta velit placeat, fugiat doloribus nulla id nostrum impedit ratione ullam quis maxime distinctio
+        corporis accusamus, aliquid laudantium ut itaque repellendus libero perferendis, dignissimos harum voluptate?
+        Impedit, eveniet. Omnis aliquam iste maiores culpa numquam! Id culpa sapiente officiis recusandae repellendus
+        quaerat impedit eum tempore expedita velit reiciendis, deleniti debitis nemo rem deserunt illo consequatur modi
+        magnam doloremque repudiandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis mollitia rerum,
+        recusandae impedit velit maxime dolorum qui quidem adipisci consequatur corrupti voluptates repellendus quos
+        reprehenderit laborum! Maxime ullam suscipit harum? Tempora quam beatae, fuga sit error, quos placeat ipsum rem
+        labore voluptates, odit quae minus iure modi fugiat illum delectus et? Similique nesciunt quaerat iste libero
+        voluptas recusandae ad? Blanditiis? Soluta culpa dicta velit placeat, fugiat doloribus nulla id nostrum impedit
+        ratione ullam quis maxime distinctio corporis accusamus, aliquid laudantium ut itaque repellendus libero
+        perferendis, dignissimos harum voluptate? Impedit, eveniet. Omnis aliquam iste maiores culpa numquam! Id culpa
+        sapiente officiis recusandae repellendus quaerat impedit eum tempore expedita velit reiciendis, deleniti debitis
+        nemo rem deserunt illo consequatur modi magnam doloremque repudiandae.
+      </div><br><br>
+      <div class="scroll__block block">
+        <h3 class="block__title">ПОДКЛЮЧЕНИЕ ФАЙЛОВ</h3><br><br>
+        <a href="https://github.com/Grsmto/simplebar/tree/master/packages/simplebar"
+          style="color: blue; border-bottom: 1px solid blue;">ССЫЛКА НА ПЛАГИН</a><br><br>
+        <p class="block__text">
+          <span>1 Вначале надо скопировать и вставить в свои файлы:</span>
+        <pre>
+&lt;link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/&gt;
+&lt;script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"&gt;&lt;/script&gt;
+          </pre>
+        </p><br>
+        <p class="block__text">
+          <span>2 Прописать атрибут элементу, на который будет установлен скролл <b>data-simplebar</b></span>
+        <pre>
+&lt;div data-simplebar&gt;&lt;/div&gt;
+          </pre>
+        </p>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="js/just-validate.min.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/validation-scroll.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS</title>
+  <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__container">
+        <h1 class="title header__title">
+          CSS&nbsp;&mdash; Cascading Style Sheets (каскадные таблицы стилей)
+        </h1>
+        <nav class="header__nav">
+          <ul class="reset-list header__list">
+            <li class="header__item"><a class="header__link" href="index.html">Главная страница</a></li>
+            <li class="header__item"><a class="header__link" href="media.html">Предыдущая страница</a></li>
+            <li class="header__item"><a class="header__link" href="../folder-javascript/js.html">Следующая страница</a>
+            </li>
+          </ul>
+          <ul class="reset-list header__list">
+            <li class="header__item"><a class="header__link" href="#structure">Структура объявления в css</a></li>
+            <li class="header__item"><a class="header__link" href="#kinds">Виды селекторов</a></li>
+            <li class="header__item"><a class="header__link" href="#mass">Вес селекторов css</a></li>
+            <li class="header__item"><a class="header__link" href="#gradient">Линейный градиент</a></li>
+            <li class="header__item"><a class="header__link" href="#display">Свойство display</a></li>
+            <li class="header__item"><a class="header__link" href="#margin">Отступы</a></li>
+            <li class="header__item"><a class="header__link" href="#position">Позиционирование</a></li>
+            <li class="header__item"><a class="header__link" href="#features">CSS свойства</a></li>
+            <li class="header__item"><a class="header__link" href="#font">Вес шрифта</a></li>
+            <li class="header__item"><a class="header__link" href="#semantics">Семантические элементы HTML5</a></li>
+            <li class="header__item"><a class="header__link" href="#background">Background</a></li>
+            <li class="header__item"><a class="header__link" href="#flex">Flexbox</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section-offset structure" id="structure">
+      <div class="container">
+        <div class="structure__container">
+          <figure class="structure__img">
+            <figcaption class="structure__pct">
+              СТРУКТУРА ОБЪЯВЛЕНИЯ
+            </figcaption>
+            <img src="img/2.png" alt="Структура объявления">
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset kinds" id="kinds">
+      <div class="container">
+        <div class="kinds__container">
+          <h2 class="title kinds__title">
+            Виды селекторов
+          </h2>
+          <div class="kinds__scion kinds-scion">
+            <h3 class="title kinds-scion__title">
+              Селектор потомков
+            </h3>
+            <p class="text kinds-scion__descr">
+              <b>ul&nbsp;li {text-transform: uppercase;}</b>&nbsp;&mdash; выберет все элементы&nbsp;li, являющиеся
+              потомками всех элементов&nbsp;ul;
+            </p>
+            <p class="text kinds-scion__descr">
+              <b>p.first a&nbsp;{color: green;}</b>&nbsp;&mdash; данный стиль применится ко&nbsp;всем ссылкам, потомкам
+              абзаца с&nbsp;классом first;
+            </p>
+            <p class="text kinds-scion__descr">
+              <b>p .first a&nbsp;{color: green;}</b>&nbsp;&mdash; если добавить пробел, то&nbsp;будут стилизованы
+              ссылки, расположенные внутри любого тега класса .first, который является потомком элемента &lt;p&gt;;
+            </p>
+            <p class="text kinds-scion__descr">
+              <b>.first a&nbsp;{color: green;}</b>&nbsp;&mdash; данный стиль применится к&nbsp;любой ссылке,
+              расположенной внутри другого элемента, обозначенного классом .first.
+            </p>
+          </div>
+          <div class="kinds__child kinds-child">
+            <h3 class="title kinds-child__title">
+              Дочерний элемент
+            </h3>
+            <p class="text kinds-child__descr">
+              Дочерний элемент является прямым потомком содержащего его элемента. У&nbsp;одного элемента может быть
+              несколько дочерних элементов, а&nbsp;родительский элемент у&nbsp;каждого элемента может быть только один.
+              Дочерний селектор позволяет применить стили только если дочерний элемент идёт сразу за&nbsp;родительским
+              элементом и&nbsp;между ними нет других элементов, то&nbsp;есть дочерний элемент больше ни&nbsp;во&nbsp;что
+              не&nbsp;вложен.
+            </p>
+            <p class="text kinds-child__descr">
+              Например, <b>p &gt; strong</b>&nbsp;&mdash; выберет все элементы <b>strong</b>, являющиеся дочерними
+              по&nbsp;отношению к&nbsp;элементу&nbsp;<b>p</b>.
+            </p>
+          </div>
+          <div class="kinds__sister kinds-sister">
+            <h3 class="title kinds-sister__title">
+              Сестринксий элемент
+            </h3>
+            <p class="text kinds-sister__descr">
+              Сестринские отношения возникают между элементами, имеющими общего родителя. Селекторы сестринских
+              элементов позволяют выбрать элементы из&nbsp;группы элементов одного уровня:
+            </p>
+            <p class="text kinds-sister__descr">
+              &mdash;&nbsp;h1 + p&nbsp;&mdash; выберет все первые абзацы, идущие непосредственно за&nbsp;любым тегом
+              &lt;h1&gt;, не&nbsp;затрагивая остальные абзацы;
+            </p>
+            <p class="text kinds-sister__descr">
+              &mdash;&nbsp;h1 ~ p&nbsp;&mdash; выберет все абзацы, являющиеся сестринскими по&nbsp;отношению
+              к&nbsp;любому заголовку h1&nbsp;и&nbsp;идущие сразу после него.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset mass" id="mass">
+      <div class="container">
+        <div class="mass__container">
+          <h2 class="title mass__title">
+            Вес селекторов
+          </h2>
+          <div class="mass__wane mass-wane">
+            <h3 class="title mass-wane__title">
+              По убыванию
+            </h3>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                style=""
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                1,0,0,0
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                #id
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                0,1,0,0
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                .class
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                0,0,1,0
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                [attr=value]
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                0,0,1,0
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                LI
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                0,0,0,1
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              <span class="mass-wane__span">
+                *
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-wane__span">
+                0,0,0,0
+              </span>
+            </p>
+            <p class="text mass-wane__descr">
+              У&nbsp;стилей, заданных в&nbsp;атрибуте style, на&nbsp;первой позиции будет единица&nbsp;&mdash; 1,0,0,0.
+              Это самая высокая специфичность, которая перевешивает свойства, заданные другими способами.
+            </p>
+            <p class="text mass-wane__descr">
+              Переопределить стили, заданные в&nbsp;style, можно дописав !important к&nbsp;значению свойства
+              в&nbsp;таблице стилей.
+            </p>
+            <p class="text mass-wane__descr">
+              Обратный вариант&nbsp;&mdash; универсальный селектор *, он&nbsp;не&nbsp;имеет веса: 0,0,0,0.
+            </p>
+          </div>
+          <div class="mass__rise mass-rise">
+            <h3 class="title mass-rise__title">
+              По возрастанию
+            </h3>
+            <p class="text mass-rise__descr">
+              <span class="mass-rise__span">
+                LI
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-rise__span">
+                0,0,0,1
+              </span>
+            </p>
+            <p class="text mass-rise__descr">
+              <span class="mass-rise__span">
+                UL LI
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-rise__span">
+                0,0,0,2
+              </span>
+            </p>
+            <p class="text mass-rise__descr">
+              <span class="mass-rise__span">
+                .orange
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-rise__span">
+                0,0,1,0
+              </span>
+            </p>
+            <p class="text mass-rise__descr">
+              <span class="mass-rise__span">
+                .orange A SPAN
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-rise__span">
+                0,0,1,2
+              </span>
+            </p>
+            <p class="text mass-rise__descr">
+              <span class="mass-rise__span">
+                #page .orange
+              </span>
+              &mdash;&nbsp;
+              <span class="mass-rise__span">
+                0,1,1,0
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset gradient" id="gradient">
+      <div class="container">
+        <div class="gradient__container">
+          <h2 class="title gradient__title">
+            Линейный градиент
+          </h2>
+          <figure class="gradient__figure">
+            <img class="gradient__img" src="img/3.png" alt="ЛИНИЯ ГРАДИЕНТА">
+            <figcaption class="gradient__pct">
+              ЛИНИЯ ГРАДИЕНТА, НАЧАЛЬНАЯ И&nbsp;КОНЕЧНАЯ ТОЧКИ И&nbsp;УГОЛ ГРАДИЕНТА
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset display" id="display">
+      <div class="container">
+        <div class="display__container">
+          <h2 class="title display__title">
+            Свойство display
+          </h2>
+          <p class="text display__descr">
+            <b>Многоцелевое свойтсво, которое определяет, как элемент должен быть показан в&nbsp;документе.</b>
+          </p>
+          <p class="text display__descr">
+            <b>block</b> &mdash;&nbsp;Элемент показывается как блочный. Применение этого значения для строчных
+            элементов,
+            например &lt;span&gt;, заставляет его вести подобно блокам&nbsp;&mdash; происходит перенос строк
+            в&nbsp;начале и&nbsp;в&nbsp;конце содержимого;
+          </p>
+          <p class="text display__descr">
+            <b>inline</b> &mdash;&nbsp;Элемент отображается как строчный. Использование блочных элементов, таких, как
+            &lt;div&gt; и&nbsp;&lt;p&gt;, автоматически создаёт перенос и&nbsp;показывает их&nbsp;содержимое
+            с&nbsp;новой строки. Значение inline отменяет эту особенность, поэтому содержимое блочных элементов
+            начинается с&nbsp;того места, где окончился предыдущий элемент;
+          </p>
+          <p class="text display__descr">
+            <b>inline-block</b> &mdash;&nbsp;Это значение генерирует блочный элемент, который обтекается другими
+            элементами
+            веб-страницы подобно строчному элементу. Фактически такой элемент по&nbsp;своему действию похож
+            на&nbsp;встраиваемые
+            элементы (вроде &lt;img&gt;). При этом его внутренняя часть форматируется как блочный элемент, а&nbsp;сам
+            элемент &mdash;
+            как строчный.
+          </p>
+          <p class="text display__descr">
+            <b>inline-table</b> &mdash;&nbsp;Определяет, что элемент является таблицей, как при использовании
+            &lt;table&gt;, но&nbsp;при
+            этом таблица является строчным элементом и&nbsp;происходит её&nbsp;обтекание другими элементами, например,
+            текстом.
+          </p>
+          <p class="text display__descr">
+            <b>inline-flex</b> &mdash;&nbsp;Элемент ведёт себя как строчный и&nbsp;выкладывает содержимое согласно
+            флекс-модели.
+          </p>
+          <p class="text display__descr">
+            <b>flex</b> &mdash;&nbsp;Элемент ведёт себя как блочный и&nbsp;выкладывает содержимое согласно флекс-модели.
+          </p>
+          <p class="text display__descr">
+            <b>list-item</b> &mdash;&nbsp;Элемент выводится как блочный и&nbsp;добавляется маркер списка.
+          </p>
+          <p class="text display__descr">
+            <b>none</b> &mdash;&nbsp;Временно удаляет элемент из&nbsp;документа. Занимаемое им&nbsp;место
+            не&nbsp;резервируется, и&nbsp;веб-страница
+            формируется так, словно элемента и&nbsp;не&nbsp;было. Изменить значение и&nbsp;сделать вновь видимым элемент
+            можно с&nbsp;помощью
+            скриптов, обращаясь к&nbsp;свойствам через объектную модель. В&nbsp;этом случае происходит
+            переформатирование данных на
+            странице с&nbsp;учётом вновь добавленного элемента.
+          </p>
+          <p class="text display__descr">
+            <b>run-in</b> &mdash;&nbsp;Устанавливает элемент как блочный или строчный, в&nbsp;зависимости
+            от&nbsp;контекста.
+          </p>
+          <p class="text display__descr">
+            <b>table</b> &mdash;&nbsp;Определяет, что элемент является блочной таблицей, подобно использованию
+            &lt;table&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-caption</b> &mdash;&nbsp;Задаёт заголовок таблицы, подобно применению &lt;caption&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-cell</b> &mdash;&nbsp;Указывает, что элемент представляет собой ячейку таблицы (&lt;td&gt; или
+            &lt;th&gt;).
+          </p>
+          <p class="text display__descr">
+            <b>table-column</b> &mdash;&nbsp;Назначает элемент колонкой таблицы, словно был добавлен &lt;col&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-column-group</b> &mdash;&nbsp;Определяет, что элемент является группой одной или более колонок
+            таблицы, как при
+            использовании &lt;colgroup&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-footer-group</b> &mdash;&nbsp;Используется для хранения одной или нескольких строк ячеек, которые
+            отображаются в
+            самом низу таблицы. По&nbsp;своему действию сходно с&nbsp;работой &lt;tfoot&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-header-group</b> &mdash;&nbsp;Элемент предназначен для хранения одной или нескольких строк ячеек,
+            которые
+            представлены вверху таблицы. По&nbsp;своему действию сходно с&nbsp;работой &lt;thead&gt;.
+          </p>
+          <p class="text display__descr">
+            <b>table-row</b> &mdash;&nbsp;Элемент отображается как строка таблицы (&lt;tr&gt;).
+          </p>
+          <p class="text display__descr">
+            <b>table-row-group</b> &mdash;&nbsp;Создаёт структурный блок, состоящий из&nbsp;нескольких строк таблицы,
+            аналогично действию
+            &lt;tbody&gt;.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset margin" id="margin">
+      <div class="container">
+        <div class="margin__container">
+          <h2 class="title margin__title">
+            Отступы
+          </h2>
+          <p class="text margin__descr">
+            <b>Принципы отступов для гибкости Вёрстки</b>
+          </p>
+          <ul class="reset-list margin__list">
+            <li class="margin__item">
+              Отступы задаются от&nbsp;предыдущего элемента к&nbsp;следующему;
+            </li>
+            <li class="margin__item">
+              Отступы задаются только между соседними элементами в&nbsp;потоке;
+            </li>
+            <li class="margin__item">
+              Последнему элементу группы нужно обнулять отступ;
+            </li>
+            <li class="margin__item">
+              Нельзя задавать отступы БЭМ-блокам.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset position" id="position">
+      <div class="container">
+        <div class="position__container">
+          <h2 class="title position__title">
+            Позиционирование
+          </h2>
+          <figure class="position__figure">
+            <img class="position__img" src="img/4.png" alt="Позиционирование">
+            <figcaption class="position__pct">
+              РАЗНИЦА МЕЖДУ СТАТИЧНЫМ, ОТНОСИТЕЛЬНЫМ И&nbsp;АБСОЛЮТНЫМ ПОЗИЦИОНИРОВАНИЕМ
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset features" id="features">
+      <div class="container">
+        <div class="features__container">
+          <h2 class="title features__title">
+            CSS&nbsp;&mdash; свойства
+          </h2>
+          <div class="features__block features-block">
+            <h3 class="title features-block__title">
+              Свойства блока
+            </h3>
+            <p class="text features-block__descr">
+              <b>opacity: 1;</b> &mdash;&nbsp;прозрачность блока от&nbsp;0&nbsp;до&nbsp;1&nbsp;
+            </p>
+            <p class="text features-block__descr">
+              <b>border: 3px solid red;</b> &mdash;&nbsp; границы блока (solid-сплошная, dashed-штрипухтирная,
+              dotted-точки, double-двойная);
+            </p>
+            <p class="text features-block__descr">
+              <b>border-radius:</b> 30px&nbsp;&mdash; закругление углов. (border-top-left-radius верхний левый)
+            </p>
+            <p class="text features-block__descr">
+              <b>outline</b>&nbsp;&mdash; границы блока, которые не&nbsp;учитываются в&nbsp;блочной модели
+            </p>
+            <p class="text features-block__descr">
+              <b>box-shadow: 5px-вертикаль 3px-горизонт 10px-размытость блока #000-цвет блока</b>&nbsp;&mdash; отвечает
+              за&nbsp;тень блока. insent&nbsp;&mdash; отражает место тени в&nbsp;другом углу
+            </p>
+            <p class="text features-block__descr">
+              <b>visibility: visible;</b> &mdash;&nbsp;визуально удаляет блок, однако в&nbsp;коде сохраняются параметры
+            </p>
+          </div>
+          <div class="features__text features-text">
+            <h3 class="title features-text__title">
+              Свойства текста
+            </h3>
+            <p class="text features-text__descr">
+              <b>font-family:</b> &mdash;&nbsp;шрифты
+            </p>
+            <p class="text features-text__descr">
+              <b>font-size:</b> &mdash;&nbsp;размер шрифта (em, rem, px, %)
+            </p>
+            <p class="text features-text__descr">
+              <b>text-indent:</b> 10px; &mdash;&nbsp;красная строка
+            </p>
+            <p class="text features-text__descr">
+              <b>letter-spacing:</b> &mdash;&nbsp;расстояние между буквами
+            </p>
+            <p class="text features-text__descr">
+              <b>font-weght:</b> block; &mdash;&nbsp;жирность текста от&nbsp;100 до&nbsp;900. Ещё lighter
+            </p>
+            <p class="text features-text__descr">
+              <b>color: rgba (0, 0, 0, 1)</b>&nbsp;&mdash; цвет текста (r-красный, g-зелёный, b-голубой, a-прозрачный
+              от&nbsp;0&nbsp;до&nbsp;1)
+            </p>
+            <p class="text features-text__descr">
+              <b>line-height:</b> &mdash;&nbsp;высота строки
+            </p>
+            <p class="text features-text__descr">
+              <b>font-style:</b> &mdash;&nbsp;наклонность шрифта (oblique, itakic, normal)
+            </p>
+            <p class="text features-text__descr">
+              <b>vertical-align:</b> &mdash;&nbsp;вертикальное выравнивание текста. Не&nbsp;работает с&nbsp;display:
+              block
+            </p>
+            <p class="text features-text__descr">
+              <b>text-align: left/right/center/justify;</b> &mdash;&nbsp;расположение текста. justify&nbsp;&mdash;
+              на&nbsp;всю ширину строки.
+            </p>
+            <p class="text features-text__descr">
+              <b>text-transform: ;</b> &mdash;&nbsp;регистр букв. none; по&nbsp;умолчанию, uppercase; ВЕРХНИЙ РЕГИСТР
+              ТЕКСТА, capitalize; первая буква каждого слова ВЕРХНЕГО РЕГИСТРА, lowercase; строчный текст
+            </p>
+            <p class="text features-text__descr">
+              <b>font: 400 15px&nbsp;/ line-heght шрифт</b>&nbsp;&mdash; всё вместе: (жирность шрифта, размер,&nbsp;/
+              высота строки и&nbsp;шрифт)
+            </p>
+            <p class="text features-text__descr">
+              <b>text-shadow: 5px-вертикаль 3px-горизонт 10px-размытость текста #000-цвет блока</b>&nbsp;&mdash;
+              отвечает за&nbsp;тень текста
+            </p>
+          </div>
+          <div class="features__background features-background">
+            <h3 class="title features-background__title">
+              Свойства фона
+            </h3>
+            <p class="text features-background-item__descr">
+              <b>background-color: rgba(0 0 0 1);</b> &mdash;&nbsp;цвет фона
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background-color: transparent</b>&nbsp;&mdash; сброс цвета по&nbsp;умолчанию
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background-image: url</b>(&quot;#&rsquo;) - фон картинкой
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background-position: center center;</b> &mdash;&nbsp;расположение картинки (по&nbsp;сторонам, единицам
+              измерения)
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background-repeat: no-repeat;</b> &mdash;&nbsp;отменяет повтор изображения в&nbsp;случае несоответствия
+              размера (repeat-разрешает по&nbsp;умолчанию)
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background-size:</b> &mdash;&nbsp;расположение изображения на&nbsp;весь фон (cover) или расположение
+              полностью изображения на&nbsp;фоне.
+            </p>
+            <p class="text features-background-item__descr">
+              <b>background: цвет url(img) no-repeat center center/cover</b>&nbsp;&mdash; сокращённый селектор для
+              использования всех свойств
+            </p>
+          </div>
+          <div class="features__tablist features-tablist">
+            <h3 class="title features-tablist__title">
+              Свойства таблиц и&nbsp;списков
+            </h3>
+            <p class="text features-tablist__descr">
+              <b>border-collapse: collapse</b>&nbsp;&mdash; убирает промежутки между ячейками
+            </p>
+            <p class="text features-tablist__descr">
+              <b>list-style: none;</b> &mdash;&nbsp;удаляет маркировку в&nbsp;списке
+            </p>
+          </div>
+          <div class="features-other features-other">
+            <h3 class="title features-other__title">
+              Разные свойства
+            </h3>
+            <p class="text features-other__descr">
+              <b>cursor: pointer;</b> &mdash;&nbsp;при наведении на&nbsp;кнопку делает курсор рукой
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset font" id="font">
+      <div class="container">
+        <div class="font__container">
+          <h2 class="title font__title">
+            Вес шрифта
+          </h2>
+          <p class="text font__descr">
+            Значения от&nbsp;100 до&nbsp;900, примерно, соответствуют следующим распространённым именам насыщенности:
+          </p>
+          <table class="font__table">
+            <caption class="font__caption">
+              Определние веса шрифта
+            </caption>
+            <thead class="font__thead font-thead">
+              <tr class="font-thead__tr">
+                <th class="font-thead__th">
+                  Значение
+                </th>
+                <th class="font-thead__th">
+                  Общее название
+                </th>
+              </tr>
+            </thead>
+            <tbody class="font__tbody font-tbody">
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">100</th>
+                <td class="font-tbody__td">Тонкий (Волосяной) Thin (Hairline)</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">200</th>
+                <td class="font-tbody__td">Дополнительный светлый (Сверхсветлый) Extra Light (Ultra Light)</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">300</th>
+                <td class="font-tbody__td">Светлый Light</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">400</th>
+                <td class="font-tbody__td">Нормальный Normal</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">500</th>
+                <td class="font-tbody__td">Средний Medium</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">600</th>
+                <td class="font-tbody__td">Полужирный Semi Bold (Demi Bold)</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">700</th>
+                <td class="font-tbody__td">Жирный Bold</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">800</th>
+                <td class="font-tbody__td">Дополнительный жирный (Сверхжирный) Extra Bold (Ultra Bold)</td>
+              </tr>
+              <tr class="font-tbody__tr">
+                <th class="font-tbody__td">900</th>
+                <td class="font-tbody__td">Чёрный (Густой) Black (Heavy)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset background" id="background">
+      <div class="container">
+        <div class="background__container">
+          <h2 class="title background__title">
+            Background
+          </h2>
+          <p class="text background__descr">
+            <a class="background__link" href="https://itchief.ru/html-and-css/background" target="_blank">
+              Источник
+            </a>
+          </p>
+          <p class="text background__descr">
+            Универсальное свойство background состоит из&nbsp;восьми других свойств (в&nbsp;скобках указано значение
+            по&nbsp;умолчанию, которое имеет каждое из&nbsp;них):
+          </p>
+          <ol class="background__list">
+            <li class="background__item background-item">
+              <p class="text background-item__descr">
+                background-image: url('ссылка на img');&mdash;&nbsp;позволяет в&nbsp;качестве фона устанавливать обычные
+                изображения (например, PNG, SVG, JPG, GIF, WebP) и&nbsp;градиенты. По&nbsp;умолчанию данное свойство
+                имеет значение none.
+              </p>
+              <p class="text background-item__descr">
+                Градиенты бывают нескольких видов: линейный, радиальный или конический градиент.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-position: 0 0;&mdash;&nbsp;задаёт позицию фонового изображения (или градиента). Значение
+                по&nbsp;умолчанию: 0%&nbsp;0% (помещает изображение в&nbsp;верхний левый угол).
+              </p>
+              <p class="text background-item__descr">
+                Единицы измерения&nbsp;&mdash; px&nbsp;и&nbsp;%
+              </p>
+              <p class="text background-item__descr">
+                Первое значение означает расстояние по&nbsp;горизонтали от&nbsp;левой стороны. Второе по&nbsp;вертикали
+                от&nbsp;верха.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text backgroun__descr">
+                background-size: auto;&mdash;&nbsp;масштабирует фоновое изображение согласно заданным размерам.
+                По&nbsp;умолчанию оно имеет значение auto.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-repeat: repeat; &mdash;&nbsp;определяет должно&nbsp;ли повторяться фоновое изображение,
+                а&nbsp;если&nbsp;да, то&nbsp;как.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-attachment: scroll; &mdash;&nbsp;определяет как будет перемещаться фон относительно области
+                просмотра браузера и&nbsp;элемента для которого он&nbsp;установлен.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-origin: padding-box; &mdash;&nbsp;определяет область для рисования фона.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-clip: border-box; &mdash;&nbsp;очень похож на&nbsp;background-origin, но&nbsp;в&nbsp;отличие
+                от&nbsp;него он&nbsp;обрезает фон, а&nbsp;не&nbsp;изменяет его размер.
+              </p>
+              <p class="text background-item__descr">
+                background-clip имеет точно такие&nbsp;же значения (border-box, padding-box и&nbsp;content-box),
+                но&nbsp;в&nbsp;качестве значения по&nbsp;умолчанию выступает border-box.
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+            <li class="background__item">
+              <p class="text background-item__descr">
+                background-color: transparent; &mdash;&nbsp;применяется для установления сплошного цвета в&nbsp;качестве
+                фона элемента. По&nbsp;умолчанию данное свойство имеет значение transparent (прозрачный цвет).
+              </p>
+              <p class="text background-item__descr">
+                Более подробно по&nbsp;ссылке в описании темы
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset flex" id="flex">
+      <div class="container">
+        <div class="flex__container">
+          <h2 class="title flex__title">
+            Flexbox
+          </h2>
+          <p class="text flex__descr">
+            <a class="flex__link" href="https://tproger.ru/translations/how-css-flexbox-works/" target="_blank">
+              Источник
+            </a>
+          </p>
+          <ol class="flex__list">
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                <b>display: flex;</b> &mdash;&nbsp;устанавливает свои правила для дочерних элементов независимо блочные
+                или строчные они
+              </p>
+              <p class="text flex-item__descr">
+                Основная ось значится горизонталь по&nbsp;умолчанию
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/1display flex.gif" alt="flexbox">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                Св-во <b>flex-direction: row/column;</b>
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/2flexbox.gif" alt="flexbox">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                Св-во <b>flex-direction: column-reverse;</b> &mdash;&nbsp;аналогично reverse работает и&nbsp;с&nbsp;row
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/3flexbox.gif" alt="flexbox">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                Св-во <b>justify-content: ;</b> &mdash;&nbsp;действует на&nbsp;основную ось
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/4flexbox.gif" alt="flexbox">
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__img" src="img/flex/justify-content.png" alt="justify-content">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                Св-во <b>align-items: ;</b> &mdash;&nbsp;действует на&nbsp;второстепенную ось
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/5flexbox.gif" alt="flexbox">
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__img" src="img/flex/align-items.png" alt="align-items">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                ПРИМЕР ДЕЙСТВИЯ FLEXBOX (св-ва):
+              </h3>
+              <p class="text flex-item__descr">
+                flex-direction: row/column;
+              </p>
+              <p class="text flex-item__descr">
+                justify-content: center;
+              </p>
+              <p class="text flex-item__descr">
+                align-items: center;
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/6flexbox.gif" alt="flexbox">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <p class="text flex-item__descr">
+                Св-во <b>align-self: ;</b>
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex__gif" src="img/flex/7flexbox.gif" alt="flexbox">
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                flex-basis
+              </h3>
+              <p class="text flex-item__descr">
+                Отвечает за&nbsp;изначальный размер элементов до&nbsp;того, как они будут изменены другими свойствами
+                CSS Flexbox:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__dif" src="img/flex/flex-basis1.gif" alt="gif">
+              </p>
+              <p class="text flex-item__descr">
+                flex-basis влияет на размер элементов вдоль главной оси. Давайте посмотрим, что случится, если мы
+                изменим направление главной оси:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__dif" src="img/flex/flex-basis2.gif" alt="gif">
+              </p>
+              <p class="text flex-item__descr">
+                Заметьте, что нам пришлось изменить и&nbsp;высоту элементов: flex-basis может определять как высоту
+                элементов, так и&nbsp;их&nbsp;ширину в&nbsp;зависимости от&nbsp;направления оси.
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                flex-grow
+              </h3>
+              <p class="text flex-item__descr">
+                Это свойство немного сложнее. Для начала зададим блокам одинаковую ширину в&nbsp;120px:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__img" src="img/flex/flex-grow1.png" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                По&nbsp;умолчанию значение flex-grow равно 0. Это значит, что блокам запрещено увеличиваться
+                в&nbsp;размерах. Зададим flex-grow равным 1&nbsp;для каждого блока:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__img" src="img/flex/flex-grow2.png" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                Теперь блоки заняли оставшееся место в&nbsp;контейнере. Но&nbsp;что значит flex-grow: 1? Попробуем
+                сделать flex-grow равным 999:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__img" src="img/flex/flex-grow3.png" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                И... ничего не&nbsp;произошло. Так получилось из-за того, что flex-grow принимает не&nbsp;абсолютные
+                значения, а&nbsp;относительные. Это значит, что не&nbsp;важно, какое значение у&nbsp;flex-grow, важно,
+                какое оно по&nbsp;отношению к&nbsp;другим блокам:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__img" src="img/flex/flex-grow4.gif" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                Вначале flex-grow каждого блока равен&nbsp;1, в&nbsp;сумме получится 6. Значит, наш контейнер разделён
+                на&nbsp;6&nbsp;частей. Каждый блок будет занимать 1/6 часть доступного пространства в&nbsp;контейнере.
+                Когда flex-grow третьего блока становится равным&nbsp;2, контейнер делится на&nbsp;7&nbsp;частей: 1 + 1
+                + 2 + 1 + 1 + 1. Теперь третий блок занимает 2/7&nbsp;пространства, остальные&nbsp;&mdash; по&nbsp;1/7.
+                И&nbsp;так далее.
+              </p>
+              <p class="text flex-item__descr">
+                flex-grow работает только для главной оси, пока мы&nbsp;не&nbsp;изменим её&nbsp;направление.
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                flex-shrink
+              </h3>
+              <p class="text flex-item__descr">
+                Прямая противоположность flex-grow. Определяет, насколько блоку можно уменьшиться в&nbsp;размере.
+                flex-shrink используется, когда элементы не&nbsp;вмещаются в&nbsp;контейнер. Вы&nbsp;определяете, какие
+                элементы должны уменьшиться в&nbsp;размерах, а&nbsp;какие&nbsp;&mdash; нет. По&nbsp;умолчанию значение
+                flex-shrink для каждого блока равно 1. Это значит, что блоки будут сжиматься, когда контейнер будет
+                уменьшаться.
+              </p>
+              <p class="text flex-item__descr">
+                Зададим flex-grow и&nbsp;flex-shrink равными&nbsp;1:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__gif" src="img/flex/flex-shrink1.gif" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                Теперь поменяем значение flex-shrink для третьего блока на&nbsp;0. Ему запретили сжиматься, поэтому его
+                ширина останется равной 120px:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__gif" src="img/flex/flex-shrink2.gif" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                flex-shrink основывается на&nbsp;пропорциях. То&nbsp;есть, если у&nbsp;первого блока flex-shrink
+                равен&nbsp;6, а&nbsp;у&nbsp;остальных он&nbsp;равен&nbsp;2, то, это значит, что первый блок будет
+                сжиматься в&nbsp;три раза быстрее, чем остальные.
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                flex
+              </h3>
+              <p class="text flex-item__descr">
+                Заменяет flex-grow, flex-shrink и&nbsp;flex-basis. Значения по&nbsp;умолчанию: 0&nbsp;(grow)
+                1&nbsp;(shrink) auto (basis).
+              </p>
+              <p class="text flex-item__descr">
+                Создадим два блока:
+              </p>
+              <div class="flex-item__block">
+                .square#one {
+                <br>
+                flex: 2 1 300px;
+                <br>
+                }
+                <br>
+                .square#two {
+                <br>
+                flex: 1 2 300px;
+                <br>
+                }
+              </div>
+              <p class="text flex-item__descr">
+                У&nbsp;обоих одинаковый flex-basis. Это значит, что оба будут шириной в&nbsp;300px (ширина контейнера:
+                600px плюс margin и&nbsp;padding). Но&nbsp;когда контейнер начнет увеличиваться в&nbsp;размерах, первый
+                блок (с&nbsp;большим flex-grow) будет увеличиваться в&nbsp;два раза быстрее, а&nbsp;второй блок
+                (с&nbsp;наибольшим flex-shrink) будет сжиматься в&nbsp;два раза быстрее:
+              </p>
+              <p class="text flex-item__descr">
+                <img class="flex-item__gif" src="img/flex/flex.gif" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                Ещё больше возможностей свойства вы&nbsp;можете найти <a class="flex-item__link"
+                  href="https://tproger.ru/translations/flex-properties-on-css/">в&nbsp;анимированном руководстве
+                  по&nbsp;CSS flex​</a>.
+              </p>
+            </li>
+            <li class="flex__item flex-item">
+              <h3 class="title flex-item__title">
+                Дополнительно
+              </h3>
+              <h4 class="title flex-item__subtitle">
+                Как с&nbsp;CSS Flexbox меняется размер?
+              </h4>
+              <p class="text flex-item__descr">
+                Когда увеличивается первый блок, он&nbsp;не&nbsp;становится в&nbsp;два раза больше второго, и&nbsp;когда
+                уменьшается второй, он&nbsp;также не&nbsp;становится в&nbsp;два раза меньше первого. Это происходит
+                из-за того, что flex-grow и&nbsp;flex-shrink отвечают за&nbsp;темп роста и&nbsp;сокращения.
+              </p>
+              <h4 class="title flex-item__subtitle">
+                Немного математики
+              </h4>
+              <p class="text flex-item__descr">
+                Начальный размер контейнера: 640px. Вычтем по&nbsp;20px с&nbsp;каждой стороны для padding,
+                и&nbsp;у&nbsp;нас останется 600px для двух блоков. Когда ширина контейнера становится равной 430px
+                (потеря в&nbsp;210px), первый блок (flex-shrink: 1) теряет 70px. Второй блок (flex-shrink: 2) теряет
+                140px. Когда контейнер сжимается до&nbsp;340px, мы&nbsp;теряем 300px. Первый блок теряет 100px,
+                второй&nbsp;&mdash; 200px. То&nbsp;же самое происходит и&nbsp;с&nbsp;flex-grow.
+              </p>
+              <p class="flex-item__descr">
+                <img class="flex-item__gif" src="img/flex/flex-example.gif" alt="">
+              </p>
+              <p class="text flex-item__descr">
+                Если вы&nbsp;также интересуетесь CSS Grid, можете ознакомиться с&nbsp;нашей статьёй, где мы&nbsp;<a
+                  class="flex-item__link" href="https://tproger.ru/translations/css-flexbox-grid/">рассматриваем Flexbox
+                  и&nbsp;Grid</a>.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <a class="footer__topbutton" href="#" title="Вернуться к началу">&#8679; Наверх</a>
+    </div>
+  </footer>
+</body>
+
+</html>

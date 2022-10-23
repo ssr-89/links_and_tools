@@ -1,0 +1,344 @@
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller-Light'),
+  url('../fonts/MullerLight.woff2') format('woff2'),
+  url('../fonts/MullerLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller-Regular'),
+  url('../fonts/MullerRegular.woff2') format('woff2'),
+  url('../fonts/MullerRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller-Medium'),
+  url('../fonts/MullerMedium.woff2') format('woff2'),
+  url('../fonts/MullerMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller-Bold'),
+  url('../fonts/MullerBold.woff2') format('woff2'),
+  url('../fonts/MullerBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+	box-sizing: border-box; /* размеры блоков явлются указанной ширине */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit; /* цвет ссылки убирается */
+	text-decoration: none; /* подчёркивание ссылки убирается */
+}
+
+img {
+	max-width: 100%; /*мах ширина соответстует странице блока страницы*/
+}
+
+body {
+	font-family: 'Muller', sans-serif;
+  background-color: rgb(70, 130, 180);
+}
+
+/*сброс стилей по умолчанию для списков*/
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*сброс стилей по умолчанию для кнопок*/
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*стандартные стили для таблиц*/
+.table {
+  border-collapse: collapse;
+}
+
+.tcaption {
+  font-weight: 600;
+}
+
+.cell {
+  padding: 15px;
+  outline: 1px solid rgb(211, 211, 211);
+}
+
+/*класс для флекс-контейнеров*/
+.flex {
+  display: flex;
+}
+
+/*общий класс для главных блоков (1 уровень)*/
+.section {
+  margin: 0;
+  padding: 0;
+}
+
+.section:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+/*класс для контейнера (2 уровень)*/
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  width: 1200px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+/*класс для всех блоков (3 уровень)*/
+.block:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+/*общий класс для заголовков*/
+.title {
+  margin: 0;
+}
+
+/*общий класс для абзацев*/
+.text {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/*header*/
+.header {
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.header-container {
+  padding: 20px 40px;
+}
+
+.header-list {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.header-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* nav */
+.nav {
+  margin-bottom: 50px;
+}
+
+.nav-container {
+  padding: 40px 40px;
+}
+
+.nav-title {
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+/*media*/
+.media-title {
+  margin-bottom: 30px;
+}
+
+.media-block-title {
+  margin-bottom: 20px;
+}
+
+.pre {
+  margin: 0;
+  background-color: powderblue;
+  border-radius: 5px;
+}
+
+.pre:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.picture-text {
+  margin-bottom: 20px;
+}
+
+/* ПЕРЕИМЕНОВАТЬ */
+.specialized-title {
+  margin-bottom: 30px;
+}
+
+.specialized-block-title {
+  margin-bottom: 20px;
+}
+
+.details {
+  margin: 0;
+  padding: 15px;
+  background-color: powderblue;
+  border-radius: 5px;
+}
+
+/* <p> в примере прописывается */
+.example {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: powderblue;
+  border-radius: 5px;
+}
+
+/*для примера*/
+blockquote, p {
+  margin: 0;
+}
+
+/*для примера*/
+blockquote p {
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+/*forms*/
+.forms-title {
+  margin-bottom: 30px;
+}
+
+.forms-block-title {
+  margin-bottom: 20px;
+}
+
+.block-table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.form-table-block {
+  margin: 0;
+  padding: 20px;
+  width: 550px;
+  background-color: powderblue;
+  border-radius: 5px;
+}
+
+.form-table-block:not(:nth-child(2n)) {
+  margin-right: 20px;
+}
+
+.form-table-block:not(:nth-child(1n+21)) {
+  margin-bottom: 20px;
+}
+
+.forms-text {
+  margin-bottom: 20px;
+}
+
+.block-forms {
+  display: flex;
+  width: 50px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/*вернуться наверх*/
+.topbutton {
+  width:100px;
+  border:2px solid #ccc;
+  background:#f7f7f7;
+  text-align:center;
+  padding:10px;
+  position:fixed;
+  bottom:50px;
+  right:50px;
+  cursor:pointer;
+  color:#333;
+  font-size:16px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  }
+
+  /*footer*/
+  .footer {
+    font-weight: 600;
+    color: white;
+  }
+
+  /* foto */
+  .foto-container {
+    position: relative;
+    overflow: hidden;
+    width: 483px;
+    height: 644px;
+    background-image: url('../img/family.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .foto-container::before,
+  .foto-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: rgb(70, 130, 180);
+    transition: transform 0.5s ease;
+  }
+
+  .foto-container:hover::before {
+    content: "";
+    top: 0;
+    bottom: 50%;
+    transform: translateY(-100%);
+  }
+
+  .foto-container:hover::after {
+    content: "";
+    top: 50%;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  .foto-descr {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 50px;
+    color: lime;
+    text-align: center;
+    border: 1px solid lime;
+    border-radius: 10px;
+  }

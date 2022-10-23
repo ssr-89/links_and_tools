@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+  <link rel="shortcut icon" href="img/javascript.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/js-style.css">
+  <script defer src="js/javascript.js"></script>
+  <script defer src="js/primer.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <nav class="header__menu header-menu">
+        <button class="header-menu__burger btn">
+          <span></span>
+        </button>
+        <span class="header-menu__span">МЕНЮ</span>
+        <ul class="header-menu__list reset-list">
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#hero">JavaScript</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#data-types">Типы данных</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#operators">Операторы</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#functions">Функции</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#objects">Объекты</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#array">Массивы</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#method">Методы</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#cycle">Циклы</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#other">Справочник JavaScript</a>
+          </li>
+          <!-- <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href=""></a>
+          </li> -->
+          <br><br><br>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="../index.html">ГЛАВНАЯ СТРАНИЦА</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="../folder-html-css/html-css.html">HTML и CSS</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="../folder-git/git.html">GIT</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="../folder-tools/tools.html">ИНСТРУМЕНТЫ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="hero__container">
+        <h1 class="hero__title title">JavaScript</h1>
+        <p class="hero__text text">
+          <strong>JavaScript</strong>&nbsp;&mdash; один из&nbsp;тех языков программирования, которые можно просто освоить без опыта. Он&nbsp;используется для веб-разработки, на&nbsp;нем можно создавать серверные приложения, 3D-игры и&nbsp;даже программировать робототехнику.
+        </p>
+      </div>
+    </section>
+    <section class="data-types" id="data-types">
+      <div class="data-types__container">
+        <h2 class="data-types__title section-title title">Типы данных</h2>
+        <nav class="data-types__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#digit">Число</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#string">Строка</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#boolean">Boolean</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#transform">Преобразование типов
+                данных</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="https://learn.javascript.ru/types" target="_blank"><i>Источник</i></a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#"></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div class="data-types__block block-accordion" data-spollers data-one-spoller>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="digit">ЧИСЛО</button>
+            <div class="block-accordion__digit digit">
+              <p class="codepen" data-height="340" data-default-tab="js" data-slug-hash="qBpqeMY" data-user="archicolt" style="height: 340px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/qBpqeMY">
+                    number</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              <p class="codepen" data-height="475" data-default-tab="js" data-slug-hash="WNJJZzj" data-user="archicolt" style="height: 475px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/WNJJZzj">
+                    number-2</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="string">СТРОКА</button>
+            <div class="block-accordion__string string">
+              <p class="string__text text">
+                Перенос строки и использование обратных кавычек
+              </p>
+              <p class="codepen" data-height="376" data-default-tab="js" data-slug-hash="KKZaNBy" data-user="archicolt" style="height: 376px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/KKZaNBy">
+                    string</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="boolean">BOOLEAN</button>
+            <div class="block-accordion__boolean boolean">
+              <p class="codepen" data-height="367" data-default-tab="js" data-slug-hash="abEBeYL" data-user="archicolt" style="height: 367px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/abEBeYL">
+                    boolean</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="PRIMER">PRIMER</button>
+            <div class="block-accordion__PRIMER PRIMER">
+              <a target="_blank" class="PRIMER__link link reset-link" href="#">Источник</a>
+              <p class="PRIMER__descr accordion-descr text">TITLE</p>
+              <p class="PRIMER__descr text">TEXT</p>
+              <br><br>
+              <p class="PRIMER__descr accordion-descr text">TITLE</p>
+              <p class="PRIMER__descr text">TEXT</p>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="transform">ПРЕОБРАЗОВАНИЕ
+              ТИПОВ ДАННЫХ</button>
+            <div class="block-accordion__transform transform">
+              <p class="transform__text text">Преобразование в строку</p>
+              <p class="codepen" data-height="203" data-default-tab="js" data-slug-hash="WNJJZWZ" data-user="archicolt" style="height: 203px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/WNJJZWZ">
+                    Преобразование в строку</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              <br><br><br>
+              <p class="transform__text text">Преобразование в число</p>
+              <p class="codepen" data-height="309" data-default-tab="js" data-slug-hash="dyeeVEy" data-user="archicolt" style="height: 309px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/dyeeVEy">
+                    JS: Преобразование в число</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              <br><br><br>
+              <p class="transform__text text">Логическое преобразование</p>
+              <p class="codepen" data-height="255" data-default-tab="js" data-slug-hash="XWqqewo" data-user="archicolt" style="height: 255px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/archicolt/pen/XWqqewo">
+                    JS: Логическое преобразование</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="operators" id="operators">
+      <div class="operators__container">
+        <h2 class="operators__title section-title title">Операторы</h2>
+        <nav class="operators__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#basic-operators">Базовые операторы
+                <code>+ - * / , % **</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#comparisons-operators">Операторы сравнения <code>=== &lt; &gt;
+                ==</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#logical-operators">Логические операторы
+                <code>! && || ??</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#conditional-operators">Условные операторы
+                <code>if switch</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#typeof">Оператор <code>typeof</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#ternary"><code>?</code> - тернарный оператор</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="operators__block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="basic-operators">Базовые операторы <code>+ - * / , % **</code></button>
+            <div class="block-accordion__basic-operators basic-operators">
+              <a target="_blank" class="basic-operators__link link reset-link" href="https://learn.javascript.ru/operators">Источник</a>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Операнд - это то, к чему применяется операторы.
+                </p>
+                <pre>
+<b>alert(y - x);</b> // y и x операнды
+                </pre>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Бинарные операторы применяются в двум операндам
+                </p>
+                <p class="basic-operators__descr text">
+                  + возможно складывать как числа путём сложения чисел, так и строки с помощью объединения, к примеру “Строка” + 58 и получится Строка58
+                </p>
+                <pre>
+<b>let x = 1, y = 3;</b>
+<b>alert(y + x);</b> // 4, бинарный минус складывает значения
+              </pre>
+                <p class="basic-operators__descr text">
+                  Другие арифметические операторы (- / *) работают только с числами.
+                </p>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Унарные операторы применяются к одному операнду
+                </p>
+                <p class="basic-operators__descr text">
+                  +”25” – благодаря + строка преобразуется в число
+                </p>
+                <p class="basic-operators__descr text">
+                  +”25” + +”15” – преобразование в число имеет преимущество и происходит первым, только потом складываются числа
+                </p>
+                <pre>
+<b>let x = 1;</b>
+
+<b>x = -x;</b>
+<b>alert(x);</b> // -1, применили унарный минус
+              </pre>
+                <br><br>
+                <p class="basic-operators__descr text">
+                  <b>При унарном операторе строки преобразуются в числа</b>
+                </p>
+                <pre>
+// Бинарный оператор
+<b>let apples = "2";</b>
+<b>let oranges = "3";</b>
+
+<b>alert(apples + oranges);</b> // "23", так как бинарный плюс объединяет строки
+
+
+// Унарный оператор
+<b>let apples = "2";</b>
+<b>let oranges = "3";</b>
+
+// оба операнда предварительно преобразованы в числа
+<b>alert(+apples + +oranges);</b> // 5
+
+// более длинный вариант
+// alert(Number(apples) + Number(oranges)); // 5
+              </pre>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">= оператор присваивания</p>
+                <p class="basic-operators__descr text">let b = 2;</p>
+                <p class="basic-operators__descr text">let result = 8 – (a = b + 3); к a присваивается сумма b и 3 = 5.
+                </p>
+                <p class="basic-operators__descr text">Потом идёт вычитание 8 – 5</p>
+                <p class="basic-operators__descr text">
+                  <b>
+                    <i>
+                      Так код писать не рекомендуется из-за его низкой читабельности
+                    </i>
+                  </b>
+                </p>
+                <br>
+                <p class="basic-operators__descr text">
+                  Присваивание по цепочке:
+                </p>
+                <p class="basic-operators__descr text">
+                  let resOne = resTwo = resThree = 1 + 2: - сначала происходит сложение и результат выдаётся остальным
+                  переменным
+                </p>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">Инкремент primer++ прибавляет 1</p>
+                <p class="basic-operators__descr accordion-descr text">Декремент primer-- убавляет 1</p>
+                <p class="basic-operators__descr text">
+                  Данные операторы можно использовать только к переменным
+                </p>
+                <br>
+                <p class="basic-operators__descr text"><b>Постфиксная форма primer++</b></p>
+                <p class="basic-operators__descr text"><b>Префиксная форма ++primer</b></p>
+                <br>
+                <p class="basic-operators__descr text">
+                  При постфиксной форме будет возвращён изначальный результат без прибавления 1
+                </p>
+                <p class="basic-operators__descr text">
+                  При префиксной форме вернёт сумма с прибавленной 1
+                </p>
+                <br>
+                <p class="basic-operators__descr text">
+                  Инкременты и декременты имеют приоритет перед другими арифметическими операторами.
+                </p>
+                <pre>
+<b>
+let a = 10;
+a++; // 11
+a--; // 10
+++a; // 11
+--a; // 10
+</b>
+
+// постиндексной записи? сначала производится значение переменной и только потом прибавление к ней единицы
+<b>var a = 10;</b>
+<b>console.log(a++);</b> <i>// вернёт 10 - консоль выводит старое значение и только потом к ней прибавляется единица</i>
+<b>console.log(a);</b> <i>// вернёт 11, т.к. в предыдущем выводе единицу прибавили после вывода консоли</i>
+<b>console.log(a--);</b> <i>// вернёт 11 - консоль выводит предыдущее значение и только потом вычитает единицу</i>
+<b>console.log(a);</b> <i>// вернёт 10, т.к. в предыдущем выводе единицу вычли после вывода консоли</i>
+
+<b>
+x += 5; // x = x + 5;
+x -= 5; // x = x - 5;
+x *= 3; // x = x * 3;
+x += 5; // x = x + 5;
+x /= 5; // x = x / 5;
+x %= 5; // x = x % 5;
+</b>
+              </pre>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Оператор , (запятая) перечисляет несколько выражений, но результат вернётся только последнего
+                  выражения.
+                </p>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Оператор <b>%</b> - взятие остатка. Показывает остаток.
+                </p>
+                <pre>
+<b>alert(5 % 2);</b> // 1, остаток от деления 5 на 2
+<b>alert(8 % 3);</b> // 2, остаток от деления 8 на 3
+              </pre>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Оператор <b>**</b> - возведение в степень. <b>a**b</b> - <b>a</b> умножается на себя <b>b</b> кол-во
+                  раз
+                </p>
+                <pre>
+<b>alert(2 ** 2);</b> // 4  (2 умножено на себя 2 раза)
+<b>alert(2 ** 3);</b> // 8  (2 * 2 * 2, 3 раза)
+<b>alert(2 ** 4);</b> // 16 (2 * 2 * 2 * 2, 4 раза)
+
+// для нецелых чисел
+<b>alert(4 ** (1/2));</b> // 2 (степень 1/2 эквивалентна взятию квадратного корня)
+<b>alert(8 ** (1/3));</b> // 2 (степень 1/3 эквивалентна взятию кубического корня)
+              </pre>
+              </div>
+              <br><br>
+              <div class="basic-operators__wrapper">
+                <p class="basic-operators__descr accordion-descr text">
+                  Приоритет операторов
+                </p>
+                <pre>
+                    <table class="basic-operators__table table">
+                      <tr class="basic-operators__line">
+                        <th class="basic-operators__table-item">Приоритет</th>
+                        <th class="basic-operators__table-item">Название</th>
+                        <th class="basic-operators__table-item">Обозначение</th>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">15</td>
+                        <td class="basic-operators__table-item">унарный плюс</td>
+                        <td class="basic-operators__table-item">+</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">15</td>
+                        <td class="basic-operators__table-item">унарный минус</td>
+                        <td class="basic-operators__table-item">-</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">14</td>
+                        <td class="basic-operators__table-item">возведение в степень</td>
+                        <td class="basic-operators__table-item">**</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">13</td>
+                        <td class="basic-operators__table-item">умножение</td>
+                        <td class="basic-operators__table-item">*</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">13</td>
+                        <td class="basic-operators__table-item">деление</td>
+                        <td class="basic-operators__table-item">/</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">12</td>
+                        <td class="basic-operators__table-item">сложение</td>
+                        <td class="basic-operators__table-item">+</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">12</td>
+                        <td class="basic-operators__table-item">вычитание</td>
+                        <td class="basic-operators__table-item">-</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">2</td>
+                        <td class="basic-operators__table-item">присваивание</td>
+                        <td class="basic-operators__table-item">=</td>
+                      </tr>
+                      <tr class="basic-operators__line">
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                        <td class="basic-operators__table-item">...</td>
+                      </tr>
+                    </table>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="comparisons-operators">Операторы сравнения <code>=== &lt; &gt;
+                ==</code></button>
+            <div class="block-accordion__comparisons-operators comparisons-operators">
+              <a target="_blank" class="comparisons-operators__link link reset-link" href="https://learn.javascript.ru/comparison">Источник</a>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  &gt;&lt; больше или меньше
+                </p>
+                <p class="comparisons-operators__descr text">
+                  == равно с преобразованием в число
+                </p>
+                <p class="comparisons-operators__descr text">
+                  === строгое сравнение без преобразования в число
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  <b>'b' &gt; 'a'</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  При сравнении строк JS использует алфавитный порядок
+                </p>
+                <p class="comparisons-operators__descr text">
+                  Чем дальше буква, тем больше у неё преимущество, а значит оно будет больше предыдущей буквы.
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  <b>'a' &gt; 'A'</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  Заглавные буквы имеют меньший вес по сравнению со строчными
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  <b>'Скрипт' &gt; 'Скрипка'</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  При сравнении слов будут сравниваться каждый символ в слове и у которго будет больше вес, тот,
+                  соответственно, и будет больше
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  <b>'Слайдер' &gt; 'Слайд'</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  Если кол-во символов разное, то будет больше та строка, символов у которой больше при предыдущих
+                  остальных
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  <b>'Пример' &lt; 'пример'</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  Аналогиное сравнение и заглавных и строчных букв в словах
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr text">
+                  При сравнении разных типов данных, то JS будет преобразовывать все в числа для сравнения
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>
+                    true == 1<br>
+                    false == 0
+                  </b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  В примере ответы будут равны, потому что true - это 1, а false - это 0
+                </p>
+              </div>
+              <br><br>
+              <div class="comparisons-operators__wrapper">
+                <p class="comparisons-operators__descr accordion-descr text">
+                  Сравнение null и undefined
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(null === undefined);</b> // false строгое сравнение
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(null == undefined);</b> // true равны и не равны никаким другим значениям (0 == NaN) -
+                  спец правило языка
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log("пробел1");</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(null &gt; 0);</b> // false - null преобразуется в 0
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(null == 0);</b> // false
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(null &gt;= 0);</b> // true - null преобразуется в 0
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log("пробел2");</b>
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(undefined &gt; 0);</b> // undefined преобразуется в NaN
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(undefined == 0);</b> // undefined преобразуется в NaN
+                </p>
+                <p class="comparisons-operators__descr text">
+                  <b>console.log(undefined &gt;= 0);</b> // undefined преобразуется в NaN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="logical-operators">Логические операторы <code>! && || ??</code></button>
+            <div class="block-accordion__logical-operators logical-operators">
+              <a target="_blank" class="logical-operators__link link rest-link" href="https://learn.javascript.ru/logical-operators">Источник</a>
+              <div class="logical-operators__wrapper">
+                <p class="logical-operators__descr accordion-descr text">
+                  <code>||</code> оператор ИЛИ
+                </p>
+                <br>
+                Данный оператор не различает <code>false</code> <code>0</code> <code>""</code>
+                <code>null/undefined</code> - выводит их как ЛОЖЬ (false), если не нашёл истинного значения (true).
+                <br>
+                <br>
+                <p class="logical-operators__descr text">
+                  let userName = '';
+                </p>
+                <p class="logical-operators__descr text">
+                  let userNickName = '';
+                </p>
+                <p class="logical-operators__descr text">
+                  let user = userName || userNickName || "Без имени"; console.log(user); <i>//
+                    возвращает "Без имени"</i>
+                </p>
+                <p class="logical-operators__descr text">
+                  let admins = 0;
+                </p>
+                <p class="logical-operators__descr text">
+                  let users = 5;
+                </p>
+                <p class="logical-operators__descr text">
+                  admins &gt; users || users++;
+                </p>
+                <p class="logical-operators__descr text">
+                  console.log(users); вернёт 6 <i>// возвращает users = 5 + users++ (+1) путём
+                    сложения</i>
+                </p>
+              </div>
+              <br><br>
+              <div class="logical-operators__wrapper">
+                <p class="logical-operators__descr accordion-descr text">
+                  <code>&&</code> оператор И
+                </p>
+                <p class="logical-operators__descr text">
+                  Данный оператор ищет и выводит ЛОЖЬ (false).
+                </p>
+                <p class="logical-operators__descr text">
+                  Если не находит ЛОЖЬ (false), то возвращает последнее значение, являющееся ИСТИНОЙ (true)
+                </p>
+              </div>
+              <br><br>
+              <div class="logical-operators__wrapper" style="background-color: rgba(255,0,0,.2);">
+                <p class="logical-operators__descr text">
+                  <b>var f = 8;</b>
+                </p>
+                <p class="logical-operators__descr text">
+                  <b>
+                    if (f === 13 || f &gt; 0 && f &lt; 11) {</b>//<br>
+                  <b>
+                    &nbsp;console.log("f - число 13 или число от 1 до 10")<br>
+                    }
+                  </b>
+                </p>
+                <p class="logical-operators__descr text">
+                  1. Проверка идёт СЛЕВА НАПРАВО. Первым проверяется <b>f === 13</b>. При соответствии проверка
+                  прекращается
+                </p>
+                <p class="logical-operators__descr text">
+                  2. В случае условие <b>f === 13</b> не соответствует, то следущим по приоритету идёт оператор
+                  <b>&&</b>
+                </p>
+              </div>
+              <br><br>
+              <div class="logical-operators__wrapper">
+                <p class="logical-operators__descr accordion-descr text">
+                  <code>!</code> оператор НЕ
+                </p>
+                <p class="logical-operators__descr text">
+                  Данный оператор имеет наивысший приоритет над <b>|| &&</b>
+                </p>
+              </div>
+              <br><br>
+              <div class="logical-operators__wrapper">
+                <p class="logical-operators__descr accordion-descr text">
+                  <code>??</code> - оператор нулевого слияния
+                </p>
+                <br>
+                <p class="logical-operators__descr text">
+                  Возращает первый операнд, если он не определился как <b>null</b> или <b>undefined</b>.
+                </p>
+                <p class="logical-operators__descr text">
+                  Если первый операнд определился как <b>null</b> или <b>undefined</b>, то возвращает второй операнд
+                  даже, если второй операнд определился как <b>null</b> или <b>undefined</b>.
+                </p>
+              </div>
+              <br><br>
+              <div class="logical-operators__wrapper">
+                <p class="logical-operators__descr accordion-descr text">
+                  Приоритет логических операторов
+                </p>
+                <p class="logical-operators__descr text">
+                  <code>!</code> - наивысший приоритет<br>
+                  <code>&&</code> - занимает среднее место<br>
+                  <code>||</code> и <code>??</code> - самый низкий приоритет среди логических операторов
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="conditional-operators">Условные операторы <code>if switch</code></button>
+            <div class="block-accordion__conditional-operators conditional-operators">
+              <a target="_blank" class="conditional-operators__link link reset-link" href="https://learn.javascript.ru/ifelse">Источник</a>
+              <div class="conditional-operators__wrapper">
+                <p class="conditional-operators__descr accordion-descr text">
+                  Операторы if и else стоит применять, если кол-во 2-3 условия. Либо при условиях true и false
+                </p>
+                <pre>
+if (condition) {
+  <i>// код, выполняющийся при соблюдении условия</i>
+  }
+
+  if (condition) {
+  <i>// код, выполняющийся при соблюдении условия</i>
+  } else {
+  <i>// код, выполняющийся в противном случае</i>
+  }
+
+  if (condition1) {
+  <i>// при первом условии</i>
+  } else if (condition2) {
+  <i>// при втором условии</i>
+  } else if (condition3) {
+  <i>// при третьем условии</i>
+  } else {
+  <i>// если ни одно условие не соблюдено</i>
+  }
+
+  <i>// пример с дискриминантом</i>
+  let d = 10;
+  if (d &gt; 0) {
+  <i>// вычисляем x1, x2</i>
+  } else if (d === 0) {
+  <i>// вычисляем единственное значение x</i>
+  } else {
+  <i>// выводим сообщение об отсутствии решений</i>
+}
+                </pre>
+                <hr>
+                <br><br>
+                <pre>
+var login = prompt("Введите имя", ""); <i>// 1 Запрос логина</i>
+
+if (login === "Админ") {
+  var password = prompt("Введите пароль", ""); <i>// 2.1 Запрос пароля в случае верного логина</i>
+
+  if (var password === "Я главный") {
+    alert("Здравствуйте!"); <i>// 3.1 Приветствие, если пароль введён верно</i>
+  } else if (password === "" || password === null) {
+    alert("Отменено"); <i>// 3.2 Отмена в случае нажатия ESC или кнопки "Отмена"</i>
+  } else {
+    alert("Неверный пароль"); <i>// 3.3 В случае введения неверного пароля</i>
+  }
+} else if (login === "" || login === null) {
+  alert("Отменено"); <i>// 2.2 Отмена в случае нажатия ESC или кнопки "Отмена"</i>
+} else {
+  alert("Я вас не знаю"); <i>// 2.3 В случае введения неверного логина</i>
+}
+                </pre>
+              </div>
+              <br><br>
+              <div class="conditional-operators__wrapper">
+                <p class="conditional-operators__descr accordion-descr text">Оператор switch следует применять при кол-ве от 3 условий</p>
+                <p class="conditional-operators__descr text">
+                <pre>
+let fruit = 'Яблоко';<br>
+switch (fruit) {
+  case 'Яблоко':
+    console.log('Перед нами яблоко');
+    break;
+  case 'Банан':
+    console.log('Перед нами банан');
+    break;
+  case 'Арбуз':
+  case 'Вишня':
+  case 'Клубника':
+    console.log('Это ягода, а не фрукт');
+    break;
+  default:
+    console.log('Не знаю такого фрукта');
+    break;
+}
+
+<i>- Без <code>break</code> возможно объединить несколько вариантов <code>case</code></i>
+<i>- Строгая проверка на равенство <code>===</code>. Значения <code>case</code> должны быть одного типа.</i>
+                  </pre>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="typeof">Оператор
+              <code>typeof</code></button>
+            <div class="block-accordion__typeof typeof">
+              <a target="_blank" class="typeof__link link reset-link" href="https://learn.javascript.ru/types">Источник</a>
+              <p class="typeof__descr accordion-descr text">Проверка значения типа данных</p>
+              <pre>
+<b>typeof undefined</b> // "undefined"
+
+<b>typeof 0</b> // "number"
+
+<b>typeof 10n</b> // "biglnt"
+
+<b>typeof true</b> // "boolean"
+
+<b>typeof "foo"</b> // "string"
+
+<b>typeof Symbol("id")</b> // "symbol"
+
+<b>typeof Math</b> // "object"  (1)
+
+<b>typeof null</b> // "object"  (2)
+
+<b>typeof alert</b> // "function"  (3)
+              </pre>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="ternary"><code>?</code> - тернарный
+              оператор</button>
+            <div class="block-accordion__ternary ternary">
+              <div class="ternary__wrapper">
+                <a target="_blank" class="ternary__link link reset-link" href="https://learn.javascript.ru/ifelse">Источник</a>
+                <p class="ternary__descr accordion-descr text">Проверка значения типа данных</p>
+                <p class="ternary__descr text">
+                  <b>Условный (тернарный) оператор</b> - единственный оператор в JavaScript, принимающий три операнда:
+                  условие,
+                  за которым следует знак вопроса (?), затем выражение, которое выполняется, если условие истинно,
+                  сопровождается двоеточием (:), и, наконец, выражение, которое выполняется, если условие ложно. Он
+                  часто используется в качестве укороченного варианта условного оператора if.
+                </p>
+                <pre>
+<code>var result = условие ? значение1 : значение2;</code>
+
+
+<i>Пример:</i>
+<code>var result = (age &gt; 18) ? true : false;</code><i>- рекомендуется использовать скобки в условиях</i>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="functions" id="functions">
+      <div class="functions__container">
+        <h2 class="functions__title section-title title">Функции</h2>
+        <nav class="functions__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#modal-function">alert,
+                prompt, confim</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#parse">Функции для чисел</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#string-function">Функции для строк</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function">function</a>
+            </li>
+            <li class="section-menu__item">
+              <a href="#function-argument-parameter" class="section-menu__link reset-link">Аргументы и параметры function</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-return">function return</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-name">Имена function</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#"></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="functions-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="modal-function">alert, prompt, confim</button>
+            <div class="block-accordion__modal-function modal-function">
+              <a target="_blank" class="modal-fucntion__link link reset-link" href="https://learn.javascript.ru/alert-prompt-confirm">Источник</a>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">alert</p>
+                <p class="modal-function__descr text">
+                  Функция <b>alert</b> выводит результат кода, который был указан для вывода, в виде модального окна.
+                </p>
+                <br>
+                <p class="modal-function__descr text">
+                  При этом интерфейс остальной части страницы блокируется пока модальное окно не будет закрыто.
+                </p>
+                <br>
+                <pre>
+var a = "Hello";
+
+alert(a);
+                </pre>
+                <p class="modal-function__descr text">
+                  Данная функция показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».
+                </p>
+              </div>
+              <br><br>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">prompt</p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с полем для ввода</b>
+                </p>
+                <p class="modal-function__descr text">
+                  <b>let puck = prompt("Test", '');</b> // для IE
+                </p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b>let puck = prompt("Сколько тебе лет?", [] или "" или "100");</b><br>
+                  <b>alert(`Тебе ${puck} лет!`);</b> // Тебе 100 лет!
+                </p>
+              </div>
+              <br><br>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">confim</p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с вопросом и вариантами ответа</b>
+                </p>
+                <p class="modal-function__descr text">
+                  <b>let isBoss = confirm("Ты здесь главный?");</b><br>
+                  <b>alert(isBoss);</b> // true, если нажата OK
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="parse">Функции для
+              чисел: parseInt() и
+              parseFloat()</button>
+            <div class="block-accordion__parse parse">
+              <p class="parse__descr accordion-descr text">
+                Функции parseInt и parseFloat применяются к числам.
+              </p>
+              <div class="parse__wrapper">
+                <p class="parse__descr text">
+                  <b>parseInt()</b> - отбрасывает дробные части и выводит только целое число
+                </p>
+                <pre>
+<b>const john = parseInt(10.333);</b>
+<b>console.log(john);</b> // 10
+                </pre>
+              </div>
+              <br><br>
+              <div class="parse__wrapper">
+                <p class="parse__descr text">
+                  <b>parseFloat()</b> - возвращает число каким оно должно быть. Целое - целым, дробное - дробным.
+                </p>
+                <pre>
+<b>const john = parseFloat(10.333);</b>
+<b>console.log(john);</b> // 10.333
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="string-function">Функции для строк</button>
+            <div class="block-accordion__string-function string-function">
+              <p class="string-function__descr accordion-descr text">
+                Данные функции применяются для строк
+              </p>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>charAt()</b> возвращает символ, находящийся в указанной позиции в строке. Обратите внимание на то, что отсчёт позиций начинается с 0.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.charAt(3));</b> // возвращает "a"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>concat()</b> - присоединяет к строке одну или несколько строк и возвращает объединённую строку.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.concat(" - это круто!!!"));</b> // возвращает "Javascript - это круто!!!"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>indexOf()</b> - выполняет поиск первого вхождения символа или подстроки в данной строке и возвращает номер соответствующей позиции.
+                </p>
+                <pre>
+<b>const string = "Javascript - это здорово!";</b>
+<b>console.log(string.indexOf("здорово"));</b> // возвращает 17, т.к. буква "з" на 17 позиции
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>split()</b> - разбивает строку на массив подстрок.
+                </p>
+                <pre>
+<b>const string = "Javascript - это здорово!";</b>
+<b>console.log(string.split("з"));</b> // возвращает ["Javascript - это ", "дорово!"]
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>substr()</b> - извлекает часть строки, начиная с указанной позиции, и возвращает указанное кол-во символов.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.substr(2,5));</b> // возвращает "vascr"
+              </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>substring()</b> - извлекает символы строки, заключённые между указанными позициями (символ, соответствующий концу диапазона, в результат не включается).
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.substring(2,5));</b> // возвращает "vas"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>toLowerCase()</b> - переводит указанные символы строки в нижний регистр.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.toLowerCase());</b> // возвращает "javascript"
+              </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>toUpperCase()</b> - переводит указанные символы строки в верхний регистр.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.toUpperCase());</b> // возвращает "JAVASCRIPT"
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function">function</button>
+            <div class="block-accordion__function function">
+              <div class="function__wrapper">
+                <pre>
+<i>Саму функцию можно вызвать до её объявления</i>
+printWeekday(); <i>// вызов функции до её объявления</i>
+
+function printWeekday() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+}
+                </pre>
+                <pre>
+<i>Функцию, указанную значением переменной, можно вызвать только после объявления переменной</i>
+var primerName = function() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+    ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+};
+primerName(); <i>// вызов функции после объявления переменной в которой функция является значением</i>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function__wrapper">
+                <p class="function__descr accordion-descr text">Самовыполняющиеся анонимная функция функция</p>
+                <p class="function__descr text">
+                  Что сделать самовыполняющуюся функцию необходимо функцию добавить в круглые скобки и в конце пару пустых круглых скобок добавить.
+                </p>
+                <pre>
+<code style="display: block;">
+(function() {
+  ...
+})();
+</code>
+
+var  myVariable = "Я нахожусь вне функции.";(function() {
+  var myVariable = "Я нахожусь в этой анонимной функции";
+  console.log(myVariable);
+})();
+console.log(myVariable);
+                </pre>
+              </div>
+              <br><br>
+              <div class="function__wrapper">
+                <p class="function__descr accordion-descr text">Возведение в степень без объекта Math.pow</p>
+                <pre>
+function pow(x, n) {
+  let result = x;
+
+  for (let i = 1; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", '');
+let n = prompt("n?", '');
+
+if (n &lt; 1) {
+  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+} else {
+  alert( pow(x, n) );
+}
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-argument-parameter">Аргументы и параметры function</button>
+            <div class="block-accordion__function-argument function-argument-parameter">
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">ВАЖНО: примитивные (элементарные) типы данных для аргументов: <code>number, string, boolean, undefined, null</code></p>
+                <pre>
+function <i>ИМЯ ФУНКЦИИ</i>(<i>ПАРАМЕТР, ПАРАМЕТР</i>) {
+  <i>ИНСТРУКЦИЯ ФУНКЦИИ</i>
+}
+<i>ИМЯ ФУНКЦИИ</i>(<i>АРГУМЕНТ, АРГУМЕНТ</i>);
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">ПРИМЕНЕНИЕ ОБЪЕКТА <code>arguments</code> В ФУКНЦИИ С ПРЕВЫШЕНИЕМ КОЛ-ВО АРГУМЕНТОВ НАД КОЛ-ВОМ ПАРАМЕТРОВ</p>
+                <pre>
+function flexMobile() {
+  var welcome = 'Добро пожаловать, ';
+  for (i = 0; i &lt; arguments.length; i++) {
+    welcome = welcome + arguments[i] + '';
+  }
+  return welcome;
+}
+console.log(flexMobile(("Christopher", "James", "Phoenix", "Minnick") + "&lt;br&gt;"));
+console.log(flexMobile(("Eva", "Ann", "Holland") + "&lt;br&gt;"));
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">Функция с 2-мя аргументами</p>
+                <pre>
+<i>// при этом второй аргумент имеет значение по умолчанию</i>
+function findCard(cards, wantedCard = "Туз") { <i>// cards и wantedCard со значением - это ПАРАМЕТРЫ</i>
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let found = false;
+
+  for (let card of cards) {
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      found = true;
+      break;
+    }
+  }
+  console.log(
+    found
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+}
+
+let myCards = ["2", "Король", "Туз", "5", "6", "Король"];
+
+// ищем туза в переданной колоде карт
+findCard(myCards);
+// ищем пятёрку в переданной колоде карт
+findCard(myCards, "5"); <i>// myCards и "5" - это АРГУМЕНТЫ</i>
+
+<i>
+/*
+Вернёт:
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту 5"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Мы нашли карту 5!"
+*/
+ПОСЛЕ ТОГО, КАК НАШЁЛСЯ "ТУЗ" ФУНКИЦЯ ЗАПУСКАЕТСЯ СНОВА И ИЩЕТ "5"
+</i>
+                </pre>
+                <p class="function-argument-parameter__descr accordion-descr text">Пример работы функции</p>
+                <img class="function-argument-parameter__img img" src="img/function/argument-function.jpg" alt="Пример очерёдности действий функции">
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-return">return function</button>
+            <div class="block-accordion__function-return function-return">
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">
+                  Директива <code>return</code> может находиться в любом месте тела функции. Как только выполнение доходит до этого места, функция останавливается, и значение возвращается в вызвавший её код (присваивается переменной <code>result</code> выше).
+                </p>
+                <pre>
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert(result); <i>// 3</i>
+                </pre>
+                <p class="function-return__descr text">
+                  <b>
+                    ВАЖНО! <code>return</code> и его значение НЕОБХОДИМО писать в одну строку, либо значение прописать в круглых скобках и разместить в несколько строк, <br>иначе <code>return</code> будет пустым, что равняется <code>undefined</code>.
+                  </b>
+                </p>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 1</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/OJzEQgY?editors=0012">Codepen</a>
+                <pre>
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let foundIndex = -1;
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      foundIndex = index;
+      break;
+    }
+  }
+  <i>// ВАРИАНТ №1</i>
+  console.log(
+    foundIndex &gt; -1
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+
+  <i>
+  /*
+  ВАРИАНТ №2
+  if (foundIndex &gt; -1) {
+    console.log(`Мы нашли карту ${wantedCard}!`);
+  } else {
+    console.log(`В колоде нет карты ${wantedCard} :(`);
+  }
+  */
+  </i>
+  return foundIndex;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+
+let aceIndex = findCardIndex(myCards);
+let jackIndex = findCardIndex(myCards, "Валет");
+
+console.log(aceIndex + " - показывает кол-во перебранных карт");
+console.log(jackIndex);
+
+<i>
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+"3 - показывает кол-во перебранных карт"
+-1
+</i>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 2</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQOQ?editors=0012">Codepen</a>
+                <pre>
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      console.log(`Мы нашли карту ${wantedCard}!`);
+      return index;
+    }
+  }
+  console.log(`В колоде нет карты ${wantedCard} :(`);
+  return -1;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+findCardIndex(myCards);
+findCardIndex(myCards, "Валет");
+
+<i>
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+</i>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 3</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/zYpaReR?editors=0012">Codepen</a>
+                <pre>
+function checkAge(age) {
+  console.log(`Вам ${age} лет`);
+  if (age &gt;= 18) return;
+  console.log("Школота!");
+  console.log(`Потерпи ещё ${18 - age} лет до совершеннолетия`);
+}
+
+// все сообщения будут выведены
+checkAge(2);
+
+// функция перестанет выполняться после первого сообщения
+checkAge(23);
+checkAge(18);
+
+<i>
+"Вам 2 лет"
+"Школота!"
+"Потерпи ещё 16 лет до совершеннолетия"
+"Вам 23 лет"
+"Вам 18 лет"
+</i>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 4 and undefined</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQzL?editors=0012">Codepen</a>
+                <pre>
+function doNothing() {
+  console.log("Я ничего не делаю!");
+}
+
+console.log(doNothing()); // undefined
+let x = doNothing();
+console.log(x); // undefined
+
+let y;
+console.log(y);
+
+<i>
+"Я ничего не делаю!"
+undefined
+"Я ничего не делаю!"
+undefined
+undefined
+</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-name">Имена function</button>
+            <div class="block-accordion__function-name function-name">
+              <div class="function-name__wrapper">
+                <pre>
+showMessage(..)     <i>// показывает сообщение</i>
+getAge(..)          <i>// возвращает возраст (получая его каким-то образом)</i>
+calcSum(..)         <i>// вычисляет сумму и возвращает результат</i>
+createForm(..)      <i>// создаёт форму (и обычно возвращает её)</i>
+checkPermission(..) <i>// проверяет доступ, возвращая true/false</i>
+                </pre>
+                <p class="function-name__descr accordion-descr text"></p>
+                <p class="function-name__descr text"></p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="JJJ">ЗАГОЛОВОК</button>
+            <div class="block-accordion__--- ---">
+              <div class="---__wrapper">
+                <p class="---__descr accordion-descr text"></p>
+                <p class="---__descr text"></p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="objects" id="objects">
+      <div class="objects__container">
+        <h2 class="objects__title section-title title">Объекты</h2>
+        <nav class="objects__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="objects-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="math">Math</button>
+            <div class="block-accordion__math math">
+              <a target="_blank" class="math__link link reset-link" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math">Источник</a>
+              <div class="math__wrapper">
+                <p class="math__descr accordion-descr text">
+                  Объект Math является встроенным объектом, хранящим в своих свойствах и методах различные математические константы и функции.
+                </p>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Объект Math не является функциональным объектом.
+                </p>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Math не работает с числами типа BigInt.
+                </p>
+                <br>
+                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="WNJXOPx" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/WNJXOPx">
+                      2.5JS-функции Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Практика сравнения чисел и Math
+                </p>
+                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="eYerGPZ" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/eYerGPZ">
+                      2.7JS-Практика сравнения чисел и Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
+            <div class="block-accordion__--- ---">
+
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="array" id="array">
+      <div class="array__container">
+        <h2 class="array__title section-title title">Массивы</h2>
+        <nav class="array__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="№array-features">Свойства массива</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="№method-array">Методы массивов</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="array-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="array-features">Свойства массива (точечная нотация)</button>
+            <div class="block-accordion__array-features array-features">
+              <div class="array-features__wrapper">
+                <pre>
+<b>array.prototype</b> <i>позволяет добавлять свойства и методы в объект Array</i>
+<b>array.constructor</b> <i>ссылка на функцию, создавшую прототип объекта Array</i>
+<b>array.length</b> <i>возвращает или устанавливает кол-во элементов в массиве</i>
+
+
+<i>Пример усечения массива</i>
+<b>array[2000];</b>
+<b>array.length;</b> <i>возвращает 2001</i>
+<b>array.length = 10;</b>
+<b>array.length;</b><i>возвращает 10</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="method-array">Методы
+              массивов</button>
+            <div class="block-accordion__method-array method-array">
+              <a class="method-array__link link reset-link" href="https://learn.javascript.ru/array-methods">Источник</a>
+              <div class="method-array__wrapper">
+                <p class="method-array__descr accordion-descr text"></p>
+                <p class="method-array__descr text"></p>
+                <pre>
+concat() <i>новый массив, содержащий текущий массив и дополненный другними массивами и элементами</i>
+every() <i>возвращает значение <b>true</b>, если каждый элемент массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+filter() <i>новый массив, который содержит все элементы текущего массива, удовлетворяющиие условию, предоставляемому заданной тестовой функцией</i>
+forEach() <i>выполняет заданную функцию для каждого элемента массива</i>
+indexOf() <i>индекс первого вхождения заданного значения в массиве. Если значение не обнаружено, то возвращается -1</i>
+<br>
+join() <i>объединяет все элементы массива в одну строку</i>
+lastIndexOf() <i>индекс последнего вхождения заданного значения в массиве. Если значение не обнаружено, возвращается -1</i>
+map() <i>новый массив, полученный путём преобразования каждого элемента текущего массива с помощью заданной функции</i>
+pop() <i>удаляет последний элемент из массива</i>
+push() <i>добавляет новые элементы в конец массива</i>
+<br>
+reduce() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (слева направо)</i>
+reduceRight() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (справа налево)</i>
+reverse() <i>обращает порядок следования элементов в массиве в обратный порядок</i>
+shift() <i>удаляет первый элемент из массива и возвращает его, изменяя длину массива</i>
+slice() <i>выбирает часть массива и возвращает его в виде нового массива</i>
+<br>
+some() <i>возвращает значение <b>true</b>, если один или несколько элементов массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+sort() <i>возвращает отсортированный массив (по умолчанию сортировка выполняется в алфавитном порядке и в порядке возрастания</i>
+splice() <i>возвращает новый масив, состоящий из элементов, которые были добавлены или удалены из данного массива</i>
+toString() <i>преобразует массив в строку</i>
+unShift() <i>возвращает новый массив другой длины, к которому добавлены один или несколько элементов</i>
+<br><br>
+<i style="font-size: 20px;">Примеры применения методов:</i>
+arr.push(...items) <i>– добавляет элементы в конец,</i>
+arr.pop() <i>– извлекает элемент из конца,</i>
+arr.shift() <i>– извлекает элемент из начала,</i>
+arr.unshift(...items) <i>– добавляет элементы в начало.</i>
+<br>
+let arr = ["I", "go", "home"];
+delete arr[1]; <i>// удалит "go", но оставит пустое место</i> <code>''</code> <i>со значением</i> <code>undefined</code>
+console.log(arr); <i>// вернёт</i> <code>["I",,"home"]</code>
+console.log(arr.length); <i>// вернёт</i> <code>3</code>
+console.log(arr[1]); <i>// вернёт</i> <code>undefined</code>
+
+<i>Метод</i> <code>splice</code> <i>удаляет пустое место</i>
+
+arr.splice(1, 1); <i>// начиная с позиции 1 удаляет 1 элемент</i>
+console.log(arr); <i>// вернёт</i> <code>["I","home"]</code>
+
+<i>Так что можно без delete обойтись</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
+            <div class="block-accordion__BBB BBB">
+
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="cycle" id="cycle">
+      <div class="cycle__container">
+        <h2 class="cycle__title section-title title">Циклы</h2>
+        <nav class="cycle__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#for">for</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#for-of">for-of</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#for-in">for-in</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#while">while</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#do-while">fo-while</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#continue">continue</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#break">break</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#for-while">for-while</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#select-cycle">Когда какой цикл выбрать</a>
+            </li>
+            <li class="section-menu__item">
+              <a target="_blank" class="section-menu__link link reset-link" href="https://learn.javascript.ru/while-for">Источник</a>
+            </li>
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="cycle-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="for">for</button>
+            <div class="block-accordion__for for">
+              <div class="for__wrapper">
+                <p class="for__descr accordion-descr text"></p>
+                <p class="for__descr text"></p>
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/wvjQGRN?editors=0012">Codepen</a>
+var fibo = [1,1];
+
+for (var i = 1; i &lt; 9; ++i) { <i>// к <code>i</code> после каждой итерации прибавляется 1</i>
+  fibo.push(fibo[i] + fibo[i - 1]); <i>// <code>i</code> - это индексы массива, значения которых складываются и прибавляются к конце</i>
+}
+console.log(fibo);
+
+//[1,1,2,3,5,8,13,21,34,55] итого 10 чисел
+// 0,1,2,3,4,5,6, 7, 8, 9 - индекс исчисления
+
+<i style="font-size: 20px;">ПРИНЦИП РАБОТЫ ЦИКЛА for</i>
+1) Начало: var i = 1; <i>// выполняется один раз при входе в цикл</i>
+
+2) Условие: i &lt; 9; <i>// выполняется перед каждой итерацией цикла, если оно false, цикл остановится</i>
+
+3) Тело: fibo.push(fibo[i] + fibo[i - 1]);
+<i>// вернёт [1,1,2]. В данном случае i - это индекс массива, т.е. первый элемент массива плюс нулевый элемент (1+1=2).</i>
+<i>// Данный код выполняется пока условие true.</i>
+
+4) Шаг: ++i; <i>// 1 + 1 = 2 = i</i>
+5) Условие: i &lt; 9; <i>// 2 &lt; 9;</i>
+6) Тело: fibo.push(fibo[i] + fibo[i - 1]); <i>// вернёт [1,1,2,3]. Последнее число i = 2 после вычета шага. Значит второе число плюс первое (2+1=3)</i>
+7) Шаг: ++i; <i>// 1 + 2 = 3 = i</i>
+8) Условие: i &lt; 9; <i>// 3 &lt; 9;</i>
+9) Тело: fibo.push(fibo[i] + fibo[i - 1]); <i>// вернёт [1,1,2,3,5]. Последнее число i = 3 после вычета шага. Значит второе число плюс первое (3+2=5)</i>
+
+<hr>
+
+var i = 0;
+
+for (i; i &lt; 3; i++) {
+  console.log(i); <i>// закончится на 2, потому что МАХ 3 - 0 1 2</i>
+}
+console.log(i); <i>// закончится на 3, потому что цикл завершён и возвращает последний результат вне цикла, который не подошёл условиям цикла (false)</i>
+
+<hr>
+
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
+for (; Math.random() &gt;= 0.1;) console.log(fibo, "WOW");
+
+<hr>
+
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen (ВЕЧНЫЙ ЦИКЛ):</a>
+for (;;) console.log("Я буду сниться тебе в кошмарах"); // (;;) ничего прописано в первой/второй/третьей частях
+
+<hr>
+
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen (ВЕЧНЫЙ ЦИКЛ):</a>
+for (let i = 0;; ++i) { console.log(i); } // выводит максимальное кол-во чисел
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="for-of">for
+              of</button>
+            <div class="block-accordion__for-of for-of">
+              <div class="for-of__wrapper">
+                <pre>
+<a target="_blank" class="for-of__link link reset-link" href="https://codepen.io/archicolt/pen/eYebpLo">Codepen</a>
+let fruits = ['Яблоко', 'Банан', 'Апельсин', 'Ананас', 'Дыня']; // массив фруктов
+
+console.log('Сегодня я съел:');
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+<i>
+/*
+"Сегодня я съел:"
+"Яблоко"
+"Банан"
+"Апельсин"
+"Ананас"
+"Дыня"
+*/
+</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="for-in">for
+              in</button>
+            <div class="block-accordion__for-in for-in">
+              <div class="for-in__wrapper">
+                <p class="for-in__descr accordion-descr text">
+                  Оператор <code>for in</code> выделяет каждое значение отдельно из массива
+                </p>
+                <pre>
+<a target="_blank" class="for-of__link link reset-link" href="https://codepen.io/archicolt/pen/eYebpLo">Codepen</a>
+let rating = ['Катя', 'Вася', 'Маша', 'Петя', 'Лена'];
+
+console.log('Рейтинг студентов:');
+for (let i in rating) {
+  console.log(`${parseInt(i) + 1} место: ${rating[i]}`);
+}
+
+<i>
+/*
+"Рейтинг студентов:"
+"1 место: Катя"
+"2 место: Вася"
+"3 место: Маша"
+"4 место: Петя"
+"5 место: Лена"
+*/
+</i>
+
+<i>// parseInt преобразует строку в число. если убрать parseInt, <br>то будет двухзначная нумерация - 01 11 21, т.е. конкатена́ция — операция склеивания объектов линейной структуры, обычно строк.. <br>операция + будет выбирать последующие категории</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="while">while</button>
+            <div class="block-accordion__while while">
+              <div class="while__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/BamvKRy?editors=0012">Codepen</a>
+let teaVolume = 200;
+
+console.log("Вы налили себе " + teaVolume + " мл чая");
+
+while (teaVolume &gt; 0) {
+  teaVolume -= 10; // снижает кол-во чая на 10 мл
+  console.log("В чашке осталось " + teaVolume + " мл чая");
+}
+console.log("Вы выпили весь чай");
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="do-while">do-while</button>
+            <div class="block-accordion__do-while do-while">
+              <div class="do-while__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/BamvKRy?editors=0012">Codepen</a>
+// do-while - стоит использовать только, когда условие будет на 100% выполнено хотя бы 1 раз
+// для простоты примера представим, что в барабане пистолета 5 слотов и 1 патрон
+// вероятность выстрела - 20%
+// в данном цикле нет переменной
+
+do {
+  console.log("Нажимаем на спуск");
+} while (Math.random() &gt; 0.2); // пока рандомное число больше 0.2 условие выполняется
+
+console.log("Похоже, вам не повезло");
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="continue">continue</button>
+            <div class="block-accordion__continue continue">
+              <div class="continue__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/BamMqjM?editors=1112">Codepen</a>
+// ВАЖНО! в continue ненужные карты отсеиваются сразу и не участвуют в цикле
+
+let cards = ["2", "Король", "Туз", "5", "6", "Король", "Дама"]; // карты в руке
+let hand = [];
+
+for (let card of cards) {
+  // выполняем только для нечётного индекса
+  if (card !== "Король" && card !== "Туз") continue; <i>// continue отсеивает то, что соответствует условию, т.е. '5' не равно 'Король' или 'Туз' и её отсеивает.</i>
+  hand.push(card);
+  console.log("Карта " + card + " добавлена в руку");
+}
+
+console.log("Карты в руке", hand);
+<i>
+// вернёт
+Карта Король добавлена в руку
+Карта Туз добавлена в руку
+Карта Король добавлена в руку
+Карты в руке (3) ['Король', 'Туз', 'Король']
+</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="break">break</button>
+            <div class="block-accordion__break break">
+              <div class="break__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/wvPNYgb?editors=0012">Codepen</a>
+// ВАЖНО! в break перечисляются все карты до тех пор, пока не попадётся нужная карта. Все карты участвуют в цикле
+
+let cards = ["2", "Король", "Туз", "5", "6", "Валет", "Дама"];
+
+console.log("Ищем даму в колоде...");
+
+let found = false;
+
+for (let card of cards) {
+  console.log(`Из колоды вытянута карта ${card}`);
+  if (card === "Дама") {
+    found = true;
+    break; // выход из цикла если выполняется true
+  }
+}
+
+console.log(found ? "Мы нашли даму!" : "В колоде нет дам :(");
+                </pre>
+                <p class="break__descr accordion-descr text">ПРИНЦИП РАБОТЫ continue и break</p>
+                <img class="break__img img" src="img/cycle/break_continue.jpg" alt="Принцип работы continue и break">
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="for-while">for VS
+              while</button>
+            <div class="block-accordion__for-while for-while">
+              <div class="for-while__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/vYWbVdV?editors=0010">Codepen</a>
+let i;
+
+console.log("Цикл for");
+
+// цикл for
+for (i = 0; i &lt; 11; i += 2) {
+  // в первой части код до выполнения цикла, во второй части условие для выполнения итерации, в третьей части код после каждой итерации
+  console.log(i); // четвёртая часть ТЕЛО ЦИКЛА
+}
+
+console.log("Цикл while");
+
+// аналогичный цикл while с условием для завершения в теле цикла
+i = 0;
+while (true) {
+  if (i &gt; 10) break; // если i больше 10, то выходим из цикла break
+  console.log(i);
+  i += 2;
+}
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="select-cycle">Когда какой цикл выбрать</button>
+            <div class="block-accordion__select-cycle select-cycle">
+              <div class="select-cycle__wrapper">
+                <pre>
+<a target="_blank" class="link reset-link" href="https://codepen.io/archicolt/pen/XWzGaLb?editors=0012">Codepen</a>
+// <i>Простое повторение действий по счётчику</i>
+for (let i = 0; i &lt; 10; ++i) {
+  console.log(i);
+}
+
+// <i>Заполнение массива на основе счётчика</i>
+let a = [];
+for (let i = 0; i &lt; 10; ++i) {
+  a.push(i * i);
+}
+
+// <i>Заполнение массива на основе значений другого массива</i>
+let b = [];
+for (let pow2 of a) {
+  b.push(pow2 / 2);
+}
+
+// <i>Заполнение пустого массива на основе других данных (длина массива неизвестна)</i>
+let c = [];
+let next;
+white (next = file.nextLine()) {
+  c.push(next);
+}
+
+// <i>Обработка значений массива (возможно of)</i>
+for (let line in c) {
+  console.log('Длина строки:', line.length);
+}
+
+// <i>Обработка индексов массива (возможно in)</i>
+for (let number of c) {
+  console.log(`Длина строки: ${number}: ${c[number].length}`);
+}
+
+// <i>Обработка значений или индексов массива в обработном порядке</i>
+let aReversed = [];
+for (let i = a.length - 1; i &gt;= 0; --i) {
+  aReversed.push(a[i]);
+}
+
+// <i>Сложная логика выхода из цикла</i>
+let currentAttempt = 0;
+while (currentAttempt++ &lt; 1000) {
+  if (crayfishwhistles()) break;
+} // <i>crayfishwhistles() - какое-то сложное условие. в случае выполнения условия, то иттерация завершается</i>
+
+// <i>Обработка нескольких массивов одинаковой длины</i>
+for (let i in a) {
+  console.log(a[i] + aReversed[i]);
+}
+for (let i = 0; i &lt; a.length; ++i) {
+  console.log(a[i] + aReversed[i]);
+}
+
+// <i>Цикл со счётчиком и сложной логикой изменения значения счётчиков</i>
+for (let x = 0; x &lt; 100; x += Math.round(Math.random() * 5)) {
+  console.log(x);
+}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="other" id="other">
+      <div class="other__container">
+        <h2 class="other__title section-title title">Справочник JavaScript</h2>
+        <nav class="other__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#search">Поиск и стилизация</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#offset">Присваивание класса</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#falcy">"falsy" ложные значения</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#node">Node.js</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#document">document - свойтсва и их значения</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#"></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="other-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="search">Поиск и
+              стилизация</button>
+            <div class="block-accordion__search search">
+              <div class="search__wrapper">
+                <p class="search__descr accordion-descr text">
+                  Способ поиска
+                </p>
+                <p class="search__descr text">
+                  <b>document.querySelector('.hero-list__descr')</b> - метод поиска по селекторам CSS
+                </p>
+              </div>
+              <br>
+              <div class="search__wrapper">
+                <p class="search__descr accordion-descr text">
+                  Стилизация через JS
+                </p>
+                <p class="search__descr text">
+                  <b>document.querySelector('.hero-list__descr').style.color = 'red';</b> - назначение стиля.<br> Срабатывает один раз на первом элементе, который был найден с классом. <b>hero-list__descr</b>
+                </p>
+                <p class="search__descr text">
+                  Данный способ является более приоритетным по сравнению со стилизацией в CSS.
+                </p>
+              </div>
+              <br>
+              <div class="search__wrapper">
+                <p class="search__descr accordion-descr text">
+                  Сокращёние кода для его повторного использования
+                </p>
+                <p class="search__descr text">
+                  <b>let descr = document.querySelector('.hero-list__descr');</b> - создание переменной
+                </p>
+                <p class="search__descr text">
+                  <b>descr.style.color = 'red';</b> - использование переменной для стилизации.
+                </p>
+                <p class="search__descr text">
+                  Данный способ улучшает читабельность кода и снижает нагрузку на систему, потому что запускает файл <b>document.querySelector</b> один раз
+                </p>
+              </div>
+              <br>
+              <div class="search__wrapper">
+                <p class="search__descr accordion-descr text">
+                  Автоматическая повторная стилизация
+                </p>
+                <p class="search__descr text">
+                  <b>document.querySelectorAll('.hero-list__title').forEach(function(element) {<br>
+                    &nbsp;&nbsp;element.style.color = 'green';<br>
+                    });</b>
+                </p>
+                <p class="search__descr text">
+                  <b>querySelectorAll()</b> - выбор всех элементов названием, классом или id
+                </p>
+                <p class="search__descr text">
+                  <b>.forEach()</b> - выполняет указанную функцию внутри один раз для каждого элемента в массиве
+                </p>
+                <p class="search__descr text">
+                  <b>function(element) {}</b> - функция с предметом внутри на который надо воздействовать
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="offset">Присваивание
+              класса</button>
+            <div class="block-accordion__offset offset">
+              <div class="offset__wrapper">
+                <p class="offset__descr accordion-descr text">
+                  Присвоение класса блоку в JS и его смещение
+                </p>
+                <p class="offset__descr text">
+                  <b>let block = document.querySelector('.item-primer__child');</b> - создание переменной
+                </p>
+                <p class="offset__descr text">
+                  <b>block.classList.add('block-translate');</b> - присвоение класса блоку
+                </p>
+                <p class="offset__descr text">
+                  <b>add</b> - добавляет
+                </p>
+                <p class="offset__descr text">
+                  <b>remove</b> - удаляет
+                </p>
+              </div>
+              <br><br>
+              <div class="offset__primer">
+                <div class="offset__block">
+                  <p class="offset__descr accordion-descr text">HTML</p>
+                  <pre style="padding: 5px; background-color: rgba(255, 255, 255, .8)">
+&lt;div class="parent"&gt;
+  &lt;div class="child"&gt;
+    &lt;p class="child__descr"&gt;
+      Смещение по горизонтали на 50px
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                  </pre>
+                </div>
+                <div class="offset__block">
+                  <p class="offset__descr accordion-descr text">CSS</p>
+                  <pre style="padding: 5px; background-color: rgba(255, 255, 255, .8)">
+.parent {
+  width: 200px;
+  height: 100px;
+  background-color: powderblue;
+}
+.child {
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+}
+.block-translate {
+  transform: translateX(50px);
+}
+                  </pre>
+                </div>
+                <div class="offset__block">
+                  <p class="offset__descr accordion-descr text">JS</p>
+                  <pre style="padding: 5px; background-color: rgba(255, 255, 255, .8)">
+var block = document.querySelector('.child');
+block.classList.add('block-translate');
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="falsy">"falsy" ложные значения</button>
+            <div class="block-accordion__falsy falsy">
+              <div class="falsy__wrapper">
+                <ul class="falsy__list">
+                  <li class="falsy__item">
+                    Число <code>0</code>, пустая строка <code>""</code>, <code>null</code>, <code>undefined</code> и <code>NaN</code> становятся <code>false</code>. Из-за этого их называют «ложными» («falsy») значениями.
+                  </li>
+                  <li class="falsy__item">
+                    Остальные значения становятся <code>true</code>, поэтому их называют «правдивыми» («truthy»).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="node">Node.js в VSCode</button>
+            <div class="block-accordion__node node">
+              <div class="node__wrapper">
+                <p class="node__descr text">
+                  Установить breakpoint с помощью F9
+                </p>
+                <p class="node__descr text">
+                  Запуск компилятора с помощью F5 (Node.js)
+                </p>
+                <p class="node__descr text">
+                  И делать прогон по шагам с помощью F11
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="document">document - свойтсва и их значения</button>
+            <div class="block-accordion__document document">
+              <div class="document__wrapper">
+                <p class="document__descr accordion-descr text">
+                  С помощью данного цикла возможно в DevTools во владке "Console" прописать и на странице откроется список свойств и их значений объекта document
+                </p>
+                <pre>
+for (var prop in document){
+  document.write(prop + ": " + document[prop] +"&lt;br&gt; ");
+}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="AAA" id="III">
+      <div class="AAA__container">
+        <h2 class="AAA__title section-title title">НАЗВАНИЕ БЛОКА</h2>
+        <nav class="AAA__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li>
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="AAA-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
+            <div class="block-accordion__BBB BBB">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn"
+              id="JJJ">ЗАГОЛОВОК</button>
+            <div class="block-accordion__--- ---">
+              <div class="---__wrapper">
+                <p class="---__descr accordion-descr text"></p>
+                <p class="---__descr text"></p>
+              </div>
+            </div>
+          </div> -->

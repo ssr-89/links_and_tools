@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="css/tabs.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">TABS</h1>
+      <div class="header__row-top row-top">
+        <nav class="row-top__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="tools.html">Главная страница</a>
+            </li>
+            <li class="menu__item">
+              <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="select.html">Select</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="slides.html">Slides</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="accordion.html">Accordion</a>
+            </li>
+          </ul>
+        </nav><br><br>
+        <nav class="row-top__menu menu">
+          <ul class="menu__list" style="padding: 20px 15px; background-color: rgba(0, 0, 0, 1);">
+            <li class="menu__item">
+              <p style="color: rgba(255, 255, 255, 1);">Содежание страницы:</p>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#"></a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#"></a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#tabs" style="color: #fff;">&gt; TABS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="tabs" id="tabs">
+    <div class="tabs__container">
+      <h2 class="tabs__title">TABS</h2>
+      <div class="tabs__primer">
+        <!-- кнопки табов -->
+        <ul class="tabs-nav">
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn tabs-nav__btn--active" data-path="one">
+              Первый таб
+            </button>
+          </li>
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn" data-path="two">
+              Второй таб
+            </button>
+          </li>
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn" data-path="three">
+              Третий таб
+            </button>
+          </li>
+        </ul>
+        <div class="tabs-content">
+          <!-- элементы табов -->
+          <div class="tabs-item tabs-item--active" data-target="one"
+            style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-aladdin-qattouri-4116184.jpg');">
+            Далеко-далеко за словесными горами в РОССИИ.
+          </div>
+          <div class="tabs-item" data-target="two"
+            style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-stokpic-5486.jpg');">
+            Далеко-далеко за словесными горами в АМЕРИКЕ.
+          </div>
+          <div class="tabs-item" data-target="three"
+            style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-simon-berger-1323550.jpg');">
+            Далеко-далеко за словесными горами в КИТАЕ.
+          </div>
+        </div>
+      </div><br><br><br>
+      <div class="tabs__block">
+        <div class="tabs__html html">
+          <h3 class="html__title">HTML</h3>
+          <pre>
+&lt;!-- кнопки табов --&gt;
+&lt;ul class="tabs-nav"&gt;
+  &lt;li class="tabs-nav__item"&gt;
+    &lt;button class="tabs-nav__btn tabs-nav__btn--active" data-path="one"&gt;
+      Первый таб
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="tabs-nav__item"&gt;
+    &lt;button class="tabs-nav__btn" data-path="two"&gt;
+      Второй таб
+    &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="tabs-nav__item"&gt;
+    &lt;button class="tabs-nav__btn" data-path="three"&gt;
+      Третий таб
+    &lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tabs-content"&gt;
+  &lt;!-- элементы табов --&gt;
+  &lt;div class="tabs-item tabs-item--active" data-target="one"
+    style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-aladdin-qattouri-4116184.jpg');"&gt;
+    Далеко-далеко за словесными горами в РОССИИ.
+  &lt;/div&gt;
+  &lt;div class="tabs-item" data-target="two"
+    style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-stokpic-5486.jpg');"&gt;
+    Далеко-далеко за словесными горами в АМЕРИКЕ.
+  &lt;/div&gt;
+  &lt;div class="tabs-item" data-target="three"
+    style="background-image: linear-gradient(180deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url('img/tabs/primer/pexels-simon-berger-1323550.jpg');"&gt;
+    Далеко-далеко за словесными горами в КИТАЕ.
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div><br>
+        <div class="tabs__css css">
+          <h3 class="css__title">CSS</h3>
+          <pre>
+.tabs-nav {
+  display: flex;
+  padding: 20px;
+  column-gap: 30px;
+  background-color: navy;
+  color: #fff;
+}
+.tabs-nav__btn {
+  font-weight: bold;
+  font-size: 16px;
+}
+.tabs-nav__btn--active {
+  color: tan;
+}
+.tabs-content {
+  color: #fff;
+}
+.tabs-item {
+  display: none;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 1200px;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.tabs-item--active {
+  display: block;
+}
+          </pre>
+        </div><br>
+        <div class="tabs__js js">
+          <h3 class="js__title">JS</h3>
+          <pre>
+'use strict'
+
+document.querySelectorAll('.tabs-item').forEach(function (tabsItem) {
+  tabsItem.classList.remove('tabs-item--active') // удаление класса активности у элементов табов
+});
+
+document.querySelectorAll('.tabs-nav__btn').forEach(function (tabsBtn) {
+  tabsBtn.classList.remove('tabs-nav__btn--active'); // удаляет класс активности у кнопки
+  tabsBtn.addEventListener('click', function (e) {
+    const path = e.currentTarget.dataset.path;
+    document.querySelectorAll('.tabs-nav__btn').forEach(function (btn) {
+      btn.classList.remove('tabs-nav__btn--active');
+    });
+    e.currentTarget.classList.add('tabs-nav__btn--active');
+    document.querySelectorAll('.tabs-item').forEach(function (tabsItem) {
+      tabsItem.classList.remove('tabs-item--active')
+    });
+    document.querySelector(`[data-target="${path}"]`).classList.add('tabs-item--active'); // находим нужный элемент таба и присваиваем класс актива, т.е. открываем
+  });
+});
+
+/*
+tabsBtn === .tabs-nav__btn
+
+tabsItem === .tabs-item
+
+e.currentTarget - выделяет конкретный нажатый элемент
+
+dataset.path - позволяет получить значения атрибута data-path у табов (кнопок)
+
+tabsBtn.classList.remove('tabs-item--active'); - возможно пригодится
+*/
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/tabs.js"></script>
+</body>
+
+</html>

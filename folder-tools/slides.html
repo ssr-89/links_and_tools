@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLIDES</title>
+  <link rel="stylesheet" href="links/css/slick.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/slides.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">SLIDES</h1>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a href="burger-search-tooltip.html" class="menu__link">Burger, Search, Tooltip</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="select.html">Select</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="accordion.html">Accordion</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li>
+        </ul>
+        <ul class="menu__list">
+          <li class="menu__item" style="color: rgb(13, 240, 25);">
+            <p>Содежание страницы:</p>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#slick">SLICK</a>
+          </li>
+          <li class="menu__item">
+            <details>
+              <summary>SWIPER</summary>
+              <ul>
+                <li><a class="menu__link menu-link-accord" href="#initial">Инициализация</a></li>
+                <li><a class="menu__link menu-link-accord" href="#switching">Переключение</a></li>
+                <li><a class="menu__link menu-link-accord" href="#effects">Эффекты переключения</a></li>
+                <li><a class="menu__link menu-link-accord" href="#navigation">Навигация</a></li>
+                <li><a class="menu__link menu-link-accord" href="#pagination">Пагинация</a></li>
+                <li><a class="menu__link menu-link-accord" href="#breakpoint">Бейк-поинты</a></li>
+                <li><a class="menu__link menu-link-accord" href="#scroll">Скроллбар</a></li>
+                <li><a class="menu__link menu-link-accord" href="#hash">Хеш-навигация</a></li>
+                <li><a class="menu__link menu-link-accord" href="#load">Предзагрузка контента слайда</a></li>
+                <li><a class="menu__link menu-link-accord" href="#zoom">ZOOM-картинок</a></li>
+                <li><a class="menu__link menu-link-accord" href="#thumbs">Thumbs (превью, миниатюры)</a></li>
+                <li><a class="menu__link menu-link-accord" href="#inslider">Слайдер в слайдере</a></li>
+                <li><a class="menu__link menu-link-accord" href="#twoslider">Одновременные слайдеры</a></li>
+                <li><a class="menu__link menu-link-accord" href="#newslider">Обновление слайдера (в табе)</a></li>
+                <li><a class="menu__link menu-link-accord" href="#parallax">Параллакс-эффект</a></li>
+                <li><a class="menu__link menu-link-accord" href="#virtual">Виртуальные слайдеры</a></li>
+                <li><a class="menu__link menu-link-accord" href="#availability">Доступность (для пользователей с
+                    ограничениями)</a></li>
+                <li><a class="menu__link menu-link-accord" href="#methods">Методы, параметры, события</a></li>
+                <li><a class="menu__link menu-link-accord" href="#different">Общие настройки</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="slick" id="slick">
+    <h2 class="slick__title">SLICK</h2>
+    <div class="slick__slider slider">
+      <div class="slick__item" style="background-image: url('img/slides/slides/01.jpg');">
+        <div class="slick__container" style="background-color: rgba(255,255,255,.8);">
+          <a class="slick__link" href="https://kenwheeler.github.io/slick/"
+            style="color: blue; border-bottom: 1px solid blue;">Ссылка на плагин</a><br><br>
+          <div class="slick__wrapper">
+            <p class="slick__text">
+              1 Подключить плагины <b>jQuery</b><br>
+            <pre>
+  &lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+            </pre><br>
+            </p><br>
+            <p class="slick__text">
+              2 Скачать по <a class="slick__link" href="https://github.com/kenwheeler/slick/archive/v1.8.1.zip"
+                style="color: blue; border-bottom: 1px solid blue;">ссылке</a> архив.
+            </p>
+            <p class="slick__text">
+              3 Перенести из архива файлы <b>slick.css</b> <b>slick.min.js</b> и подключить.
+            </p><br>
+            <p class="slick__text">
+              4 Создать <b>HTML</b>-разметку
+            <pre>
+  &lt;div class="your-class"&gt;
+    &lt;div&gt;your content&lt;/div&gt;
+    &lt;div&gt;your content&lt;/div&gt;
+    &lt;div&gt;your content&lt;/div&gt;
+  &lt;/div&gt;
+          </pre><br>
+            </p>
+            <p class="slick__text">
+              5 Прописать скрипт в <b>JS</b>
+            <pre>
+  'use strict'
+  $(document).ready(function () {
+    $('.your-class').slick({
+      arrows: false, // стрелки для переключения картинки
+      fade: true,
+      autoplay: 10000, // время смены картинки
+      dots: true // подключение точек для переключения картинки
+    });
+  });
+            </pre>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slick__item" style="background-image: url('img/slides/slides/02.jpg');">
+        <div class="slick__container" style="background-color: rgba(255,255,255,.8);">
+          <div class="slick__wrapper">
+            <h3 class="slick__title">ДОПОЛНЕНИЕ: CSS-стили</h3>
+            <ul>
+              <li>
+                1 Главной секции задать:<br>
+                <pre>
+position: relative;
+                </pre>
+              </li>
+              <li>
+                2 Слайдер-блоку необходимо задать, чтобы слайдер не вылез за пределы видимой части:<br>
+                <pre>
+position: absolute;
+z-index: -1;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+          </pre>
+              </li>
+              <li>
+                3 Слайдер-ячейкам прописываем:<br>
+                <pre>
+height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+                </pre>
+              </li>
+              <li>
+                4 Точкам для переключения также прописываем стили:<br>
+                <pre>
+.slick__slider .slick-dots {
+  margin: -55px auto 0;
+  padding: 0 15px; // зависит от размеров проекта
+  position: relative;
+  z-index: 2;
+  max-width: 1230px; // свои параметры задаём
+}
+                </pre>
+              </li>
+              <li>
+                5 Кнопке точек задаём:<br>
+                <pre>
+.slick__slider .slick-dots button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  font-size: 0;
+}
+                </pre>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slick__item" style="background-image: url('img/slides/slides/03.jpg');">
+        <div class="slick__container" style="background-color: rgba(255,255,255,.8);">
+          <ul>
+            <li>
+              6 Стили кнопки точек в момент активности точки:<br>
+              <pre>
+.slick__slider .slick-dots .slick-active button {
+background-color: yellowgreen;
+cursor: pointer;
+}
+            </pre>
+            </li>
+            <li>
+              7 Чтобы выстроить в ряд точки задаём:<br>
+              <pre>
+.slick__slider .slick-dots li {
+display: inline-block;
+}
+            </pre>
+            </li>
+            <li>
+              8 И отступы между точками<br>
+              <pre>
+.slick__slider .slick-dots li:not(:last-child) {
+margin: 0 20px 0 0;
+}
+            </pre>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="swiper" id="swiper">
+    <div class="swiper__container">
+      <h2 class="swiper__title">SWIPER</h2>
+      <div class="swiper__info info">
+        <h3 class="info__title" id="initial">ИНИЦИАЛИЗАЦИЯ</h3><br>
+        <div class="info__wrapper info-wrapper">
+          <h4 class="info-wrapper__title">HTML</h4><br>
+          <p class="info-wrapper__text">
+          <pre>
+&lt;!-- контейнер слайдера --&gt;
+&lt;div class="swiper-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;!-- кнопки пагинации --&gt;
+  &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+
+  &lt;!-- кнопки для навигации --&gt;
+  &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+  &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Подключение файлов <b>CSS</b>
+          <pre>
+&lt;link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/&gt;
+
+<i style="color: rgba(255,0,0,1);">ВАЖНО подключить стили раньше основных файлов</i>
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Подключение файлов <b>JS</b>
+          <pre>
+&lt;script src="https://unpkg.com/swiper/swiper-bundle.min.js"&gt;&lt;/script&gt;
+
+<i style="color: rgba(255,0,0,1);">ВАЖНО подключить скрипты раньше основных файлов</i>
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Далее в родном JS-файле необходимо прописать следующий код для последующей настройки слайдера:
+          <pre>
+const swiper = new Swiper('.swiper-container', {
+  // кол-во слайдов для показа
+  slidesPerView: 1,
+
+
+  // кол-во перелистываемых слайдов
+  slidesPerGroup: 3,
+
+
+  // бесконечный цикл прокрутки
+  loop: true,
+
+
+  // автопрокрутка
+  autoplay: {
+    // Пауза между прокруткой (миллисекунды)
+    delay: 1000,
+
+    // Закончить на последнем слайде
+    stopOnLastSlide: true,
+
+    // Отключить после ручного переключения
+    disableOnInteraction: false,
+  },
+
+
+  // эффект переключения слайдов сменой прозрачности
+  effect:  “fade”,
+
+  // Дополнение к fade
+  fadeEffect: {
+    // параллельная смена прозрачности
+    crossFade: true,
+  },
+
+
+  // пагинация (ТОЧКИ)
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+
+  // навигация (КНОПКИ)
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text"></p><br>
+          <p class="info-wrapper__text"></p>
+        </div><br><br><br><br><br>
+        <h3 class="info__title">НАСТРОЙКА JS</h3><br>
+        <div class="info__wrapper info-wrapper" id="switching">
+          <h4 class="info-wrapper__title">I ПЕРЕКЛЮЧЕНИЕ</h4><br>
+          <p class="info-wrapper__text">
+            Количество слайдов для показа (ВОЗМОЖНО УКАЗАТЬ НЕЦЕЛЫЕ ЧИСЛА, К ПРИМЕРУ 1,2)
+          <pre>
+slidesPerView: 1,
+            </pre><br><br>
+          <i style="background-color: powderblue;">ВОЗМОЖНО УКАЗАТЬ auto (АВТОШИРИНА), в CSS тогда прописать</i><br>
+          <pre>
+.swiper-container .swiper-slide {
+  width: auto;
+}
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Отключение функционала, если слайдов меньше, чем нужно для прокрутки
+          <pre>
+watchOverflow: true,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Кол-во пролистываемых слайдов одновременно
+          <pre>
+slidesPerGroup: 3,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Бесконечный слайдер. Повторный показ слайдов (НЕ РАБОТАЕТ С МУЛЬТИРЯДНОСТЬЮ)
+          <pre>
+loop: true,
+            </pre>
+          </p>
+          <p class="info-wrapper__text">
+            Кол-во дублирующих слайдов (ЕСЛИ slidesPerView: auto,)
+          <pre>
+loopedSlides: 3,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Свободный режим (СВОБОДНО ПРОКРУЧИВАТЬ СЛАЙДЫ БЕЗ ФИКСИРОВАННЫХ ПОЗИЦИЙ)
+          <pre>
+freeMode: true,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Активный слайд по центру (slidesPerView: 1 – желательно установить на 1)
+          <pre>
+centeredSlides: true,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Автопрокрутка
+          <pre>
+autoplay: {
+  // Пауза между прокруткой (миллисекунды)
+  delay: 1000,
+
+  // Закончить на последнем слайде
+  stopOnLastSlide: true,
+
+  // Отключить после ручного переключения
+  disableOnInteraction: false,
+},
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Скорость переключения слайда (миллисекунды)
+          <pre>
+speed: 300,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Отступ между слайдами (в пикселях)
+          <pre>
+spaceBetween: 30,
+            </pre>
+          </p><br><br>
+          <p class="info-wrapper__text">
+            Вертикальная прокрутка (для всего слайдера установить высоту для корректной работы)
+          <pre>
+direction: 'vertical',
+            </pre>
+          </p>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="effects">
+          <h4 class="info-wrapper__title">II ЭФФЕКТЫ ПЕРЕКЛЮЧЕНИЯ СЛАЙДОВ</h4><br>
+          <p class="info-wrapper__text">
+            Эффект перелистывания
+          <pre>
+effect: 'slide',
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Эффект смены прозрачности
+          <pre>
+effect: 'fade',
+
+// Дополнение к fade
+fadeEffect: {
+  // параллельная смена прозрачности
+  crossFade: true,
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Эффект переворота
+          <pre>
+effect: 'flip',
+
+// Дополнение к flip
+flipEffect: {
+
+//тень
+slideShadows: true,
+
+// показ только активного слайда
+limitRotation: true
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Эффект куб (В СТИЛЯХ СЛЕДУЕТ ОГРАНИЧИТЬ ШИРИНУ ВСЕГО СЛАЙДЕРА swiper-container)
+          <pre>
+effect: 'cube',
+
+// Дополнение к cube
+cubeEffect: {
+
+// настройки тени
+slideShadows: true,
+shadow: true,
+shadowOffset: 20,
+shadowScale: 0.94,
+},
+          </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Эффект потока
+          <pre>
+effect: 'coverflow',
+
+// Дополнение к coverflow
+coverflowEffect: {
+// угол
+rotate: 20,
+
+//наложение
+stretch: 50;
+
+// тень
+slideShadows: true,
+},
+            </pre>
+          </p>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="navigation">
+          <h4 class="info-wrapper__title">III НАВИГАЦИЯ</h4>
+          <pre>
+<b>JS</b>
+// навигация
+navigation: {
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+},
+          </pre>
+          <pre>
+<b>CSS</b>
+.swiper-container .swiper-button-prev::after,
+.swiper-container .swiper-button-next::after {
+  color: #fff;
+  font-size: 80px;
+}
+          </pre>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="pagination">
+          <h4 class="info-wrapper__title">IV ПАГИНАЦИЯ</h4>
+          <pre>
+<b>CSS</b>
+.swiper-container .swiper-pagination {
+  bottom: 0;
+}
+/*bullets*/
+.swiper-container .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+/*fraction*/
+.swiper-container .swiper-pagination-fraction {
+  font-size: 20px;
+  color: #fff;
+}
+
+/*progressbar*/
+.swiper-container .swiper-pagination-progressbar-fill {
+  background-color: greenyellow;
+}
+          </pre><br><br>
+          <pre>
+<b>JS</b>
+// буллеты
+type: 'bullets',
+  clickable: true, // включение кликания точек (буллетов)
+  dynamicBullets: true, // динамические точки (буллеты)
+  // нумерация точек (буллетов)
+  renderBullet: function (index, className) {
+    return '&lt;span class="' + className + '"&gt;' + (index + 1) + '&lt;/span&gt;';
+  },
+},
+          </pre><br><br>
+          <pre>
+// фракция
+type: 'fraction',
+// кастомный вывод фракции
+renderFraction: function (currentClass, totalClass) {
+  return 'Фото &lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' + ' из ' +  '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
+},
+          </pre><br><br>
+          <pre>
+// прогрессбар
+type: 'progressbar',
+          </pre>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="breakpoint">
+          <h4 class="info-wrapper__title">V БРЕЙК-ПОИНТЫ (АДАПТИВ)</h4>
+          <p class="info-wrapper__text">
+          <pre>
+breakpoints: {
+  320: {
+    slidesPerView: 1,
+  },
+  480: {
+    slidesPerView: 2,
+  },
+  992: {
+    slidesPerView: 3,
+    },
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+          <pre>
+// соотношение сторон (высота делённая на ширину)
+breakpoints: {
+  '@0.75': {
+    slidesPerView: 1,
+  },
+  '@1.00': {
+    slidesPerView: 2,
+  },
+  '@1.50': {
+    slidesPerView: 3,
+  },
+},
+            </pre>
+          </p>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="scroll">
+          <h4 class="info-wrapper__title">VI СКОЛЛБАР (СТОИТ ОТКЛЮЧАТЬ ПРИ БЕСКОНЕЧНОМ СЛАЙДЕРЕ)</h4>
+          <p class="info-wrapper__text">
+          <pre>
+<b>JS</b>
+scrollbar: {
+  el: '.swiper-scrollbar',
+  // Возможность перетаскивать скролл
+  draggable: true // включение скроллбара
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+          <pre>
+<b>/*scrollbar*/</b>
+.swiper-container .swiper-scrollbar-drag {
+  background-color: greenyellow;
+  cursor: pointer;
+}
+            </pre>
+          </p>
+          <p class="info-wrapper__text"></p>
+          <p class="info-wrapper__text"></p>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="hash">
+          <h4 class="info-wrapper__title">VII ХЕШ-НАВИГАЦИЯ (УКАЗЫВАЕТ АДРЕС КАЖДОМУ СЛАЙДУ)</h4><br>
+          <p class="info-wrapper__text">
+            В <b>HTML</b> слайдам прописать атрибуты <code style="color: red;">data-hash="slide-1/2/3/4/и т.д."</code>
+          <pre>
+<b>JS</b>
+// Навигация по хешу (каждому слайду указывается свой адрес)
+hashNavigation: {
+  // Отслеживать состояние
+  watchState: true,
+},
+            </pre>
+          </p>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="load">
+          <h4 class="info-wrapper__title">VIII ПОДГРУЗКА КАРТИНОК В МОМЕНТ ПЕРЕКЛЮЧЕНИЯ</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b> - добавить выделенные атрибуты и прописать иконку подгрузки в <b>src</b><br>
+&lt;div class="swiper-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-slide"&gt;
+      &lt;div class="swiper-slide__image"&gt;
+        &lt;img <u>data-src="img/01.jpg" src="img/1x1.png" class="swiper-lazy"</u> alt ="Картинка"&gt;
+        <u>&lt;div class="swiper-lazy-preloader"&gt;&lt;/div&gt;</u>
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Отключить предзагрузку картинок
+preloadImages: false,
+// Lazy Loading
+// (подгрузка картинок)
+lazy: {
+  // Подгружать на старте переключения слайда
+  loadOnTranstitionStart: false,
+
+  // Подгрузить предыдущую и следущую картинки
+  loadPrevNaxt: false,
+},
+
+// слежка за видимыми слайдами
+watchSlidesProgress: true,
+
+// добавление класса видимым слайдам
+watchSlidesVisibility: true,
+              </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="zoom">
+          <h4 class="info-wrapper__title">IX ZOOM-картинок</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b> - добавить класс<br>
+&lt;div class="swiper-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-slide"&gt;
+      &lt;div class="swiper-slide__image <u>swiper-zoom-container</u>"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Зум картинок
+zoom: {
+  // максимальное увеличение
+  maxRatio: 5,
+  // минимальное увеличение
+  minRatio: 1,
+},
+                </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="thumbs">
+          <h4 class="info-wrapper__title">X Thumbs (превью, миниатюры) (ЖЕЛАТЕЛЬНО УБРАТЬ У ГЛАВНОГО СЛАЙДЕРА СКРОЛЛ,
+            ФРАКЦИИ И ПОСТАВИТЬ КОЛ-ВО ПОКАЗА СЛАЙДОВ НА 1)</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b>
+<!--СОЗДАТЬ МИНИ-СТРУКТУРУ СЛАЙДЕРА С ТАКИМ ЖЕ КОЛ-ВОМ СЛАЙДОВ-->
+&lt;div class="swiper-mini-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-mini-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-mini-slide"&gt;
+      &lt;div class="swiper-mini-slide__image"&gt;
+        &lt;img src="img/01.png" alt ="Картинка"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-mini-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-mini-slide"&gt;Slide 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">CSS</b><br>
+/*Миниатюры (превью*/
+. swiper-mini-container {}
+. swiper-mini-wrapper {}
+.swiper-mini-slide {
+  opacity: 0.2;
+  transition: opacity 0.3s ease 0s;
+}
+. swiper-mini-slide.swiper-slide-thumb-active {
+  opacity: 1;
+}
+. swiper-mini-slide__image {
+  position: relative;
+  padding: 0 0 30% 0;
+  cursor: pointer;
+}
+.swiper-mini-slide__image img {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Миниатюры (превью)
+thumbs: {
+  // свайпер с миниаютрами и его настройки
+  swiper: {
+    el: '.swiper-mini-container',
+    slidesPerView: 5,
+  },
+},
+              </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="inslider">
+          <h4 class="info-wrapper__title">XI Слайдер внутри слайдера (ОТКЛЮЧИТЬ ПЕРЕКЛЮЧЕНИЕ ПРИ КЛИКЕ НА СЛАЙД)</h4>
+          <br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b><br>
+&lt;div class="swiper-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;
+        &lt;div class="swiper-in-container"&gt;
+            &lt;!-- враппер --&gt;
+          &lt;div class="swiper-in-wrapper"&gt;
+            &lt;!-- слайды --&gt;
+            &lt;div class="swiper-in-slide"&gt;
+              &lt;div class="swiper-in-slide__image"&gt;
+                &lt;img&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="swiper-in-slide"&gt;
+              &lt;div class="swiper-in-slide__image"&gt;
+                &lt;img&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="swiper-in-slide"&gt;Slide 3&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">CSS</b><br>
+.swiper-in-container {
+  height: 450px;
+}
+
+.swiper-wrapper {}
+
+.swiper-in-slide {
+  height: 450px;
+}
+
+.swiper-in-slide__image img {
+  max-width: 100%;
+}
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Слайдер в слайдере
+new Swiper ('.swiper-in-container', {
+  // Курсор перетаскивания
+  grabCursor: true,
+  // Навигация
+  // Пагинация, текущее положение, прогрессбар
+  pagination: {
+    el: '.swiper-pagination',
+    // Буллеты
+    clickable: true,
+  },
+
+  // корректная работа перетаскивания/свайпа для дочернего слайдера
+  nested: true,
+});
+              </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="twoslider">
+          <h4 class="info-wrapper__title">XII ДВА СЛАЙДЕРА (КАРТИНКА+ТЕКСТ)</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b><br>
+&lt;div СЛАЙДЕР-КОНТЕЙНЕР-IMG&gt;КАРТИНКИ&lt;/div&gt;
+&lt;div class="text"&gt;Некий разделяющий объект&lt;/div&gt;
+&lt;div СЛАЙДЕР-КОНТЕЙНЕР-TEXT&gt;ТЕКСТ&lt;/div&gt;
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">CSS</b><br>
+/*Передача управления*/
+.text {
+  margin: 50px 0;
+  padding: 10px;
+  font-size: 25px;
+  line-height: 150%;
+  background-color: #77608d;
+  color: #fff;
+}
+.СЛАЙДЕР-КОНТЕЙНЕР-TEXT {}
+.СЛАЙДЕР-wrapper-TEXT {}
+.СЛАЙДЕР-slide-TEXT {
+  font-size: 25px;
+  line-height: 150%;
+  color: #fff;
+}
+.СЛАЙДЕР-slide-TEXT h2 {
+  font-size: 40px;
+  line-weight: 700;
+  margin: 0 0 15px 0;
+}
+              </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// ещё один слайдер
+new Swiper ('.СЛАЙДЕР-КОНТЕЙНЕР-TEXT', {
+  // кол-во слайдов для показа
+  slodesPerView: 3,
+  // Отступ между слайдами
+  spaceBetween: 30,
+});
+
+далее для слайдера-картинок присвоить переменную
+и также присвоить переменную для слайдера-текста
+
+//передача управления
+переменная-картинок.controller.control = переменная-текста
+переменная-текста.controller.control = переменная-картинок
+              </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="newslider">
+          <h4 class="info-wrapper__title">XIII ОБНОВЛЕНИЕ СЛАЙДЕРА</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+//К примеру: слайдер находится внутри таба. Для корректной работы самого слайдера при переключении на элемент таба, где находится слайдер необходимо прописать следующие функции
+
+// автоматическое обновление свайпера при изменении элементов слайдера
+observer: true,
+
+// автоматическое обновление свайпера при изменении родительских элементов слайдера
+observeParents: true,
+
+// автоматическое обновление свайпера при изменении дочерних элементов слайда
+observeSlideChildren: true,
+            </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="parallax">
+          <h4 class="info-wrapper__title">XIV ПАРАЛЛАКС-ЭФФЕКТ</h4><br>
+          <div class="info-wrapper__block">
+            <p class=" info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">HTML</b><br>
+&lt;div class="swiper-parallax-container"&gt;
+  <span style="color: red;">&lt;div class="swiper-parallax__bg" data-swiper-parallax="-20%"&gt;ФОН ДЛЯ ВСЕГО СЛАЙДЕРА&lt;/div&gt;</span>
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-parallax-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+      &lt;div class="swiper-parallax-slide"&gt;
+        &lt;h2 class="swiper-parallax__title" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2"</span>&gt;Слайд №1&lt;/h2&gt;
+        &lt;p class="swiper-parallax__text" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax="-300" data-swiper-parallax-duration="500"</span>&gt;TEXT&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="swiper-parallax-slide"&gt;
+        &lt;h2 class="swiper-parallax__title" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2"</span>&gt;Слайд №1&lt;/h2&gt;
+        &lt;p class="swiper-parallax__text" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax="-300" data-swiper-parallax-duration="500"</span>&gt;TEXT&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="swiper-parallax-slide"&gt;
+        &lt;h2 class="swiper-parallax__title" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2"</span>&gt;Слайд №1&lt;/h2&gt;
+        &lt;p class="swiper-parallax__text" <span style="color: red;">data-swiper-parallax-opacity="0" data-swiper-parallax="-300" data-swiper-parallax-duration="500"</span>&gt;TEXT&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+АТРИБУТЫ
+data-swiper-parallax=”-20%” – сдвиг фона
+data-swiper-parallax-opacity=”0” – прозрачность элемента
+data-swiper-parallax-scale=”0.2” - отвечает за масштаб
+data-swiper-parallax-duration=”500” - отвечает скорость проигрывания данного объекта
+            </pre>
+            </p><br>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">CSS</b><br>
+У МЕНЯ НЕ РАБОТАЕТ!!!
+            </pre>
+            </p><br>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Параллакс слайдер
+new Swiper ('.swiper-parallax-container', {
+  // включаем параллакс
+  parallax: true,
+
+  // скорость переключения
+  speed: 2000,
+
+  // стрелки
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+});
+            </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="virtual">
+          <h4 class="info-wrapper__title">XV ВИРТУАЛЬНЫЕ СЛАЙДЫ</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+              Виртуальные слайдеры, чтобы не заполнять html, можно создать через js, прописав нужное кол-во. В данном
+              случае 500 слайдов.
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// фомирование слайдера
+virtual: {
+    slides: (function () {
+      let slide = []
+      for (let I = 0; I &lt; 500; i++) {
+        slide.push(`&lt;div class=”swiper-container__text”&gt;Слайд №${i}&lt;/div&gt;`);
+      }
+      return slide;
+    }()),
+  },
+});
+            </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="availability">
+          <h4 class="info-wrapper__title">XVI ДОСТУПНОСТЬ (для пользователей с ограничениями)</h4><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+ally: {
+  // включить/выключить
+  enabled: true,
+
+  // сообщения
+  prevSlideMeassge: 'Previous slide',
+  nextSlideMessage: 'Next slide',
+  firstSlideMessage: 'This is the first slide',
+  lastSlideMessage: 'This is the last slide',
+  paginationBulletMessage: 'Go to slide {{index}}',
+  notificationClass: 'swiper-notification',
+  containerMessage: '',
+  containerRoleDescriptionMessage: '',
+  itemRoleDescriotionMessage: '',
+},
+            </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="methods">
+          <h4 class="info-wrapper__title">XVII Методы, параметры, события</h4><br>
+          <p class="info-wrapper__text">
+          <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Параметры
+
+// Получение
+let qSlides = myImageSlider.slides.length;
+
+// Изменение
+myImageSlider.params.speed = 3000;
+              </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+          <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// Методы
+
+// Обновить слайдер
+myImageSlider.update();
+
+// Переключится на слайд 2, скорость 800
+myImageSlider.slideTo(2, 800);
+              </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+          <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// События
+on: {
+  init: function () {
+    console.log('Слайдер запущен!');
+  },
+  //Событие смены слайда
+  slideChange: function () {
+    console.log('Слайд переключён');
+  },
+},
+});
+
+// Событие смены слайда
+myImageSlider.on('slideChange', function () {
+  console.log(‘Слайд переключён’);
+});
+              </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+          <pre>
+<b style="background-color: powderblue;">JS</b><br>
+//ПРИМЕР
+
+// Запуск автопрокрутки при наведении
+let sliderBlock = document.querySelector('.swiper-container');
+// myImageSlider - это переменная, которой присовен слайдер
+sliderBlock.addEventListener("mouseenter", function (e) {
+  myImageSlider.params.autoplay.disableOnInteraction = false;
+  myImageSlider.params.autoplay.delay = 500;
+  myImageSlider.autoplay.start();
+});
+sliderBlock.addEventListener("mouseleave", function (e) {
+  myImageSlider.autoplay.stop();
+});
+              </pre>
+          </p><br>
+          <div class="info-wrapper__block" style="display: flex; gap: 10px;">
+            <p class="info-wrapper__text">
+            <pre>
+              <b style="background-color: powderblue;">HTML</b><br>
+&lt;!-- контейнер слайдера --&gt;
+&lt;div class="swiper-container"&gt;
+  &lt;!-- враппер --&gt;
+  &lt;div class="swiper-wrapper"&gt;
+    &lt;!-- слайды --&gt;
+    &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- кнопки пагинации --&gt;
+  &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+
+  &lt;!-- кнопки для навигации --&gt;
+  &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+  &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+
+&lt;!--Фракция--&gt;
+  &lt;div class="swiper-container__fraction"&gt;
+    &lt;div class="swiper-container__current"&gt;&lt;/div&gt;
+    &lt;div class="swiper-container__sepparator"&gt;&lt;/div&gt;
+    &lt;div class="swiper-container__total"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">CSS</b><br>
+/*Фракция*/
+.swiper-container__fraction {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-container__current {}
+.swiper-container__sepparator {
+  margin: 0 15px;
+}
+.swiper-container__total {}
+            </pre>
+            </p>
+            <p class="info-wrapper__text">
+            <pre>
+<b style="background-color: powderblue;">JS</b><br>
+// фракция
+let mySliderAllSlides = document.querySelector('.swiper-container__total');
+let mySliderCurrentSlide = document.querySelector('.swiper-container__current');
+
+mySliderAllSlides.innerHTML = myImageSlider.slides.length;
+myImageSlider.on('slideChange', function () {
+  let currentSlide = ++myImageSlider.realIndex;
+  mySliderCurrentSlide.innerHTML = currentSlide;
+});
+            </pre>
+            </p>
+          </div>
+        </div><br><br><br><br><br>
+        <div class="info__wrapper info-wrapper" id="different">
+          <h4 class="info-wrapper__title">Общие настройки</h4><br>
+          <p class="info-wrapper__text">
+            Стартовый слайд (НАЧИНАЕТСЯ С 0)
+          <pre>
+initialSlide: 0,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Автовысота
+          <pre>
+autoHeight: true,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Мультирядность (автовысоту необходимо отключить и slidesPerView: 2, чтобы листать слайды) (ВАЖНО:
+            slidesPerView не будет работать, если больше одного ряда)
+          <pre>
+<b>JS</b>
+slidesPerColumn: 2,
+
+<b>CSS</b>
+.swiper-container {
+  height: 700px;
+}
+.swiper-container .swiper-slide {
+  height: calc ((100% - 30px) / 2);
+  overflow: hidden;
+}
+          </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Управление клавиатурой
+          <pre>
+keyboard: {
+  // Включить/выключить
+  enabled: true,
+  // Включить/выключить
+  // только когда слайдер в пределах вьюпорта
+  onlyInViewport: true,
+  // Включить/выключить
+  // управление клавишами pageUp, pageDown
+  pageUpDown: true,
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Управление колесом мыши
+          <pre>
+mousewheel: {
+  //Чувствительность колеса мыши
+  sensitivity: 1,
+  // Класс объекта на котором будет срабатывать прокрутка мышью
+  // eventsTarget: ".image-slider"
+},
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Включение/отключение, перетаскивание на ПК
+          <pre>
+simulateTouch: true,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            чувствительность свайпа
+          <pre>
+touchRadio: 1,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            угол срабатывания свайпа/перетаксивания
+          <pre>
+touchAngle: 45,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            курсор перестаскивания
+          <pre>
+grabCursor: true,
+            </pre>
+          </p><br>
+          <p class="info-wrapper__text">
+            Переключение при клике на слайд
+          <pre>
+slideToClickedSlide: true, // НЕ РАБОТАЕТ У МЕНЯ
+            </pre>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- контейнер слайдера -->
+    <div class="swiper-container">
+      <!-- враппер -->
+      <div class="swiper-wrapper">
+        <!-- слайды -->
+        <div class="swiper-slide" style="background-image: url('img/slides/slides/01.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('img/slides/slides/02.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('img/slides/slides/03.jpg');"></div>
+        <!-- кнопки для навигации -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__container">
+      <a class="footer__topbutton" href="#" title="Вернуться к началу">&#8679; Наверх</a>
+    </div>
+  </footer>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="links/js/slick.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/slides-slick.js"></script>
+  <script>
+    'use strict'
+    // slick
+    $(document).ready(function () {
+      $('.slick__slider').slick({
+        arrows: false, // стрелки переключения
+        fade: true,
+        autoplay: 3000, // время автопереключения
+        dots: true // точки переключения
+      });
+    });
+  </script>
+</body>
+
+</html>

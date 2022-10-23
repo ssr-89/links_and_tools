@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Light"), url("../fonts/MullerLight.woff2") format("woff2"),
+    url("../fonts/MullerLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Regular"), url("../fonts/MullerRegular.woff2") format("woff2"),
+    url("../fonts/MullerRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Medium"), url("../fonts/MullerMedium.woff2") format("woff2"),
+    url("../fonts/MullerMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: local("Muller-Bold"), url("../fonts/MullerBold.woff2") format("woff2"),
+    url("../fonts/MullerBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+body {
+  font-weight: normal;
+  font-family: "Muller", Verdana, Tahoma, sans-serif;
+  font-size: 100%;
+  line-height: 1;
+  background-color: Gainsboro;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: lightgray;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 50px 100px;
+  max-width: 1400px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 56px;
+  text-align: center;
+}
+
+/*HEADER*/
+.header {
+  background-color: rgba(70, 130, 180, 1);
+}
+
+/*FOCUS*/
+.focus__title {
+  margin: 0 0 20px;
+}
+.focus-border {
+  margin: 0 0 50px;
+}
+.focus-border__title {
+  margin: 0 0 10px;
+}
+.text-primer {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 20px;
+  padding: 10px;
+  font-weight: 700;
+  color: red;
+}
+.text-primer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  background: none;
+}
+.focus-border__text-primer:focus::before {
+  border: 1px solid red;
+}
+.focus-border__inner:not(:last-child) {
+  margin: 0 0 30px;
+}
+pre {
+  padding: 20px;
+  background-color: powderblue;
+}
+.focus-background__title {
+  margin: 0 0 10px;
+}
+.focus-background__text-primer span {
+  position: relative;
+  z-index: 1;
+}
+.focus-background__text-primer:focus span {
+  color: #fff;
+}
+.focus-background__text-primer:focus::before {
+  background-color: red;
+}
+.focus-background__inner:not(:last-child) {
+  margin: 0 0 30px;
+}

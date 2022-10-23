@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BURGER SEARCH TOOLTIP</title>
+  <link rel="stylesheet" href="css/burger-search-tooltip.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">BURGER SEARCH TOOLTIP</h1>
+      <div class="header__row-top row-top">
+        <nav class="row-top__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="tools.html">Главная страница</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="select.html">Select</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="slides.html">Slides</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="accordion.html">Accordion</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="tabs.html">Tabs</a>
+            </li><br>
+            <li class="menu__item">
+              <p style="color: rgb(27, 245, 27);">Содежание страницы:</p>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#burger">BURGER</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#search">SEARCH</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#tooltip">TOOLTIP</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="burger" id="burger">
+    <div class="burger__container">
+      <h2 class="burger__title">BURGER</h2>
+      <div class="burger__wrapper wrapper">
+        <div class="wrapper__html html">
+          <h3 class="html__title">HTML</h3><br>
+          <p class="html__text">
+            <b>МЕНЮ</b>
+          <pre>
+&lt;nav class="header__menu menu"&gt;
+&lt;ul class="menu__list"&gt;
+  &lt;li class="menu__item"&gt;
+    &lt;a class="menu__link" href="#"&gt;HOME&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="menu__item"&gt;
+    &lt;a class="menu__link" href="#"&gt;ABOUT US&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="menu__item"&gt;
+    &lt;a class="menu__link" href="#"&gt;PRODUCT&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="menu__item"&gt;
+    &lt;a class="menu__link" href="#"&gt;CONTACTS&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+              </pre>
+          </p>
+          =============================<br><br>
+          <p class="html__text">
+            <b>КНОПКА БУРГЕРА</b>
+          <pre>
+&lt;button class="header__burger burger"&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/button&gt;
+              </pre>
+          </p>
+        </div>
+        <div class="wrapper__css css">
+          <h3 class="css__title">CSS</h3><br>
+          <p class="css__text">
+            <b>ПАССИВНОЕ СОСТОЯНИЕ МЕНЮ</b>
+          <pre>
+.menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  margin: 0;
+  margin-top: -100%;
+  padding: 50px;
+  box-shadow: 0 0 5px #888;
+  background-color: #fff;
+  transition: margin-top .7s ease-in-out;
+  opacity: 0.9;
+}
+
+.nav__list {
+  flex-direction: column;
+}
+
+.nav__link {
+  font-size: 18px;
+}
+            </pre>
+          </p>
+          =============================<br><br>
+          <p class="css__text">
+            <b>ПАССИВНОЕ СОСТОЯНИЕ КНОПКИ БУРГЕРА</b>
+          <pre>
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+  margin: 0;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  border: 1px solid #3172b9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.burger span {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #3172b9;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3172b9;
+}
+.burger span::before {
+  top: 8px;
+}
+.burger span::after {
+  bottom: 8px;
+}
+            </pre>
+          </p>
+          =============================<br><br>
+          <p class="css__text">
+            <b>АКТИВНОЕ СОСТОЯНИЕ МЕНЮ</b>
+          <pre>
+.menu.active {
+  margin-top: 0;
+}
+            </pre>
+          </p>
+          =============================<br><br>
+          <p class="css__text">
+            <b>АКТИВНОЕ СОСТОЯНИЕ КНОПКИ БУРГЕРА</b>
+          <pre>
+.burger {
+  display: flex;
+}
+
+.burger.active span {
+  background: none;
+}
+.burger.active span::before,
+.burger.active span::after {
+  top: 0;
+  transition-delay: 0s, 0.3s;
+}
+.burger.active span::before {
+  transform: rotate(-45deg);
+}
+.burger.active span::after {
+  transform: rotate(45deg);
+}
+            </pre>
+          </p>
+        </div>
+        <div class="wrapper__js js">
+          <h3 class="js__title">JS</h3><br>
+          <p class="js__text">
+            <b>СОЗДАНИЕ ПЕРЕМЕННЫХ</b>
+          <pre>
+"use strict";
+// burger
+let burger = document.querySelector(".burger");
+let menu = document.querySelector(".menu");
+let menuLinks = menu.querySelectorAll(".menu__link");
+            </pre>
+          </p>
+          =============================<br><br>
+          <p class="js__text">
+            <b>ПРИСВОЕНИЕ КЛАССА active И АКТИВАЦИЯ МЕНЮ И КНОПКИ БУРГЕРА</b>
+          <pre>
+// EventListener() - слушает наш клик и открывает меню
+burger.addEventListener("click", function () {
+  burger.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+            </pre>
+          </p>
+          =============================<br><br>
+          <p class="js__text">
+            <b>ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ НА ЭЛЕМЕНТ МЕНЮ.</b>
+          <pre>
+// закрывает меню при клике на элемент меню
+menuLinks.forEach(function (el) {
+  el.addEventListener("click", function () {
+    burger.classList.remove("active");
+    menu.classList.remove("active");
+  });
+});
+            </pre>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="search" id="search">
+    <div class="search__container">
+      <h2 class="search__title">SEARCH</h2>
+      <div class="search__wrapper wrapper">
+        <div class="wrapper__html html">
+          <h3 class="html__title">HTML</h3><br>
+          <pre>
+&lt;div class="search-block"&gt;
+  &lt;form class="form-search" action="#" method="post"&gt;
+    &lt;input type="text" placeholder="Введите текст"&gt;
+    &lt;button&gt;Найти&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;button class="search"&gt;<b><u>svg-картинка</u></b>&lt;/button&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="wrapper__css css">
+          <h3 class="css__title">CSS</h3><br>
+          <pre>
+.search-block {
+  position: relative;
+  width: 40%;
+  overflow: hidden;
+}
+form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(120%);
+  transition: all .2s ease-in-out;
+}
+.active {
+  transform: translateX(0);
+}
+          </pre>
+        </div>
+        <div class="wrapper__js js">
+          <h3 class="js__title">JS</h3><br>
+          <pre>
+const search = document.querySelector(".form-search");
+const btn = document.querySelector(".search");
+
+btn.addEventListener("click", function () {
+  search.classList.toggle("active");
+});
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="tooltip" id="tooltip">
+    <div class="tooltip__container">
+      <h2 class="tooltip__title">TOOLTIP</h2>
+      <div class="wrapper__html html">
+        <h3 class="html__title">HTML</h3><br>
+        <pre>
+&lt;p&gt;
+  Когда человек сознательно или интуитивно выбирает себе в жизни какую-то цель, жизненную задачу, он невольно <b style="color: red;">&lt;span class="tooltip-container txt2"&gt;
+  &lt;span class="tooltip"&gt;i&lt;/span&gt;&lt;/span&gt;</b> дает себе оценку. По тому, ради чего человек живет, можно судить и о его <b style="color: green;">&lt;span class="tooltip-container tooltip-2"&gt;
+  &lt;span class="tooltip"&gt;i&lt;/span&gt;&lt;/span&gt;</b> самооценке - низкой или высокой.
+&lt;/p&gt;
+          </pre>
+      </div>
+      <div class="wrapper__css css">
+        <h3 class="css__title">CSS</h3><br>
+        <p class="css__text">
+          <b>ПАССИВНОЕ СОСТОЯНИЕ КОНТЕЙНЕРА ТУЛТИП И САМОГО ТУЛТИП</b>
+        <pre>
+            <b style="color: red;">
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+            </b>
+            <b style="color:green;">
+.tooltip {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: orange;
+  color: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+            </b>
+          </pre>
+        </p><br>
+        <p class="css__text">
+          <b>АКТИВНОЕ СОСТОЯНИЕ ТУЛТИП</b>
+        <pre>
+            <b style="color: red;">
+.tooltip-container:before {
+  content: "Tooltip test text";
+  position: absolute;
+
+  transform: translate(calc(-100%/2 + 10px), calc(-100% - 10px));
+  max-width: max-content;
+  width: 100vh;
+  background-color: #333;
+  color: #fff;
+
+  padding: 10px;
+  box-sizing: border-box;
+  display: none;
+  word-wrap: break-word;
+}
+
+.tooltip-container:after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top: 10px solid #333;
+  display: none;
+}
+
+.tooltip-container:hover:before,
+.tooltip-container:hover:after {
+  display: inline-block;
+}
+            </b>
+.txt2:before {
+  content: "none"
+}
+            </pre>
+        </p>
+      </div>
+    </div>
+  </section>
+  <script src="#"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/focus-hover-active.css">
+  <title>Focus, hover, active</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">
+        Focus, hover, active
+      </h1>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link" href="tools.html">Главная страница</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="validation-scroll.html">Form Validation, Scroll</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="radio-checkbox.html">Radio, Checkbox</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="select.html">Select</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="slides.html">Slides</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="accordion.html">Accordion</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="tabs.html">Tabs</a>
+          </li><br>
+          <li class="menu__item">
+            <p style="color: rgb(27, 245, 27);">Содежание страницы:</p>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#focus">FOCUS</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#hover">HOVER</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#active">ACTIVE</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="focus" id="focus">
+      <div class="focus__container">
+        <h2 class="focus__title">FOCUS</h2>
+        <div class="focus__wrapper focus-border">
+          <h3 class="focus-border__title">Focus border</h3>
+          <a class="focus-border__text-primer text-primer" href="#!">
+            TEXT-PRIMER
+          </a>
+          <div class="focus-border__inner">
+            <h4 class="focus-border__heading">HTML</h4>
+            <pre>
+&lt;a class="primer" href="#!"&gt;TEXT-PRIMER&lt;/a&gt;
+            </pre>
+          </div>
+          <div class="focus-border__inner">
+            <h4 class="focus-border__heading">CSS</h4>
+            <pre>
+.primer {
+  position: relative;
+}
+
+.primer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  background: none;
+}
+
+.primer:focus::before {
+  border: 1px solid ewd;
+}
+            </pre>
+          </div>
+        </div>
+        <div class="focus__wrapper focus-background">
+          <h3 class="focus-background__title">Focus background</h3>
+          <a class="focus-background__text-primer text-primer" href="#!">
+            <span>TEXT-PRIMER</span>
+          </a>
+          <div class="focus-background__inner">
+            <h4 class="focus-background__heading">HTML</h4>
+            <pre>
+&lt;a class="primer" href="#!"&gt;
+  &lt;span&gt;TEXT-PRIMER&lt;/span&gt;
+&lt;/a&gt;
+            </pre>
+          </div>
+          <div class="focus-background__inner">
+            <h4 class="focus-background__heading">CSS</h4>
+            <pre>
+.primer {
+  position: relative;
+}
+
+.primer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  background: none;
+}
+
+.primer span {
+  position: relative;
+  z-index: 1;
+}
+
+.primer:focus span {
+  color: #fff;
+}
+
+.primer:focus::before {
+  background-color: red;
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+</body>
+
+</html>
