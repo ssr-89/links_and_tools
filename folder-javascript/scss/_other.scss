@@ -1,0 +1,17 @@
+.search,
+.offset,
+.node,
+.document {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+.offset__primer {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.offset__block {
+  padding: 20px;
+  background-color: rgba(176, 224, 230, 1);
+}

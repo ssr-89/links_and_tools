@@ -8,6 +8,7 @@
   <title>JavaScript</title>
   <link rel="shortcut icon" href="img/javascript.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/js-style.css">
+  <link rel="stylesheet" href="css/breakpoints.css">
   <script defer src="js/javascript.js"></script>
   <script defer src="js/primer.js"></script>
 </head>
@@ -31,19 +32,19 @@
             <a class="header-menu__link reset-link" href="#operators">Операторы</a>
           </li>
           <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#cycle">Циклы</a>
+          </li>
+          <li class="header-menu__item">
+            <a class="header-menu__link reset-link" href="#array">Массивы</a>
+          </li>
+          <li class="header-menu__item">
             <a class="header-menu__link reset-link" href="#functions">Функции</a>
           </li>
           <li class="header-menu__item">
             <a class="header-menu__link reset-link" href="#objects">Объекты</a>
           </li>
           <li class="header-menu__item">
-            <a class="header-menu__link reset-link" href="#array">Массивы</a>
-          </li>
-          <li class="header-menu__item">
             <a class="header-menu__link reset-link" href="#method">Методы</a>
-          </li>
-          <li class="header-menu__item">
-            <a class="header-menu__link reset-link" href="#cycle">Циклы</a>
           </li>
           <li class="header-menu__item">
             <a class="header-menu__link reset-link" href="#other">Справочник JavaScript</a>
@@ -809,6 +810,8 @@ switch (fruit) {
 <b>typeof null</b> // "object"  (2)
 
 <b>typeof alert</b> // "function"  (3)
+
+<b>typeof function(){}</b> // "function"  (4)
               </pre>
             </div>
           </div>
@@ -836,751 +839,6 @@ switch (fruit) {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="functions" id="functions">
-      <div class="functions__container">
-        <h2 class="functions__title section-title title">Функции</h2>
-        <nav class="functions__menu section-menu">
-          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
-          <ul class="section-menu__list reset-list">
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#modal-function">alert,
-                prompt, confim</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#parse">Функции для чисел</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#string-function">Функции для строк</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#function">function</a>
-            </li>
-            <li class="section-menu__item">
-              <a href="#function-argument-parameter" class="section-menu__link reset-link">Аргументы и параметры function</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#function-return">function return</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#function-name">Имена function</a>
-            </li>
-            <!-- <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#"></a>
-            </li> -->
-          </ul>
-        </nav>
-        <div data-spollers data-one-spoller class="functions-block block-accordion">
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="modal-function">alert, prompt, confim</button>
-            <div class="block-accordion__modal-function modal-function">
-              <a target="_blank" class="modal-fucntion__link link reset-link" href="https://learn.javascript.ru/alert-prompt-confirm">Источник</a>
-              <div class="modal-function__wrapper">
-                <p class="modal-function__descr accordion-descr text">alert</p>
-                <p class="modal-function__descr text">
-                  Функция <b>alert</b> выводит результат кода, который был указан для вывода, в виде модального окна.
-                </p>
-                <br>
-                <p class="modal-function__descr text">
-                  При этом интерфейс остальной части страницы блокируется пока модальное окно не будет закрыто.
-                </p>
-                <br>
-                <pre>
-var a = "Hello";
-
-alert(a);
-                </pre>
-                <p class="modal-function__descr text">
-                  Данная функция показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».
-                </p>
-              </div>
-              <br><br>
-              <div class="modal-function__wrapper">
-                <p class="modal-function__descr accordion-descr text">prompt</p>
-                <br>
-                <p class="modal-function__descr text">
-                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с полем для ввода</b>
-                </p>
-                <p class="modal-function__descr text">
-                  <b>let puck = prompt("Test", '');</b> // для IE
-                </p>
-                <br>
-                <p class="modal-function__descr text">
-                  <b>let puck = prompt("Сколько тебе лет?", [] или "" или "100");</b><br>
-                  <b>alert(`Тебе ${puck} лет!`);</b> // Тебе 100 лет!
-                </p>
-              </div>
-              <br><br>
-              <div class="modal-function__wrapper">
-                <p class="modal-function__descr accordion-descr text">confim</p>
-                <br>
-                <p class="modal-function__descr text">
-                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с вопросом и вариантами ответа</b>
-                </p>
-                <p class="modal-function__descr text">
-                  <b>let isBoss = confirm("Ты здесь главный?");</b><br>
-                  <b>alert(isBoss);</b> // true, если нажата OK
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="parse">Функции для
-              чисел: parseInt() и
-              parseFloat()</button>
-            <div class="block-accordion__parse parse">
-              <p class="parse__descr accordion-descr text">
-                Функции parseInt и parseFloat применяются к числам.
-              </p>
-              <div class="parse__wrapper">
-                <p class="parse__descr text">
-                  <b>parseInt()</b> - отбрасывает дробные части и выводит только целое число
-                </p>
-                <pre>
-<b>const john = parseInt(10.333);</b>
-<b>console.log(john);</b> // 10
-                </pre>
-              </div>
-              <br><br>
-              <div class="parse__wrapper">
-                <p class="parse__descr text">
-                  <b>parseFloat()</b> - возвращает число каким оно должно быть. Целое - целым, дробное - дробным.
-                </p>
-                <pre>
-<b>const john = parseFloat(10.333);</b>
-<b>console.log(john);</b> // 10.333
-                </pre>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="string-function">Функции для строк</button>
-            <div class="block-accordion__string-function string-function">
-              <p class="string-function__descr accordion-descr text">
-                Данные функции применяются для строк
-              </p>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>charAt()</b> возвращает символ, находящийся в указанной позиции в строке. Обратите внимание на то, что отсчёт позиций начинается с 0.
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.charAt(3));</b> // возвращает "a"
-                </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>concat()</b> - присоединяет к строке одну или несколько строк и возвращает объединённую строку.
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.concat(" - это круто!!!"));</b> // возвращает "Javascript - это круто!!!"
-                </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>indexOf()</b> - выполняет поиск первого вхождения символа или подстроки в данной строке и возвращает номер соответствующей позиции.
-                </p>
-                <pre>
-<b>const string = "Javascript - это здорово!";</b>
-<b>console.log(string.indexOf("здорово"));</b> // возвращает 17, т.к. буква "з" на 17 позиции
-                </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>split()</b> - разбивает строку на массив подстрок.
-                </p>
-                <pre>
-<b>const string = "Javascript - это здорово!";</b>
-<b>console.log(string.split("з"));</b> // возвращает ["Javascript - это ", "дорово!"]
-                </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>substr()</b> - извлекает часть строки, начиная с указанной позиции, и возвращает указанное кол-во символов.
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.substr(2,5));</b> // возвращает "vascr"
-              </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>substring()</b> - извлекает символы строки, заключённые между указанными позициями (символ, соответствующий концу диапазона, в результат не включается).
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.substring(2,5));</b> // возвращает "vas"
-                </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>toLowerCase()</b> - переводит указанные символы строки в нижний регистр.
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.toLowerCase());</b> // возвращает "javascript"
-              </pre>
-              </div>
-              <br><br>
-              <div class="string-function__wrapper">
-                <p class="string-function__descr text">
-                  <b>toUpperCase()</b> - переводит указанные символы строки в верхний регистр.
-                </p>
-                <pre>
-<b>const string = "Javascript";</b>
-<b>console.log(string.toUpperCase());</b> // возвращает "JAVASCRIPT"
-                </pre>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function">function</button>
-            <div class="block-accordion__function function">
-              <div class="function__wrapper">
-                <pre>
-<i>Саму функцию можно вызвать до её объявления</i>
-printWeekday(); <i>// вызов функции до её объявления</i>
-
-function printWeekday() {
-  var dayIndex = new Date().getDay();
-  var days = [
-    'воскресенье',
-    'понедельник',
-    'вторник',
-    'среда',
-    'четверг',
-    'пятница',
-    'суббота',
-  ];
-  console.log(`Сегодня ${days[dayIndex]}`);
-}
-                </pre>
-                <pre>
-<i>Функцию, указанную значением переменной, можно вызвать только после объявления переменной</i>
-var primerName = function() {
-  var dayIndex = new Date().getDay();
-  var days = [
-    'воскресенье',
-    'понедельник',
-    'вторник',
-    'среда',
-    'четверг',
-    'пятница',
-    'суббота',
-    ];
-  console.log(`Сегодня ${days[dayIndex]}`);
-};
-primerName(); <i>// вызов функции после объявления переменной в которой функция является значением</i>
-                </pre>
-              </div>
-              <br><br>
-              <div class="function__wrapper">
-                <p class="function__descr accordion-descr text">Самовыполняющиеся анонимная функция функция</p>
-                <p class="function__descr text">
-                  Что сделать самовыполняющуюся функцию необходимо функцию добавить в круглые скобки и в конце пару пустых круглых скобок добавить.
-                </p>
-                <pre>
-<code style="display: block;">
-(function() {
-  ...
-})();
-</code>
-
-var  myVariable = "Я нахожусь вне функции.";(function() {
-  var myVariable = "Я нахожусь в этой анонимной функции";
-  console.log(myVariable);
-})();
-console.log(myVariable);
-                </pre>
-              </div>
-              <br><br>
-              <div class="function__wrapper">
-                <p class="function__descr accordion-descr text">Возведение в степень без объекта Math.pow</p>
-                <pre>
-function pow(x, n) {
-  let result = x;
-
-  for (let i = 1; i &lt; n; i++) {
-    result *= x;
-  }
-
-  return result;
-}
-
-let x = prompt("x?", '');
-let n = prompt("n?", '');
-
-if (n &lt; 1) {
-  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-} else {
-  alert( pow(x, n) );
-}
-                </pre>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-argument-parameter">Аргументы и параметры function</button>
-            <div class="block-accordion__function-argument function-argument-parameter">
-              <div class="function-argument-parameter__wrapper">
-                <p class="function-argument-parameter__descr accordion-descr text">ВАЖНО: примитивные (элементарные) типы данных для аргументов: <code>number, string, boolean, undefined, null</code></p>
-                <pre>
-function <i>ИМЯ ФУНКЦИИ</i>(<i>ПАРАМЕТР, ПАРАМЕТР</i>) {
-  <i>ИНСТРУКЦИЯ ФУНКЦИИ</i>
-}
-<i>ИМЯ ФУНКЦИИ</i>(<i>АРГУМЕНТ, АРГУМЕНТ</i>);
-                </pre>
-              </div>
-              <br><br>
-              <div class="function-argument-parameter__wrapper">
-                <p class="function-argument-parameter__descr accordion-descr text">ПРИМЕНЕНИЕ ОБЪЕКТА <code>arguments</code> В ФУКНЦИИ С ПРЕВЫШЕНИЕМ КОЛ-ВО АРГУМЕНТОВ НАД КОЛ-ВОМ ПАРАМЕТРОВ</p>
-                <pre>
-function flexMobile() {
-  var welcome = 'Добро пожаловать, ';
-  for (i = 0; i &lt; arguments.length; i++) {
-    welcome = welcome + arguments[i] + '';
-  }
-  return welcome;
-}
-console.log(flexMobile(("Christopher", "James", "Phoenix", "Minnick") + "&lt;br&gt;"));
-console.log(flexMobile(("Eva", "Ann", "Holland") + "&lt;br&gt;"));
-                </pre>
-              </div>
-              <br><br>
-              <div class="function-argument-parameter__wrapper">
-                <p class="function-argument-parameter__descr accordion-descr text">Функция с 2-мя аргументами</p>
-                <pre>
-<i>// при этом второй аргумент имеет значение по умолчанию</i>
-function findCard(cards, wantedCard = "Туз") { <i>// cards и wantedCard со значением - это ПАРАМЕТРЫ</i>
-  console.log("Ищем в колоде карту " + wantedCard);
-
-  let found = false;
-
-  for (let card of cards) {
-    console.log(`Из колоды вытянута карта ${card}`);
-    if (card === wantedCard) {
-      found = true;
-      break;
-    }
-  }
-  console.log(
-    found
-      ? `Мы нашли карту ${wantedCard}!`
-      : `В колоде нет карты ${wantedCard} :(`
-  );
-}
-
-let myCards = ["2", "Король", "Туз", "5", "6", "Король"];
-
-// ищем туза в переданной колоде карт
-findCard(myCards);
-// ищем пятёрку в переданной колоде карт
-findCard(myCards, "5"); <i>// myCards и "5" - это АРГУМЕНТЫ</i>
-
-<i>
-/*
-Вернёт:
-"Ищем в колоде карту Туз"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта Туз"
-"Мы нашли карту Туз!"
-"Ищем в колоде карту 5"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта Туз"
-"Из колоды вытянута карта 5"
-"Мы нашли карту 5!"
-*/
-ПОСЛЕ ТОГО, КАК НАШЁЛСЯ "ТУЗ" ФУНКИЦЯ ЗАПУСКАЕТСЯ СНОВА И ИЩЕТ "5"
-</i>
-                </pre>
-                <p class="function-argument-parameter__descr accordion-descr text">Пример работы функции</p>
-                <img class="function-argument-parameter__img img" src="img/function/argument-function.jpg" alt="Пример очерёдности действий функции">
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-return">return function</button>
-            <div class="block-accordion__function-return function-return">
-              <div class="function-return__wrapper">
-                <p class="function-return__descr accordion-descr text">
-                  Директива <code>return</code> может находиться в любом месте тела функции. Как только выполнение доходит до этого места, функция останавливается, и значение возвращается в вызвавший её код (присваивается переменной <code>result</code> выше).
-                </p>
-                <pre>
-function sum(a, b) {
-  return a + b;
-}
-
-let result = sum(1, 2);
-alert(result); <i>// 3</i>
-                </pre>
-                <p class="function-return__descr text">
-                  <b>
-                    ВАЖНО! <code>return</code> и его значение НЕОБХОДИМО писать в одну строку, либо значение прописать в круглых скобках и разместить в несколько строк, <br>иначе <code>return</code> будет пустым, что равняется <code>undefined</code>.
-                  </b>
-                </p>
-              </div>
-              <br><br>
-              <div class="function-return__wrapper">
-                <p class="function-return__descr accordion-descr text">return 1</p>
-                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/OJzEQgY?editors=0012">Codepen</a>
-                <pre>
-function findCardIndex(cards, wantedCard = "Туз") {
-  console.log("Ищем в колоде карту " + wantedCard);
-
-  let foundIndex = -1;
-
-  for (let index in cards) {
-    let card = cards[index];
-    console.log(`Из колоды вытянута карта ${card}`);
-    if (card === wantedCard) {
-      foundIndex = index;
-      break;
-    }
-  }
-  <i>// ВАРИАНТ №1</i>
-  console.log(
-    foundIndex &gt; -1
-      ? `Мы нашли карту ${wantedCard}!`
-      : `В колоде нет карты ${wantedCard} :(`
-  );
-
-  <i>
-  /*
-  ВАРИАНТ №2
-  if (foundIndex &gt; -1) {
-    console.log(`Мы нашли карту ${wantedCard}!`);
-  } else {
-    console.log(`В колоде нет карты ${wantedCard} :(`);
-  }
-  */
-  </i>
-  return foundIndex;
-}
-
-let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
-
-let aceIndex = findCardIndex(myCards);
-let jackIndex = findCardIndex(myCards, "Валет");
-
-console.log(aceIndex + " - показывает кол-во перебранных карт");
-console.log(jackIndex);
-
-<i>
-"Ищем в колоде карту Туз"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта 7"
-"Из колоды вытянута карта Туз"
-"Мы нашли карту Туз!"
-"Ищем в колоде карту Валет"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта 7"
-"Из колоды вытянута карта Туз"
-"Из колоды вытянута карта 5"
-"Из колоды вытянута карта 6"
-"Из колоды вытянута карта Дама"
-"В колоде нет карты Валет :("
-"3 - показывает кол-во перебранных карт"
--1
-</i>
-                </pre>
-              </div>
-              <br><br>
-              <div class="function-return__wrapper">
-                <p class="function-return__descr accordion-descr text">return 2</p>
-                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQOQ?editors=0012">Codepen</a>
-                <pre>
-function findCardIndex(cards, wantedCard = "Туз") {
-  console.log("Ищем в колоде карту " + wantedCard);
-
-  for (let index in cards) {
-    let card = cards[index];
-    console.log(`Из колоды вытянута карта ${card}`);
-    if (card === wantedCard) {
-      console.log(`Мы нашли карту ${wantedCard}!`);
-      return index;
-    }
-  }
-  console.log(`В колоде нет карты ${wantedCard} :(`);
-  return -1;
-}
-
-let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
-findCardIndex(myCards);
-findCardIndex(myCards, "Валет");
-
-<i>
-"Ищем в колоде карту Туз"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта 7"
-"Из колоды вытянута карта Туз"
-"Мы нашли карту Туз!"
-"Ищем в колоде карту Валет"
-"Из колоды вытянута карта 2"
-"Из колоды вытянута карта Король"
-"Из колоды вытянута карта 7"
-"Из колоды вытянута карта Туз"
-"Из колоды вытянута карта 5"
-"Из колоды вытянута карта 6"
-"Из колоды вытянута карта Дама"
-"В колоде нет карты Валет :("
-</i>
-                </pre>
-              </div>
-              <br><br>
-              <div class="function-return__wrapper">
-                <p class="function-return__descr accordion-descr text">return 3</p>
-                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/zYpaReR?editors=0012">Codepen</a>
-                <pre>
-function checkAge(age) {
-  console.log(`Вам ${age} лет`);
-  if (age &gt;= 18) return;
-  console.log("Школота!");
-  console.log(`Потерпи ещё ${18 - age} лет до совершеннолетия`);
-}
-
-// все сообщения будут выведены
-checkAge(2);
-
-// функция перестанет выполняться после первого сообщения
-checkAge(23);
-checkAge(18);
-
-<i>
-"Вам 2 лет"
-"Школота!"
-"Потерпи ещё 16 лет до совершеннолетия"
-"Вам 23 лет"
-"Вам 18 лет"
-</i>
-                </pre>
-              </div>
-              <br><br>
-              <div class="function-return__wrapper">
-                <p class="function-return__descr accordion-descr text">return 4 and undefined</p>
-                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQzL?editors=0012">Codepen</a>
-                <pre>
-function doNothing() {
-  console.log("Я ничего не делаю!");
-}
-
-console.log(doNothing()); // undefined
-let x = doNothing();
-console.log(x); // undefined
-
-let y;
-console.log(y);
-
-<i>
-"Я ничего не делаю!"
-undefined
-"Я ничего не делаю!"
-undefined
-undefined
-</i>
-                </pre>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-name">Имена function</button>
-            <div class="block-accordion__function-name function-name">
-              <div class="function-name__wrapper">
-                <pre>
-showMessage(..)     <i>// показывает сообщение</i>
-getAge(..)          <i>// возвращает возраст (получая его каким-то образом)</i>
-calcSum(..)         <i>// вычисляет сумму и возвращает результат</i>
-createForm(..)      <i>// создаёт форму (и обычно возвращает её)</i>
-checkPermission(..) <i>// проверяет доступ, возвращая true/false</i>
-                </pre>
-                <p class="function-name__descr accordion-descr text"></p>
-                <p class="function-name__descr text"></p>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="JJJ">ЗАГОЛОВОК</button>
-            <div class="block-accordion__--- ---">
-              <div class="---__wrapper">
-                <p class="---__descr accordion-descr text"></p>
-                <p class="---__descr text"></p>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-    <section class="objects" id="objects">
-      <div class="objects__container">
-        <h2 class="objects__title section-title title">Объекты</h2>
-        <nav class="objects__menu section-menu">
-          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
-          <ul class="section-menu__list reset-list">
-            <!-- <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href=""></a>
-            </li> -->
-          </ul>
-        </nav>
-        <div data-spollers data-one-spoller class="objects-block block-accordion">
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="math">Math</button>
-            <div class="block-accordion__math math">
-              <a target="_blank" class="math__link link reset-link" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math">Источник</a>
-              <div class="math__wrapper">
-                <p class="math__descr accordion-descr text">
-                  Объект Math является встроенным объектом, хранящим в своих свойствах и методах различные математические константы и функции.
-                </p>
-                <br>
-                <p class="math__descr accordion-descr text">
-                  Объект Math не является функциональным объектом.
-                </p>
-                <br>
-                <p class="math__descr accordion-descr text">
-                  Math не работает с числами типа BigInt.
-                </p>
-                <br>
-                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="WNJXOPx" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/WNJXOPx">
-                      2.5JS-функции Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
-                    on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
-                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                <br>
-                <br>
-                <br>
-                <br>
-                <p class="math__descr accordion-descr text">
-                  Практика сравнения чисел и Math
-                </p>
-                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="eYerGPZ" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/eYerGPZ">
-                      2.7JS-Практика сравнения чисел и Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
-                    on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
-                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
-            <div class="block-accordion__--- ---">
-
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-    <section class="array" id="array">
-      <div class="array__container">
-        <h2 class="array__title section-title title">Массивы</h2>
-        <nav class="array__menu section-menu">
-          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
-          <ul class="section-menu__list reset-list">
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="№array-features">Свойства массива</a>
-            </li>
-            <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="№method-array">Методы массивов</a>
-            </li>
-            <!-- <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href=""></a>
-            </li> -->
-          </ul>
-        </nav>
-        <div data-spollers data-one-spoller class="array-block block-accordion">
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="array-features">Свойства массива (точечная нотация)</button>
-            <div class="block-accordion__array-features array-features">
-              <div class="array-features__wrapper">
-                <pre>
-<b>array.prototype</b> <i>позволяет добавлять свойства и методы в объект Array</i>
-<b>array.constructor</b> <i>ссылка на функцию, создавшую прототип объекта Array</i>
-<b>array.length</b> <i>возвращает или устанавливает кол-во элементов в массиве</i>
-
-
-<i>Пример усечения массива</i>
-<b>array[2000];</b>
-<b>array.length;</b> <i>возвращает 2001</i>
-<b>array.length = 10;</b>
-<b>array.length;</b><i>возвращает 10</i>
-                </pre>
-              </div>
-            </div>
-          </div>
-          <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="method-array">Методы
-              массивов</button>
-            <div class="block-accordion__method-array method-array">
-              <a class="method-array__link link reset-link" href="https://learn.javascript.ru/array-methods">Источник</a>
-              <div class="method-array__wrapper">
-                <p class="method-array__descr accordion-descr text"></p>
-                <p class="method-array__descr text"></p>
-                <pre>
-concat() <i>новый массив, содержащий текущий массив и дополненный другними массивами и элементами</i>
-every() <i>возвращает значение <b>true</b>, если каждый элемент массива удовлетворяет условию, предоставляемому тестовой функцией</i>
-filter() <i>новый массив, который содержит все элементы текущего массива, удовлетворяющиие условию, предоставляемому заданной тестовой функцией</i>
-forEach() <i>выполняет заданную функцию для каждого элемента массива</i>
-indexOf() <i>индекс первого вхождения заданного значения в массиве. Если значение не обнаружено, то возвращается -1</i>
-<br>
-join() <i>объединяет все элементы массива в одну строку</i>
-lastIndexOf() <i>индекс последнего вхождения заданного значения в массиве. Если значение не обнаружено, возвращается -1</i>
-map() <i>новый массив, полученный путём преобразования каждого элемента текущего массива с помощью заданной функции</i>
-pop() <i>удаляет последний элемент из массива</i>
-push() <i>добавляет новые элементы в конец массива</i>
-<br>
-reduce() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (слева направо)</i>
-reduceRight() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (справа налево)</i>
-reverse() <i>обращает порядок следования элементов в массиве в обратный порядок</i>
-shift() <i>удаляет первый элемент из массива и возвращает его, изменяя длину массива</i>
-slice() <i>выбирает часть массива и возвращает его в виде нового массива</i>
-<br>
-some() <i>возвращает значение <b>true</b>, если один или несколько элементов массива удовлетворяет условию, предоставляемому тестовой функцией</i>
-sort() <i>возвращает отсортированный массив (по умолчанию сортировка выполняется в алфавитном порядке и в порядке возрастания</i>
-splice() <i>возвращает новый масив, состоящий из элементов, которые были добавлены или удалены из данного массива</i>
-toString() <i>преобразует массив в строку</i>
-unShift() <i>возвращает новый массив другой длины, к которому добавлены один или несколько элементов</i>
-<br><br>
-<i style="font-size: 20px;">Примеры применения методов:</i>
-arr.push(...items) <i>– добавляет элементы в конец,</i>
-arr.pop() <i>– извлекает элемент из конца,</i>
-arr.shift() <i>– извлекает элемент из начала,</i>
-arr.unshift(...items) <i>– добавляет элементы в начало.</i>
-<br>
-let arr = ["I", "go", "home"];
-delete arr[1]; <i>// удалит "go", но оставит пустое место</i> <code>''</code> <i>со значением</i> <code>undefined</code>
-console.log(arr); <i>// вернёт</i> <code>["I",,"home"]</code>
-console.log(arr.length); <i>// вернёт</i> <code>3</code>
-console.log(arr[1]); <i>// вернёт</i> <code>undefined</code>
-
-<i>Метод</i> <code>splice</code> <i>удаляет пустое место</i>
-
-arr.splice(1, 1); <i>// начиная с позиции 1 удаляет 1 элемент</i>
-console.log(arr); <i>// вернёт</i> <code>["I","home"]</code>
-
-<i>Так что можно без delete обойтись</i>
-                </pre>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
-            <div class="block-accordion__BBB BBB">
-
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -1945,6 +1203,1782 @@ for (let x = 0; x &lt; 100; x += Math.round(Math.random() * 5)) {
         </div>
       </div>
     </section>
+    <section class="array" id="array">
+      <div class="array__container">
+        <h2 class="array__title section-title title">Массивы</h2>
+        <nav class="array__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="№array-features">Свойства массива</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="№method-array">Методы массивов</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="array-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="array-features">Свойства массива (точечная нотация)</button>
+            <div class="block-accordion__array-features array-features">
+              <div class="array-features__wrapper">
+                <pre>
+<b>array.prototype</b> <i>позволяет добавлять свойства и методы в объект Array</i>
+<b>array.constructor</b> <i>ссылка на функцию, создавшую прототип объекта Array</i>
+<b>array.length</b> <i>возвращает или устанавливает кол-во элементов в массиве</i>
+
+
+<i>Пример усечения массива</i>
+<b>array[2000];</b>
+<b>array.length;</b> <i>возвращает 2001</i>
+<b>array.length = 10;</b>
+<b>array.length;</b><i>возвращает 10</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="method-array">Методы
+              массивов</button>
+            <div class="block-accordion__method-array method-array">
+              <a class="method-array__link link reset-link" href="https://learn.javascript.ru/array-methods">Источник</a>
+              <div class="method-array__wrapper">
+                <p class="method-array__descr accordion-descr text"></p>
+                <p class="method-array__descr text"></p>
+                <pre>
+concat() <i>новый массив, содержащий текущий массив и дополненный другними массивами и элементами</i>
+every() <i>возвращает значение <b>true</b>, если каждый элемент массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+filter() <i>новый массив, который содержит все элементы текущего массива, удовлетворяющиие условию, предоставляемому заданной тестовой функцией</i>
+forEach() <i>выполняет заданную функцию для каждого элемента массива</i>
+indexOf() <i>индекс первого вхождения заданного значения в массиве. Если значение не обнаружено, то возвращается -1</i>
+<br>
+join() <i>объединяет все элементы массива в одну строку</i>
+lastIndexOf() <i>индекс последнего вхождения заданного значения в массиве. Если значение не обнаружено, возвращается -1</i>
+map() <i>новый массив, полученный путём преобразования каждого элемента текущего массива с помощью заданной функции</i>
+pop() <i>удаляет последний элемент из массива</i>
+push() <i>добавляет новые элементы в конец массива</i>
+<br>
+reduce() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (слева направо)</i>
+reduceRight() <i>сводит два значения массива в одно, применяя к обоим заданную функцию (справа налево)</i>
+reverse() <i>обращает порядок следования элементов в массиве в обратный порядок</i>
+shift() <i>удаляет первый элемент из массива и возвращает его, изменяя длину массива</i>
+slice() <i>выбирает часть массива и возвращает его в виде нового массива</i>
+<br>
+some() <i>возвращает значение <b>true</b>, если один или несколько элементов массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+sort() <i>возвращает отсортированный массив (по умолчанию сортировка выполняется в алфавитном порядке и в порядке возрастания</i>
+splice() <i>возвращает новый масив, состоящий из элементов, которые были добавлены или удалены из данного массива</i>
+toString() <i>преобразует массив в строку</i>
+unShift() <i>возвращает новый массив другой длины, к которому добавлены один или несколько элементов</i>
+<br><br>
+<i style="font-size: 20px;">Примеры применения методов:</i>
+arr.push(...items) <i>– добавляет элементы в конец,</i>
+arr.pop() <i>– извлекает элемент из конца,</i>
+arr.shift() <i>– извлекает элемент из начала,</i>
+arr.unshift(...items) <i>– добавляет элементы в начало.</i>
+<br>
+let arr = ["I", "go", "home"];
+delete arr[1]; <i>// удалит "go", но оставит пустое место</i> <code>''</code> <i>со значением</i> <code>undefined</code>
+console.log(arr); <i>// вернёт</i> <code>["I",,"home"]</code>
+console.log(arr.length); <i>// вернёт</i> <code>3</code>
+console.log(arr[1]); <i>// вернёт</i> <code>undefined</code>
+
+<i>Метод</i> <code>splice</code> <i>удаляет пустое место</i>
+
+arr.splice(1, 1); <i>// начиная с позиции 1 удаляет 1 элемент</i>
+console.log(arr); <i>// вернёт</i> <code>["I","home"]</code>
+
+<i>Так что можно без delete обойтись</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn">ЗАГОЛОВОК</button>
+            <div class="block-accordion__BBB BBB">
+
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="functions" id="functions">
+      <div class="functions__container">
+        <h2 class="functions__title section-title title">Функции</h2>
+        <nav class="functions__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#modal-function">alert,
+                prompt, confim</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#parse">Функции для чисел</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#string-function">Функции для строк</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function">Function Declaration (объявление функции)</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-expression">Function Expression (функциональное выражение)</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-argument-parameter">Аргументы и параметры function</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-callback">Функции "колбэки"</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-return">function return</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#arrow-function">Стрелочная функция</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#function-name">Имена function</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#"></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="functions-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="modal-function">alert, prompt, confim</button>
+            <div class="block-accordion__modal-function modal-function">
+              <a target="_blank" class="modal-fucntion__link link reset-link" href="https://learn.javascript.ru/alert-prompt-confirm">Источник</a>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">alert</p>
+                <p class="modal-function__descr text">
+                  Функция <b>alert</b> выводит результат кода, который был указан для вывода, в виде модального окна.
+                </p>
+                <br>
+                <p class="modal-function__descr text">
+                  При этом интерфейс остальной части страницы блокируется пока модальное окно не будет закрыто.
+                </p>
+                <br>
+                <pre>
+var a = "Hello";
+
+alert(a);
+                </pre>
+                <p class="modal-function__descr text">
+                  Данная функция показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».
+                </p>
+              </div>
+              <br><br>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">prompt</p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с полем для ввода</b>
+                </p>
+                <p class="modal-function__descr text">
+                  <b>let puck = prompt("Test", '');</b> // для IE
+                </p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b>let puck = prompt("Сколько тебе лет?", [] или "" или "100");</b><br>
+                  <b>alert(`Тебе ${puck} лет!`);</b> // Тебе 100 лет!
+                </p>
+              </div>
+              <br><br>
+              <div class="modal-function__wrapper">
+                <p class="modal-function__descr accordion-descr text">confim</p>
+                <br>
+                <p class="modal-function__descr text">
+                  <b style="color: rgba(205, 92, 92, 1);">Модальное окно с вопросом и вариантами ответа</b>
+                </p>
+                <p class="modal-function__descr text">
+                  <b>let isBoss = confirm("Ты здесь главный?");</b><br>
+                  <b>alert(isBoss);</b> // true, если нажата OK
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="parse">Функции для чисел: parseInt() и parseFloat()</button>
+            <div class="block-accordion__parse parse">
+              <p class="parse__descr accordion-descr text">
+                Функции parseInt и parseFloat применяются к числам.
+              </p>
+              <div class="parse__wrapper">
+                <p class="parse__descr text">
+                  <b>parseInt()</b> - отбрасывает дробные части и выводит только целое число
+                </p>
+                <pre>
+<b>const john = parseInt(10.333);</b>
+<b>console.log(john);</b> // 10
+                </pre>
+              </div>
+              <br><br>
+              <div class="parse__wrapper">
+                <p class="parse__descr text">
+                  <b>parseFloat()</b> - возвращает число каким оно должно быть. Целое - целым, дробное - дробным.
+                </p>
+                <pre>
+<b>const john = parseFloat(10.333);</b>
+<b>console.log(john);</b> // 10.333
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="string-function">Функции для строк</button>
+            <div class="block-accordion__string-function string-function">
+              <p class="string-function__descr accordion-descr text">
+                Данные функции применяются для строк
+              </p>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>charAt()</b> возвращает символ, находящийся в указанной позиции в строке. Обратите внимание на то, что отсчёт позиций начинается с 0.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.charAt(3));</b> // возвращает "a"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>concat()</b> - присоединяет к строке одну или несколько строк и возвращает объединённую строку.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.concat(" - это круто!!!"));</b> // возвращает "Javascript - это круто!!!"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>indexOf()</b> - выполняет поиск первого вхождения символа или подстроки в данной строке и возвращает номер соответствующей позиции.
+                </p>
+                <pre>
+<b>const string = "Javascript - это здорово!";</b>
+<b>console.log(string.indexOf("здорово"));</b> // возвращает 17, т.к. буква "з" на 17 позиции
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>split()</b> - разбивает строку на массив подстрок.
+                </p>
+                <pre>
+<b>const string = "Javascript - это здорово!";</b>
+<b>console.log(string.split("з"));</b> // возвращает ["Javascript - это ", "дорово!"]
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>substr()</b> - извлекает часть строки, начиная с указанной позиции, и возвращает указанное кол-во символов.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.substr(2,5));</b> // возвращает "vascr"
+              </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>substring()</b> - извлекает символы строки, заключённые между указанными позициями (символ, соответствующий концу диапазона, в результат не включается).
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.substring(2,5));</b> // возвращает "vas"
+                </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>toLowerCase()</b> - переводит указанные символы строки в нижний регистр.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.toLowerCase());</b> // возвращает "javascript"
+              </pre>
+              </div>
+              <br><br>
+              <div class="string-function__wrapper">
+                <p class="string-function__descr text">
+                  <b>toUpperCase()</b> - переводит указанные символы строки в верхний регистр.
+                </p>
+                <pre>
+<b>const string = "Javascript";</b>
+<b>console.log(string.toUpperCase());</b> // возвращает "JAVASCRIPT"
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function">Function Declaration (объявление функции) <code>function name(...) {...}</code></button>
+            <div class="block-accordion__function function">
+              <div class="function__wrapper">
+                <p class="function__descr text">
+                  <b>Функция – это значение, представляющее «действие»</b>
+                </p>
+                <p class="function__descr text">
+                  Обычные значения, такие как строки или числа представляют собой данные.
+                </p>
+                <p class="function__descr text">
+                  Функции, с другой стороны, можно воспринимать как действия.
+                </p>
+                <p class="function__descr text">
+                  Мы можем передавать их из переменной в переменную и запускать, когда захотим.
+                </p>
+                <pre class="block">
+                  <code class="block">
+<i>Саму функцию можно вызвать до её объявления</i>
+printWeekday(); <i>// вызов функции до её объявления</i>
+
+function printWeekday() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+}
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function__wrapper">
+                <p class="function__descr accordion-descr text">Самовыполняющиеся анонимная функция функция</p>
+                <p class="function__descr text">
+                  Чтобы сделать самовыполняющуюся функцию - необходимо функцию добавить в круглые скобки и в конце пару пустых круглых скобок добавить.
+                </p>
+                <p class="function__descr text red">
+                  Анонимная функция - это функция без имени и без переменной
+                </p>
+                <pre class="block">
+                  <code class="block">
+(function() {
+  ...
+})();
+
+
+var  myVariable = "Я нахожусь вне функции.";(function() {
+  var myVariable = "Я нахожусь в этой анонимной функции";
+  console.log(myVariable);
+})();
+console.log(myVariable);
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function__wrapper">
+                <p class="function__descr accordion-descr text">Возведение в степень без объекта Math.pow</p>
+                <pre class="block">
+                  <code class="block">
+function pow(x, n) {
+  let result = x;
+
+  for (let i = 1; i &lt; n; i++) { <i>// проверяет <code>i</code> больше или равно <code>n</code></i>
+    result *= x; <i>// умножает на само себя</i>
+  }
+
+  return result;
+}
+
+let x = prompt("x?", ''); <i>// какое число x?</i>
+let n = prompt("n?", ''); <i>// какое число n?</i>
+
+if (n &lt; 1) {
+  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+} else {
+  alert( pow(x, n) );
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-expression">Function Expression (функциональное выражение)</button>
+            <div class="block-accordion__function-expression function-expression">
+              <div class="function-expression__wrapper">
+                <a target="_blank" class="function-expression__link link" href="https://learn.javascript.ru/function-expressions">Источник</a>
+                <h4 class="function-expression__title title">Function Expression: функция, созданная внутри другого выражения или синтаксической конструкции.</h4>
+                <p class="function-expression__text text">
+                  В данном случае функция создаётся в правой части «выражения присваивания» =:
+                </p>
+                <pre class="block">
+                  <code class="block">
+function sayHi() { <i>// (1) создаём</i>
+  alert( "Привет" );
+}
+
+let func = sayHi; <i>// (2) копируем - <code>sayHi</code> БЕЗ КРУГЛЫХ СКОБОК, ИНАЧЕ ОШИБКУ ВЫДАСТ ПРИ ВЫЗОВЕ <code>func();</code></i>
+
+func(); <i>// Привет // (3) вызываем копию (работает)!</i>
+sayHi(); <i>// Привет</i>
+
+<hr>
+
+<b class="red">С помощью переменной</b>
+let sayHi = function() { <i>// (1) создаём</i>
+  alert( "Привет" );
+}; <i>// ТОЧКА С ЗАПЯТОЙ ОБЯЗАТЕЛЬНА В ДАННОМ СЛУЧАЕ</i>
+let func = sayHi; <i>// (2) копируем - <code>sayHi</code> БЕЗ КРУГЛЫХ СКОБОК, ИНАЧЕ ОШИБКУ ВЫДАСТ ПРИ ВЫЗОВЕ <code>func();</code></i>
+
+func(); <i>// Привет // (3) вызываем копию (работает)!</i>
+sayHi(); <i>// Привет</i>
+                  </code>
+                </pre>
+                <pre class="block">
+                  <code class="block">
+<b class="red">Функцию, указанную значением переменной, можно вызвать только после объявления переменной</b>
+var primerName = function() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+    ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+};
+primerName(); <i>// вызов функции после объявления переменной в которой функция является значением</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-argument-parameter">Аргументы и параметры function</button>
+            <div class="block-accordion__function-argument function-argument-parameter">
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">ВАЖНО: примитивные (элементарные) типы данных для аргументов: <code>number, string, boolean, undefined, null</code></p>
+                <pre class="block">
+                  <code class="block">
+function <i>ИМЯ ФУНКЦИИ</i>(<i>ПАРАМЕТР, ПАРАМЕТР</i>) {
+  <i>ИНСТРУКЦИЯ ФУНКЦИИ</i>
+}
+<i>ИМЯ ФУНКЦИИ</i>(<i>АРГУМЕНТ, АРГУМЕНТ</i>);
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">ПРИМЕНЕНИЕ ОБЪЕКТА <code>arguments</code> В ФУКНЦИИ С ПРЕВЫШЕНИЕМ КОЛ-ВО АРГУМЕНТОВ НАД КОЛ-ВОМ ПАРАМЕТРОВ</p>
+                <pre class="block">
+                  <code class="block">
+<b class="red">ВЫДАСТ ПОСЛЕДНИЙ АРГУМЕНТ ПРИ ПРЕВЫШЕНИИ КОЛ-ВА АРГУМЕНТОВ НАД ПАРАМЕТРАМИ</b>
+function flexMobile() {
+  var welcome = 'Добро пожаловать, ';
+  for (i = 0; i &lt; arguments.length; i++) {
+    welcome = welcome + arguments[i] + '';
+  }
+  return welcome;
+}
+console.log(flexMobile(("Christopher", "James", "Phoenix", "Minnick") + "&lt;br&gt;"));
+<i>
+"Добро пожаловать, Minnick&lt;br&gt;"
+</i>
+
+
+console.log(flexMobile(("Eva", "Ann", "Holland") + "&lt;br&gt;"));
+<i>
+"Добро пожаловать, Holland&lt;br&gt;"
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-argument-parameter__wrapper">
+                <p class="function-argument-parameter__descr accordion-descr text">Функция с 2-мя аргументами</p>
+                <pre class="block">
+                  <code class="block">
+<i>// при этом второй аргумент имеет значение по умолчанию</i>
+function findCard(cards, wantedCard = "Туз") { <i>// cards и wantedCard со значением - это ПАРАМЕТРЫ</i>
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let found = false;
+
+  for (let card of cards) {
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      found = true;
+      break;
+    }
+  }
+  console.log(
+    found
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+}
+
+let myCards = ["2", "Король", "Туз", "5", "6", "Король"];
+
+// ищем туза в переданной колоде карт
+findCard(myCards);
+// ищем пятёрку в переданной колоде карт
+findCard(myCards, "5"); <i>// myCards и "5" - это АРГУМЕНТЫ</i>
+
+<i>
+/*
+Вернёт:
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту 5"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Мы нашли карту 5!"
+*/
+ПОСЛЕ ТОГО, КАК НАШЁЛСЯ "ТУЗ" ФУНКИЦЯ ЗАПУСКАЕТСЯ СНОВА И ИЩЕТ "5"
+</i>
+                  </code>
+                </pre>
+                <p class="function-argument-parameter__descr accordion-descr text">Пример работы функции</p>
+                <img class="function-argument-parameter__img img" src="img/function/argument-function.jpg" alt="Пример очерёдности действий функции">
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-callback">Функции "колбэки"</button>
+            <div class="block-accordion__function-callback function-callback">
+              <div class="function-callback__wrapper">
+                <p class="function-callback__descr text">
+                  <b>Функции "колбэки"</b> - это функции, которые объявляются в качестве аргументов для другой функции.
+                </p>
+                <pre class="block">
+                  <code class="block">
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "Вы согласны." );
+}
+
+function showCancel() {
+  alert( "Вы отменили выполнение." );
+}
+
+<i>// использование: функции showOk, showCancel передаются в качестве аргументов ask</i>
+ask("Вы согласны?", showOk, showCancel);
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-return">return function</button>
+            <div class="block-accordion__function-return function-return">
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">
+                  Директива <code>return</code> может находиться в любом месте тела функции. Как только выполнение доходит до этого места, функция останавливается, и значение возвращается в вызвавший её код (присваивается переменной <code>result</code> выше).
+                </p>
+                <pre class="block">
+                  <code class="block">
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert(result); <i>// 3</i>
+                  </code>
+                </pre>
+                <p class="function-return__descr text">
+                  <b>
+                    ВАЖНО! <code>return</code> и его значение НЕОБХОДИМО писать в одну строку, либо значение прописать в круглых скобках и разместить в несколько строк, <br>иначе <code>return</code> будет пустым, что равняется <code>undefined</code>.
+                  </b>
+                </p>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 1</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/OJzEQgY?editors=0012">Codepen</a>
+                <pre class="block">
+                  <code class="block">
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let foundIndex = -1;
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      foundIndex = index;
+      break;
+    }
+  }
+  <i>// ВАРИАНТ №1</i>
+  console.log(
+    foundIndex &gt; -1
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+
+  <i>
+  /*
+  ВАРИАНТ №2
+  if (foundIndex &gt; -1) {
+    console.log(`Мы нашли карту ${wantedCard}!`);
+  } else {
+    console.log(`В колоде нет карты ${wantedCard} :(`);
+  }
+  */
+  </i>
+  return foundIndex;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+
+let aceIndex = findCardIndex(myCards);
+let jackIndex = findCardIndex(myCards, "Валет");
+
+console.log(aceIndex + " - показывает кол-во перебранных карт");
+console.log(jackIndex);
+
+<i>
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+"3 - показывает кол-во перебранных карт"
+-1
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 2</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQOQ?editors=0012">Codepen</a>
+                <pre class="block">
+                  <code class="block">
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      console.log(`Мы нашли карту ${wantedCard}!`);
+      return index;
+    }
+  }
+  console.log(`В колоде нет карты ${wantedCard} :(`);
+  return -1;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+findCardIndex(myCards);
+findCardIndex(myCards, "Валет");
+
+<i>
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 3</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/zYpaReR?editors=0012">Codepen</a>
+                <pre class="block">
+                  <code class="block">
+function checkAge(age) {
+  console.log(`Вам ${age} лет`);
+  if (age &gt;= 18) return;
+  console.log("Школота!");
+  console.log(`Потерпи ещё ${18 - age} лет до совершеннолетия`);
+}
+
+// все сообщения будут выведены
+checkAge(2);
+
+// функция перестанет выполняться после первого сообщения
+checkAge(23);
+checkAge(18);
+
+<i>
+"Вам 2 лет"
+"Школота!"
+"Потерпи ещё 16 лет до совершеннолетия"
+"Вам 23 лет"
+"Вам 18 лет"
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="function-return__wrapper">
+                <p class="function-return__descr accordion-descr text">return 4 and undefined</p>
+                <a target="_blank" class="function-return__link reset-link" style="display: block; color: rgba(0, 0, 255, 1)" href="https://codepen.io/archicolt/pen/ExoRQzL?editors=0012">Codepen</a>
+                <pre class="block">
+                  <code class="block">
+function doNothing() {
+  console.log("Я ничего не делаю!");
+}
+
+console.log(doNothing()); // undefined
+let x = doNothing();
+console.log(x); // undefined
+
+let y;
+console.log(y);
+
+<i>
+"Я ничего не делаю!"
+undefined
+"Я ничего не делаю!"
+undefined
+undefined
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="arrow-function">Стрелочная функция <code>=&gt;</code></button>
+            <div class="block-accordion__arrow-function arrow-function">
+              <a target="_blank" class="arrow-function__link link" href="https://learn.javascript.ru/arrow-functions-basics">Источник</a>
+              <div class="arrow-function__wrapper">
+                <h4 class="arrow-function__title title">Обычное применение стрелочной функции</h4>
+                <pre class="block">
+                  <code class="block">
+let sum = (a, b) =&gt; a + b;
+<i>
+/* Эта стрелочная функция представляет собой более короткую форму:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+</i>
+alert( sum(1, 2) ); // 3
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="arrow-function__wrapper">
+                <h4 class="arrow-function__title title">Применение стрелочной функции как и Function Expression (функционального выражения)</h4>
+                <pre class="block">
+                  <code class="block">
+<b class="red">Первый вариант</b>
+let age = prompt("Сколько Вам лет?", 18);
+
+let welcome = (age &lt; 18) ?
+  () =&gt; alert('Привет!') :
+  () =&gt; alert("Здравствуйте!");
+
+welcome();
+
+<hr>
+
+<b class="red">Второй вариант</b>
+<i>// Function Expression (функционального выражения)</i>
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+);
+
+
+<i>// Стрелочная функция</i>
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () =&gt; alert("Вы согласились."),
+  () =&gt; alert("Вы отменили выполнение.")
+);
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="function-name">Имена function</button>
+            <div class="block-accordion__function-name function-name">
+              <div class="function-name__wrapper">
+                <pre class="block">
+                  <code class="block">
+showMessage(..)     <i>// показывает сообщение</i>
+getAge(..)          <i>// возвращает возраст (получая его каким-то образом)</i>
+calcSum(..)         <i>// вычисляет сумму и возвращает результат</i>
+createForm(..)      <i>// создаёт форму (и обычно возвращает её)</i>
+checkPermission(..) <i>// проверяет доступ, возвращая true/false</i>
+                  </code>
+                </pre>
+                <p class="function-name__descr accordion-descr text"></p>
+                <p class="function-name__descr text"></p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="JJJ">ЗАГОЛОВОК</button>
+            <div class="block-accordion__--- ---">
+              <div class="---__wrapper">
+                <p class="---__descr accordion-descr text"></p>
+                <p class="---__descr text"></p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section class="objects" id="objects">
+      <div class="objects__container">
+        <h2 class="objects__title section-title title">Объекты</h2>
+        <nav class="objects__menu section-menu">
+          <h3 class="section-menu__title title">СОДЕРЖАНИЕ</h3>
+          <ul class="section-menu__list reset-list">
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#math">Math</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object">Object: вывод свойств</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#add-change-del-copy">Object: Добавление, изменение, удаление и копирование свойств</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#nesting">Object: Вложенность</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-symbol">Object: Symbol</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object.assign">Object.assign</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#check">Object: Проверка свойства</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-for-in">Object: цикл <code>for in</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-method">Object: методы объекта</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-method-this">Object: методы объекта, <code>this</code></a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="№сonstructor-function">Object: функция-конструктор</a>
+            </li>
+            <!-- <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href=""></a>
+            </li> -->
+          </ul>
+        </nav>
+        <div data-spollers data-one-spoller class="objects-block block-accordion">
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="math">Math</button>
+            <div class="block-accordion__math math">
+              <a target="_blank" class="math__link link reset-link" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math">Источник</a>
+              <div class="math__wrapper">
+                <p class="math__descr accordion-descr text">
+                  Объект Math является встроенным объектом, хранящим в своих свойствах и методах различные математические константы и функции.
+                </p>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Объект Math не является функциональным объектом.
+                </p>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Math не работает с числами типа BigInt.
+                </p>
+                <br>
+                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="WNJXOPx" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/WNJXOPx">
+                      2.5JS-функции Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="math__descr accordion-descr text">
+                  Практика сравнения чисел и Math
+                </p>
+                <p class="codepen" data-height="300" data-default-tab="js" data-slug-hash="eYerGPZ" data-user="archicolt" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                  <span>See the Pen <a href="https://codepen.io/archicolt/pen/eYerGPZ">
+                      2.7JS-Практика сравнения чисел и Math</a> by Салават (<a href="https://codepen.io/archicolt">@archicolt</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object">Object: обычный вывод свойств и вывод свойств с помощью function()</button>
+            <div class="block-accordion__object object">
+              <div class="object__wrapper">
+                <h4 class="object__title title">Создание object</h4>
+                <pre class="block">
+let userInfo = new Object();
+
+let user = {};
+                </pre>
+                <p class="object__text text red-color">
+                  ВАЖНО! Свойства объекта возможно назвать зарезервированными именами, к примеру: <code>for</code> или <code>in</code>.
+                </p>
+              </div>
+              <br><br>
+              <div class="object__wrapper">
+                <h4 class="object__title title">1 Простой вывод свойств</h4>
+                <pre class="block">
+<b>ОБЫЧНЫЕ ИМЕНА СВОЙСТВ</b>
+<code class="block">
+<span class="red">var</span> <span class="navy">userInfo</span> = {
+  <span class="violet">name:</span> <span class="green">"John"</span>,<i>// обычное имя свойства</i>
+  <span class="violet">surname:</span> <span class="green">"Smith"</span>,<i>// обычное имя свойства</i>
+  <span class="violet">age:</span> <span class="orange">33</span>,<i>// обычное имя свойства</i>
+};
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">userInfo</span>); <i>// выведет весь объект</i>
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">userInfo</span>.<span class="violet">name</span>); <i>// "John"</i>
+
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">userInfo</span>[<span class="green">"age"</span>]); <i>// 33</i>
+</code>
+
+
+<b>ДЛИННЫЕ ИМЕНА СВОЙСТВ</b>
+<code class="block">
+<span class="red">var</span> <span class="navy">bigName</span> = {
+  <span class="green">"likes javascript"</span>: <span class="red">true</span>,<i>// имя из нескольких слов пишется в кавычках</i>
+}
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">bigName</span>[<span class="green">"likes javascript"</span>]); <i>// true - вывод в квадратных скобках с кавычками</i>
+</code>
+
+
+<b>ЧИСЛОВЫЕ ИМЕНА СВОЙСТВ</b>
+<code class="block">
+<span class="red">var</span> <span class="navy">digit</span> = {
+  <span class="violet">999:</span> <span class="green">"Значение свойства"</span>,<i>// имя-число как обычное имя прописывается</i>
+};
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">digit</span>[<span class="orange">999</span>]); <i>// "Значение свойства" - вывод в квадратных скобках можно без кавычек</i>
+</code>
+
+
+<b>ИМЕНА ПЕРЕМЕННЫХ ДЛЯ СВОЙСТВ</b>
+<code class="block">
+<span class="red">var</span> <span class="navy">black</span> = <span class="green">"Некое значение"</span>;
+<span class="red">var</span> <span class="navy">key</span> = <span class="green">"surname"</span>;
+
+<span class="red">var</span> <span class="navy">blackKey</span> = {
+  [<span class="red">black</span>]: <span class="red">false</span>,<i>// имя внешней переменной прописывается в квадратных скобках</i>
+}
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">blackKey</span>[<span class="red">black</span>]); <i>// false - вывод в квадратных скобках</i>
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">userInfo</span>[<span class="red">key</span>]); <i>// "Smith" передача с помощью квадратных скобок</i>
+</code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object__wrapper">
+                <h4 class="object__title title">2 Вывод свойств с помощью <code>function()</code></h4>
+                <pre class="block">
+                  <code class="block">
+<span class="red">function</span> <span class="navy">myTypes(obj, prop)</span> {
+  <span class="red">console</span>.<span class="violet">log</span>(<span class="navy">obj[prop]</span>);
+}
+
+<span class="red">var</span> <span class="navy">me</span> = {
+  <span class="violet">name</span>: <span class="green">"Alexey"</span>,
+  <span class="violet">surname</span>: <span class="green">"Petrov"</span>,
+  <span class="violet">address</span>: {
+    <span class="violet">city</span>: <span class="green">"New York"</span>,
+    <span class="violet">street</span>: <span class="green">"Fivestreets"</span>,
+  }
+};
+
+<span class="red">myTypes</span>(<span class="red">me</span>, <span class="green">"name"</span>);
+<span class="red">myTypes</span>(<span class="red">me</span>, <span class="green">"surname"</span>);
+<span class="red">myTypes</span>(<span class="red">me</span>, <span class="green">"address"</span>);
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">me</span>.<span class="violet">address.city</span>);
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object__wrapper">
+                <h4 class="object__title title">3 Вывод свойств с помощью <code>function()</code></h4>
+                <pre class="block">
+                  <code class="block">
+<span class="red">function</span> <span class="navy">makeUserInfo(name, age)</span> {
+  <span class="red">return</span> {
+    <span class="violet">name:</span> <span class="navy">name</span>,
+    <span class="violet">age:</span> <span class="navy">age</span>,
+    <i>// ...другие свойства</i>
+  };
+}
+<span class="red">let</span> <span class="navy">user</span> = <span class="red">makeUserInfo</span>(<span class="green">"John"</span>, <span class="orange">30</span>);
+<span class="red">console</span>.<span class="violet">log</span>(<span class="red">user</span>);
+                  </code>
+<i>
+/*
+УПРОЩЁННАЯ ВЕРСИЯ
+function makeUserInfo(name, age) {
+  return {
+    name, // Тоже самое, что и name: name,
+    age, // Тоже самое, что и age: age,
+    "likes javascript": true,
+    //...другие свойства
+  };
+}
+*/
+</i>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="add-change-del-copy">Object: Добавление, изменение, удаление и копирование свойств даже с переменной <code>const</code></button>
+            <div class="block-accordion__add-change-del-copy add-change-del-copy">
+              <div class="add-change-del-copy__wrapper">
+                <h4 class=" add-change-del-copy__title title">Добавление свойства</h4>
+                <pre class="block">
+                  <code class="block">
+<i>// БЕЗ ДОБАВЛЕНИЙ</i>
+const userInfo = {
+  name: "John"
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+}
+</i>
+<hr>
+
+<i>// ПЕРВОЕ ДОБАВЛЕНИЕ</i>
+userInfo.age = 30;<i>// Добавление свойства</i>
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+<hr>
+
+<i>// ВТОРОЕ ДОБАВЛЕНИЕ</i>
+userInfo["likes javascript"] = true;<i>// Добавление свойства</i>
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+  likes javascript: true,
+}
+</i>
+<hr>
+
+<i>// ТРЕТЬЕ ДОБАВЛЕНИЕ</i>
+userInfo.address = {<i>// Добавление свойства</i>
+  city: "Uzhhorod",
+  street: "Freedom"
+};
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+  likes javascript: true,
+  address: {
+    city: 'Uzhhorod',
+    street: 'Freedom',
+  }
+}
+</i>
+                  </code>
+                </pre>
+                <p class="add-change-del-copy__descr accordion-descr text"></p>
+                <p class="add-change-del-copy__descr text"></p>
+              </div>
+              <br><br>
+              <div class="add-change-del-copy__wrapper">
+                <h4 class="add-change-del-copy__title title">Изменение свойства</h4>
+                <pre class="block">
+                  <code class="block">
+const userInfo = {
+  name: "John",
+  age: 30
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+<hr>
+
+userInfo.age = 18;<i>// Изменение свойства</i>
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 18,
+}
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="add-change-del-copy__wrapper">
+                <h4 class=" add-change-del-copy__title title">Удаление свойства</h4>
+                <pre class="block">
+                  <code class="block">
+const userInfo = {
+  name: "John",
+  age: 30,
+  "likes javascript": true
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+  likes javascript: true,
+}
+</i>
+<hr>
+
+<i>// ПЕРВОЕ УДАЛЕНИЕ</i>
+delete userInfo.age;<i>// Удаление свойства</i>
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  likes javascript: true,
+}
+</i>
+<hr>
+
+<i>// ВТОРОЕ УДАЛЕНИЕ</i>
+delete userInfo["likes javascript"];<i>// Удаление свойства</i>
+
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+}
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="add-change-del-copy__wrapper">
+                <h4 class="add-change-del-copy__title title">Копирование свойства</h4>
+                <pre class="block">
+                    <code class="block">
+<i>
+// При копировании объекта в другую переменную
+// Сам объект не копируется, а копируется только ссылка на него
+</i>
+let userInfo = {
+  name: "John",
+  age: 30
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+<hr>
+
+let user = userInfo;<i>// Копирование объекта</i>
+console.log(user);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+<hr>
+
+user.age = 18;<i>// Изменение свойства объекта через новое имя переменной</i>
+console.log(userInfo);<i>// Даже при вызове объекта с изначальным именем всё равно выведет все изменения свойств</i>
+<i>
+{
+  name: 'John',
+  age: 18,
+}
+</i>
+                    </code>
+                  </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="nesting">Object: Вложенность</button>
+            <div class="block-accordion__nesting nesting">
+              <div class="nesting__wrapper">
+                <pre class="block">
+                  <code class="block">
+let userInfo = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Uzhhorod",
+    street: "Freedom",
+  },
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'Uzhhorod',
+    street: 'Freedom',
+  },
+};
+</i>
+
+<hr>
+
+console.log(userInfo.address);
+<i>
+{
+  city: 'Uzhhorod',
+  street: 'Freedom',
+},
+</i>
+
+<hr>
+
+console.log(userInfo.address.city);
+<i>
+'Uzhhorod'
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-symbol">Object: Symbol</button>
+            <div class="block-accordion__object-symbol object-symbol">
+              <div class="object-symbol__wrapper">
+                <pre class="block">
+                  <code class="block">
+<b class="red">let id = Symbol("id");</b> <i>// создание символа id с описанием (именем) 'id'</i>
+let userInfo = {
+  name: "John",
+  age: 30,
+  <b class="red">[id]: "Некое значение"</b> <i>// будет присутствовать, но не будет выводиться</i>
+};
+console.log(userInfo);
+
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+
+<i>
+/*
+Основное применение символов:
+1 "Скрытые" свойства объектов
+  Символьное свойство не появится в for..in
+2 Использование системных символов
+  Symbol.iterator, Symbol.toPrimitive и т.д.
+*/
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object.assign">Object.assign</button>
+            <div class="block-accordion__object-assign object-assign">
+              <div class="object-assign__wrapper">
+                <h4 class="object-assign__title title">Дублирование объекта</h4>
+                <pre class="block">
+                  <code class="block">
+<i>
+// Синтаксис
+// Object.assign(куда{объект}, что(свойство #1), что(свойство #2), ...);
+</i>
+let userInfo = {
+  name: "John",
+  age: 30
+};
+console.log(userInfo);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+
+<hr>
+
+let user = Object.assign({}, userInfo);
+
+user.age = 18;
+
+console.log(user);
+<i>
+{
+  name: 'John',
+  age: 18,
+}
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-assign__wrapper">
+                <h4 class="object-assign__title title">Добавление свойств объекту с помощью object-assign</h4>
+                <pre class="block">
+                  <code class="block">
+let userInfo = {
+  name: "John",
+  age: 30
+};
+<b class="red">Object.assign(userInfo, { ["likes javascript"]: true, city: "Uzhhorod" });</b>
+console.log(userInfo);
+
+<i>
+{
+  name: 'John',
+  age: 30,
+  likes javascript: true,
+  city: 'Uzhhorod',
+}
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="check">Object: Проверка свойства</button>
+            <div class="block-accordion__check check">
+              <div class="check__wrapper">
+                <h4 class="check__title title">Обычная проверка</h4>
+                <pre class="block">
+                  <code class="block">
+let userInfo = new Object();
+userInfo.name = "John";
+<i>//userInfo.age = 30;</i>
+
+<i>//console.log(userInfo.age);</i>
+
+if (userInfo.age) {
+  console.log(userInfo.age);
+}
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="check__wrapper">
+                <h4 class="check__title title">Провека: опциональная цепочка</h4>
+                <pre class="block">
+                  <code class="block">
+let userInfo = new Object();
+userInfo.name = "John";
+userInfo.age = 30;
+<i>
+/*userInfo.address = {
+  city: "Uzhhorod",
+  street: "Freedom"
+};*/
+//console.log(userInfo.address.street); // выведет ошибку, если нет данного свойства
+</i>
+
+console.log(userInfo?.address?.street); <i>// данный способ при проверке выводит undefined, если отсутствует свойство</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="check__wrapper">
+                <h4 class="check__title title">Проверка через оператор <code>in</code></h4>
+                <pre class="block">
+                  <code class="block">
+var userInfo = new Object();
+userInfo.name = "John";
+userInfo.age = 30;
+userInfo.address = {
+  city: "Uzhhorod",
+  street: "Freedom"
+};
+
+if ("name" in userInfo) {
+  console.log(userInfo.name);
+}
+<i>
+"John"
+</i>
+
+<hr>
+<i>
+// ИНФОРМАЦИЯ
+//В большинстве случаев сработает сравнение с undefined
+//либо опциональная цепочка ?.
+//Но есть особый случай, когда свойство существует
+//но содержит значение undefined
+//В этом случае необходимо использовать "in".
+</i>
+<hr>
+
+var user = new Object();
+user.name = undefined;
+<i>// ...следующие свойства</i>
+<i>
+//код не сработает и выдаст false
+/*if (user.name) {
+  console.log(user.name);
+}*/
+</i>
+
+<i>//код сработает и выдаст true (undefined)</i>
+if ("name" in user) {
+  console.log(user.name);
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-for-in">Object: цикл <code>for in</code></button>
+            <div class="block-accordion__object-for-in object-for-in">
+              <div class="object-for-in__wrapper">
+                <pre class="block">
+                  <code class="block">
+<i>
+// Для перебора всех свойств объекта используется цикл for..in.
+// Этот цикл отличется от изученного ранее цикла for(;;).
+/*
+for (let key in object) {
+  тело цикла выполняется для каждого свойства объекта
+}
+// key (переменная) ключи свойств объекта
+*/
+</i>
+var userInfo = new Object();
+userInfo.name = "John";
+userInfo.age = 30;
+userInfo.address = {
+  city: "Uzhhorod",
+  street: "Freedom"
+};
+
+<hr>
+
+for (var key in userInfo) {
+  <i>// ключи</i>
+  console.log(key);
+  <i>
+  'name'
+  'age'
+  'address'
+  </i>
+
+  <i>// значения ключей</i>
+  console.log(userInfo[key]);
+  <i>
+  'John'
+  '30'
+  'Object'
+  </i>
+}
+
+<hr>
+
+for (var key in userInfo.address) {
+  <i>// ключи</i>
+  console.log(key);
+  <i>
+  city,
+  street
+  </i>
+
+  <i>// значения ключей</i>
+  console.log(userInfo.address[key]);
+  <i>
+  Uzhhorod,
+  Freedom
+  </i>
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method">Object: методы объекта</button>
+            <div class="block-accordion__object-method object-method">
+              <div class="object-method__wrapper">
+                <pre class="block">
+                  <code class="block">
+var userInfo = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Uzhhorod",
+    street: "Freedom"
+  } <i>
+    /*
+  // showInfo - (метод - название может быть любым) ключ значением которого является функция
+  showInfo: function () {
+    console.log(
+      `${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`
+    );
+  }*/,
+  </i>
+  <i>// короткая запись</i>
+  showInfo() {
+    console.log(
+      `${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`
+    );
+  }
+};
+
+userInfo.showInfo();
+
+<i>
+"John, 30 лет. Адрес: г.Uzhhorod, ул.Freedom"
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-this">Object: методы объекта, <code>this</code></button>
+            <div class="block-accordion__object-method-this object-method-this">
+              <div class="object-method-this__wrapper">
+                <h4 class="object-method-this__title title">Методы объекта, <code>this</code></h4>
+                <pre class="block">
+                  <code class="block">
+var userInfo = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Uzhhorod",
+    street: "Freedom"
+  },
+  // короткая запись
+  showInfo() {
+    console.log(
+      `${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`
+    );
+  }
+};
+
+userInfo.showInfo();
+
+<i>
+"John, 30 лет. Адрес: г.Uzhhorod, ул.Freedom"
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-method-this__wrapper">
+                <h4 class="object-method-this__title title">Методы объекта, <code>this</code> (стрелочная функция)</h4>
+                <pre class="block">
+                  <code class="block">
+var userInfo = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Uzhhorod",
+    street: "Freedom"
+  },
+  <i>// короткая запись</i>
+  showInfo() {
+    <i>
+    // данной функции this Обращается к showInfo, у которой нет свойств (ключей) и поэтому выведет ошибку
+    /*function show() {
+      console.log(
+        `${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`
+      );
+    }*/
+    </i>
+    <i>// У стрелочной функции нет своего 'this'</i>
+    <i>// используются значение из внешнего метода userInfo.showInfo()</i>
+    var show = () =&gt;
+      console.log(
+        `${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`
+      );
+    show();
+  }
+};
+
+userInfo.showInfo();
+
+<i>
+"John, 30 лет. Адрес: г.Uzhhorod, ул.Freedom"
+</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-method-this__wrapper">
+                <h4 class="object-method-this__title title">Методы объекта, <code>this</code> (преимущество)</h4>
+                <pre class="block">
+                  <code class="block">
+var userInfo = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Uzhhorod",
+    street: "Freedom"
+  },
+  <i>// короткая запись</i>
+  showInfo() {
+    <b class="red">// если использовать this,</b>
+    <b class="red">// то метод showInfo возможно запустить другим именем объекта (переменной)</b>
+    console.log(
+      `${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`
+    );
+    <i>
+    "John, 30 лет. Адрес: г.Uzhhorod, ул.Freedom"
+    </i>
+
+    <i>// если использовать имя объекта (переменной) userInfo,</i>
+    <i>// то при вызове метода showInfo другим именем выдаст ошибку</i>
+    <i>// console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);</i>
+  }
+};
+
+userInfo.showInfo();
+
+var user = userInfo;
+userInfo = null; <i>// объект обнулён</i>
+user.showInfo(); <i>// из-за обнуления объекта данный вызов метода выдаст ошибку, если в методе вместо this использовать имя объекта (переменной)</i>
+
+<i>
+"John, 30 лет. Адрес: г.Uzhhorod, ул.Freedom"
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="сonstructor-function">Object: функция-конструктор</button>
+            <div class="block-accordion__сonstructor-function сonstructor-function">
+              <div class="сonstructor-function__wrapper">
+                <pre class="block">
+                  <code class="block">
+<i>
+/*
+Обычный синтаксис создания объекта{... } позволяет создать только один объект.
+Но зачастую нам нужно создать множество однотипных объектов, таких как пользователи, элементы меню и т.д.
+Это можно сделать при помощи функции - конструктора и оператора 'new'.
+*/
+/*
+Функции - конструкторы являются обычными функциями.
+Но есть два правила:
+1 Имя функции - конструктора должно начитаться с большой буквы.
+2 Функция - конструктор должна вызываться при помощи оператора 'new'.
+*/
+</i>
+function UserInfo(name) {
+  <i>//this = {}; Создаётся пустой объект (неявно) происходит само автоматически</i>
+
+  this.name = name;
+  this.age = age;
+
+  <i>// return this; Возвращается объект (неявно) происходит само автоматически</i>
+}
+
+console.log(new UserInfo("John", '45'));
+<i>
+{
+  'name': 'John',
+  'age': '45'
+}
+</i>
+
+
+console.log(new UserInfo("Kate", 72));
+<i>
+{
+  'name': 'Kate',
+  'age': 72
+}
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!--<div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="JJJ">ЗАГОЛОВОК</button>
+            <div class="block-accordion__--- ---">
+              <div class="---__wrapper">
+                <p class="---__descr accordion-descr text"></p>
+                <p class="---__descr text"></p>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </section>
     <section class="other" id="other">
       <div class="other__container">
         <h2 class="other__title section-title title">Справочник JavaScript</h2>
@@ -1958,7 +2992,7 @@ for (let x = 0; x &lt; 100; x += Math.round(Math.random() * 5)) {
               <a class="section-menu__link reset-link" href="#offset">Присваивание класса</a>
             </li>
             <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#falcy">"falsy" ложные значения</a>
+              <a class="section-menu__link reset-link" href="#falsy">"falsy" ложные значения</a>
             </li>
             <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#node">Node.js</a>

@@ -89,6 +89,32 @@ code {
 i {
   color: navy;
 }
+
+/*display: block;*/
+.block {
+  display: block;
+}
+
+/*colors*/
+.red-color {
+  color: rgba(255, 0, 0, 1);
+}
+.red {
+  color: rgba(139, 0, 0, 1);
+}
+.navy {
+  color: rgba(0, 0, 128, 1);
+}
+.green {
+  color: rgba(0, 100, 0, 1);
+}
+.violet {
+  color: rgba(128, 0, 128, 1);
+}
+.orange {
+  color: rgba(205, 133, 63, 1);
+}
+
 .section-title {
   margin: 0 0 20px;
 }
@@ -196,7 +222,7 @@ i {
   background-color: rgba(176, 224, 230, 1);
 }
 
-/*HEADER*/
+/*header*/
 .header {
   position: absolute;
 }
@@ -310,7 +336,7 @@ i {
   color: navy;
 }
 
-/*HERO*/
+/*hero*/
 .hero__container {
   min-height: 400px;
   background-image: url("../img/hero/background.jpg");
@@ -328,9 +354,9 @@ i {
   width: 30%;
 }
 
-/*DATA-TYPES*/
+/*data_types*/
 
-/*OPERATORS*/
+/*operators*/
 .basic-operators,
 .comparisons-operators,
 .logical-operators,
@@ -346,58 +372,8 @@ i {
   border: 1px solid #000;
   text-align: center;
 }
-/*FUNCTIONS*/
-.modal-function,
-.parse,
-.string-function,
-.function,
-.function-argument-parameter,
-.function-return,
-.function-name {
-  padding: 20px;
-  width: 70%;
-  background-color: rgba(176, 224, 230, 0.5);
-}
-/*OBJECTS*/
-.math {
-  padding: 20px;
-  width: 70%;
-  background-color: rgba(176, 224, 230, 0.5);
-}
-/*OTHER*/
-.search,
-.offset,
-.node,
-.document {
-  padding: 20px;
-  width: 70%;
-  background-color: rgba(176, 224, 230, 0.5);
-}
-.offset__primer {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 20px;
-}
-.offset__block {
-  padding: 20px;
-  background-color: rgba(176, 224, 230, 1);
-}
-/*ARRAY*/
-.array-features {
-  padding: 20px;
-  width: 70%;
-  background-color: rgba(176, 224, 230, 0.5);
-}
-/*METHOD*/
-.method-array {
-  padding: 20px;
-  width: 70%;
-  background-color: rgba(176, 224, 230, 0.5);
-}
-.method-array {
-  width: 80%;
-}
-/*CYCLE*/
+
+/*cycle*/
 .for,
 .for-of,
 .for-in,
@@ -417,31 +393,76 @@ i {
   width: 85%;
 }
 
-@media (max-width: 1699.98px) {
-  .basic-operators,
-  .comparisons-operators,
-  .logical-operators,
-  .conditional-operators,
-  .typeof,
-  .ternary,
-  .modal-function,
-  .parse,
-  .string-function,
-  .search,
-  .offset,
-  .array-features,
-  .method-array,
-  .for,
-  .for-of,
-  .for-in,
-  .while,
-  .do-while,
-  .continue,
-  .break,
-  .for-while,
-  .select-cycle,
-  .falsy,
-  .node {
-    width: 100%;
-  }
+/*array*/
+.array-features {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
 }
+
+/*functions*/
+.modal-function,
+.parse,
+.string-function,
+.function,
+.function-argument-parameter,
+.function-return,
+.function-name,
+.function-expression,
+.function-callback,
+.arrow-function {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+
+/*objects*/
+.math,
+.object,
+.add-change-del-copy,
+.object-symbol,
+.nesting,
+.object-assign,
+.check,
+.object-for-in,
+.object-method,
+.object-method-this,
+.сonstructor-function {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+.object-method-this {
+  width: 80%;
+}
+
+/*methods*/
+.method-array {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+.method-array {
+  width: 80%;
+}
+
+/*other*/
+.search,
+.offset,
+.node,
+.document {
+  padding: 20px;
+  width: 70%;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+.offset__primer {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.offset__block {
+  padding: 20px;
+  background-color: rgba(176, 224, 230, 1);
+}
+
+/*footer*/

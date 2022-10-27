@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: none; /*тень вокруг элемента*/
+}
+.details {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.table {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+.reset-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+.link {
+  display: inline-block;
+  margin: 0 0 20px;
+  text-decoration: underline;
+  color: blue;
+}
+.btn {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  color: inherit;
+}
+.img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.title,
+.text {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(192, 192, 192, 0.1);
+  min-width: 320px;
+  font-family: "Cambria", "Cochin", Georgia, Times, "Times New Roman", serif;
+  font-size: 100%;
+}
+body.block {
+  overflow: hidden;
+}
+section {
+  padding: 0;
+}
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1700px;
+  background-color: rgba(255, 255, 255, 1);
+}
+pre {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px 0;
+  background-color: powderblue;
+  font-size: 14px;
+}
+code {
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+i {
+  color: navy;
+}
+.section-title {
+  margin: 0 0 20px;
+}
+/*SECTION-MENU*/
+.section-menu {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 20px;
+  background-color: rgba(176, 224, 230, 0.5);
+}
+.section-menu__title {
+  margin: 0 0 20px;
+}
+.section-menu__item {
+  font-weight: normal;
+  font-size: 20px;
+}
+.section-menu__item:not(:last-child) {
+  margin: 0 0 10px;
+}
+.section-menu__link {
+  position: relative;
+  padding: 3px 6px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+}
+.section-menu__link::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 0;
+  width: 100%-12px;
+  height: 2px;
+  background-color: navy;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.section-menu__link:focus:not(:hover):not(:active) {
+  background-color: navy;
+  color: #fff;
+}
+.section-menu__link:hover:not(:active) {
+  color: navy;
+}
+.section-menu__link:hover:not(:active)::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.section-menu__link:active {
+  outline: 1px solid navy;
+  color: navy;
+}
+
+/*ACCORDION*/
+.accordion-descr {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 0, 128, 1);
+}
+.block-accordion__btn {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: 18px;
+  background: powderblue;
+  color: inherit;
+}
+.block-accordion._init .block-accordion__btn {
+  cursor: pointer;
+}
+.block-accordion._init .block-accordion__btn {
+  padding: 10px 40px 10px 10px;
+}
+.block-accordion._init .block-accordion__btn::before,
+.block-accordion._init .block-accordion__btn::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.block-accordion._init .block-accordion__btn::after {
+  transform: rotate(-90deg);
+}
+.block-accordion._init .block-accordion__btn._active::after {
+  transform: rotate(0deg);
+}
+.block-accordion__content {
+  padding: 0 10px 10px;
+  line-height: 130%;
+}
+.block-accordion__item:not(:last-child) {
+  margin: 0 0 30px;
+}
+[class*="__wrapper"] {
+  padding: 20px;
+  width: 100%;
+  background-color: rgba(176, 224, 230, 1);
+}
+
+@import "_header";
+@import "_hero";
+@import "_data_types";
+@import "_operators";
+@import "_cycle";
+@import "_array";
+@import "_functions";
+@import "_objects";
+@import "_methods";
+@import "_other";
+@import "_footer";
+@import "_breakpoints";
