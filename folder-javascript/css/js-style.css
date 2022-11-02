@@ -33,7 +33,7 @@
   display: inline-block;
   margin: 0 0 20px;
   text-decoration: underline;
-  color: blue;
+  color: rgba(0, 0, 255, 1);
 }
 .btn {
   margin: 0;
@@ -53,6 +53,7 @@
 .text {
   margin: 0;
   padding: 0;
+  font-size: 18px;
 }
 body {
   margin: 0;
@@ -427,7 +428,14 @@ i {
 .object-for-in,
 .object-method,
 .object-method-this,
-.сonstructor-function {
+.сonstructor-function,
+.object-add,
+.object-change,
+.object-delete,
+.object-copy,
+.object-method-one,
+.object-method-two,
+.object-method-three {
   padding: 20px;
   width: 70%;
   background-color: rgba(176, 224, 230, 0.5);
@@ -450,7 +458,8 @@ i {
 .search,
 .offset,
 .node,
-.document {
+.document,
+.debugger {
   padding: 20px;
   width: 70%;
   background-color: rgba(176, 224, 230, 0.5);

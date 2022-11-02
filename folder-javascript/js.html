@@ -2088,7 +2088,16 @@ checkPermission(..) <i>// проверяет доступ, возвращая tr
               <a class="section-menu__link reset-link" href="#object">Object: вывод свойств</a>
             </li>
             <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#add-change-del-copy">Object: Добавление, изменение, удаление и копирование свойств</a>
+              <a class="section-menu__link reset-link" href="#object-add">Object: добавление свойств</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-change">Object: изменение свойств</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-delete">Object: удаление свойств</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-copy">Object: копирование свойств</a>
             </li>
             <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#nesting">Object: Вложенность</a>
@@ -2097,7 +2106,10 @@ checkPermission(..) <i>// проверяет доступ, возвращая tr
               <a class="section-menu__link reset-link" href="#object-symbol">Object: Symbol</a>
             </li>
             <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#object.assign">Object.assign</a>
+              <a class="section-menu__link reset-link" href="#object-assign">Object.assign</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-clone">Object: клонирование объекта</a>
             </li>
             <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#check">Object: Проверка свойства</a>
@@ -2106,7 +2118,13 @@ checkPermission(..) <i>// проверяет доступ, возвращая tr
               <a class="section-menu__link reset-link" href="#object-for-in">Object: цикл <code>for in</code></a>
             </li>
             <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="#object-method">Object: методы объекта</a>
+              <a class="section-menu__link reset-link" href="#object-method-one">Object: методы объекта (первый способ)</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-method-two">Object: методы объекта (второй способ)</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-method-three">Object: методы объекта (третий способ)</a>
             </li>
             <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#object-method-this">Object: методы объекта, <code>this</code></a>
@@ -2280,10 +2298,10 @@ function makeUserInfo(name, age) {
             </div>
           </div>
           <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="add-change-del-copy">Object: Добавление, изменение, удаление и копирование свойств даже с переменной <code>const</code></button>
-            <div class="block-accordion__add-change-del-copy add-change-del-copy">
-              <div class="add-change-del-copy__wrapper">
-                <h4 class=" add-change-del-copy__title title">Добавление свойства</h4>
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-add">Object: добавление свойств <code>const</code></button>
+            <div class="block-accordion__object-add object-add">
+              <div class="object-add__wrapper">
+                <h4 class=" object-add__title title">Добавление свойства</h4>
                 <pre class="block">
                   <code class="block">
 <i>// БЕЗ ДОБАВЛЕНИЙ</i>
@@ -2343,12 +2361,14 @@ console.log(userInfo);
 </i>
                   </code>
                 </pre>
-                <p class="add-change-del-copy__descr accordion-descr text"></p>
-                <p class="add-change-del-copy__descr text"></p>
               </div>
-              <br><br>
-              <div class="add-change-del-copy__wrapper">
-                <h4 class="add-change-del-copy__title title">Изменение свойства</h4>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-change">Object: изменение свойств даже с переменной <code>const</code></button>
+            <div class="block-accordion__object-change object-change">
+              <div class="object-add__wrapper">
+                <h4 class="object-add__title title">Изменение свойства</h4>
                 <pre class="block">
                   <code class="block">
 const userInfo = {
@@ -2376,9 +2396,13 @@ console.log(userInfo);
                   </code>
                 </pre>
               </div>
-              <br><br>
-              <div class="add-change-del-copy__wrapper">
-                <h4 class=" add-change-del-copy__title title">Удаление свойства</h4>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-delete">Object: удаление свойств даже с переменной <code>const</code></button>
+            <div class="block-accordion__object-delete object-delete">
+              <div class="object-add__wrapper">
+                <h4 class=" object-add__title title">Удаление свойства</h4>
                 <pre class="block">
                   <code class="block">
 const userInfo = {
@@ -2420,29 +2444,23 @@ console.log(userInfo);
                   </code>
                 </pre>
               </div>
-              <br><br>
-              <div class="add-change-del-copy__wrapper">
-                <h4 class="add-change-del-copy__title title">Копирование свойства</h4>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-copy">Object: копирование свойств даже с переменной <code>const</code></button>
+            <div class="block-accordion__object-copy object-copy">
+              <div class="object-copy__wrapper">
+                <h4 class="object-add__title title">Копирование свойства</h4>
                 <pre class="block">
                     <code class="block">
 <i>
 // При копировании объекта в другую переменную
 // Сам объект не копируется, а копируется только ссылка на него
 </i>
-let userInfo = {
+let user = {
   name: "John",
   age: 30
 };
-console.log(userInfo);
-<i>
-{
-  name: 'John',
-  age: 30,
-}
-</i>
-<hr>
-
-let user = userInfo;<i>// Копирование объекта</i>
 console.log(user);
 <i>
 {
@@ -2452,8 +2470,18 @@ console.log(user);
 </i>
 <hr>
 
-user.age = 18;<i>// Изменение свойства объекта через новое имя переменной</i>
-console.log(userInfo);<i>// Даже при вызове объекта с изначальным именем всё равно выведет все изменения свойств</i>
+let admin = user;<i>// Копирование объекта</i>
+console.log(user);
+<i>
+{
+  name: 'John',
+  age: 30,
+}
+</i>
+<hr>
+
+admin.age = 18;<i>// Изменение свойства объекта через новое имя переменной</i>
+console.log(user);<i>// Даже при вызове объекта с изначальным именем всё равно выведет все изменения свойств</i>
 <i>
 {
   name: 'John',
@@ -2462,6 +2490,15 @@ console.log(userInfo);<i>// Даже при вызове объекта с из�
 </i>
                     </code>
                   </pre>
+                <p class="object-add__text text red">
+                  ВАЖНО!!! НЕ ПУТАТЬ
+                </p>
+                <p class="object-add__text text">
+                  При изменении <code>admin.age = 18;</code> - изменится общая ссылка.
+                </p>
+                <p class="object-add__text text">
+                  А таким способом <code>admin = {age: 18,}</code> - свойство изменится только в <code>admin</code>, т.к. это объект с новыми свойствами.
+                </p>
               </div>
             </div>
           </div>
@@ -2548,10 +2585,48 @@ console.log(userInfo);
             </div>
           </div>
           <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object.assign">Object.assign</button>
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-assign">Object.assign (клонирование, объединение объектов)</button>
             <div class="block-accordion__object-assign object-assign">
               <div class="object-assign__wrapper">
                 <h4 class="object-assign__title title">Дублирование объекта</h4>
+                <p class="object-assign__descr text">
+                  <b>Object.assign</b> - создаёт клон объекта.
+                </p>
+                <pre class="block">
+                  <code class="block">
+Object.assign(clone, obj1, obj2, obj3); <i>// clone - целевой объект, objN - объекты клонирования</i>
+
+var obj1 = { name: "John" };
+var obj2 = { surname: 'Smith' };
+var obj3 = { age: 30 };
+
+
+var clone = { gender: 'men' };
+
+Object.assign(clone, obj1, obj2, obj3);
+
+console.log(clone);
+
+<i>
+{
+  'gender': 'men',
+  'name': 'John',
+  'surname': 'Smith',
+  'age': 30,
+}
+</i>
+                  </code>
+                </pre>
+                <p class="object-assign__descr text red">
+                  ВАЖНО! Если скопированное имя свойства уже существует, то оно будет перезаписано.
+                </p>
+                <br>
+                <p class="object-assign__descr text red">
+                  ВАЖНО! С помощью <code>Object.assign</code> нельзя склонировать <u>объект внутри объекта</u> <code>user.size.height</code>.
+                </p>
+                <p class="object-assign__descr text red">
+                  Для этого необходимо использовать глубокое клонирование: <a target="_blank" class="link" href="https://lodash.com/docs/4.17.15#cloneDeep">_.cloneDeep(obj)</a>.
+                </p>
                 <pre class="block">
                   <code class="block">
 <i>
@@ -2588,7 +2663,7 @@ console.log(user);
               </div>
               <br><br>
               <div class="object-assign__wrapper">
-                <h4 class="object-assign__title title">Добавление свойств объекту с помощью object-assign</h4>
+                <h4 class="object-assign__title title">Добавление свойств объекту с помощью object.assign</h4>
                 <pre class="block">
                   <code class="block">
 let userInfo = {
@@ -2608,6 +2683,37 @@ console.log(userInfo);
 </i>
                   </code>
                 </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-clone">Object: клонирование объекта</button>
+            <div class="block-accordion__object-clone object-clone">
+              <div class="object-clone__wrapper">
+                <p class="object-clone__descr accordion-descr text">
+                  Данный способ даёт возможность не прибегать к object.assign
+                </p>
+                <pre class="block">
+                  <code class="block">
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = {}; <i>// новый пустой объект</i>
+
+<i>// давайте скопируем все свойства user в него</i>
+for (let key in user) {
+  clone[key] = user[key];
+}
+
+i// теперь clone это полностью независимый объект с тем же содержимым
+clone.name = "Pete"; <i>// изменим в нём данные</i>
+
+console.log( user.name ); <i>// все ещё John в первоначальном объекте</i>
+                  </code>
+                </pre>
+                <p class="object-clone__descr text"></p>
               </div>
             </div>
           </div>
@@ -2767,9 +2873,12 @@ for (var key in userInfo.address) {
             </div>
           </div>
           <div class="block-accordion__item">
-            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method">Object: методы объекта</button>
-            <div class="block-accordion__object-method object-method">
-              <div class="object-method__wrapper">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-one">Object: методы объекта (первый способ)</button>
+            <div class="block-accordion__object-method-one object-method-one">
+              <div class="object-method-one__wrapper">
+                <p class="object-method-one__descr text">
+                  <b>Метод</b> - это <u>свойство</u> значением которого является <u>функция</u>.
+                </p>
                 <pre class="block">
                   <code class="block">
 var userInfo = {
@@ -2780,7 +2889,7 @@ var userInfo = {
     street: "Freedom"
   } <i>
     /*
-  // showInfo - (метод - название может быть любым) ключ значением которого является функция
+  // showInfo - метод
   showInfo: function () {
     console.log(
       `${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`
@@ -2806,10 +2915,102 @@ userInfo.showInfo();
             </div>
           </div>
           <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-two">Object: методы объекта (второй способ)</button>
+            <div class="block-accordion__object-method-one object-method-one">
+              <div class="object-method-two__wrapper">
+                <a target="_blank" class="object-method__link link" href="https://codepen.io/archicolt/pen/ZERYdbY?editors=1112">Источник</a>
+                <pre class="block">
+                  <code class="block">
+var sandwich = {
+  meat: "",
+  cheese: "",
+  bread: "",
+  condiment: "",
+  makeSandwich: function (meat, cheese, bread, condiment) { <i>// параметры</i>
+    sandwich.meat = meat;
+    sandwich.cheese = cheese;
+    sandwich.bread = bread;
+    sandwich.condiment = condiment;
+    var mySandwich =
+      sandwich.bread + ", " +
+      sandwich.meat +  ", " +
+      sandwich.cheese + ", " +
+      sandwich.condiment;
+    return mySandwich;
+  }
+};
+var sandwichOrder = sandwich.makeSandwich("ham", "cheddar", "wheat", "spicy mustard"); <i>// аргументы</i>
+console.log(sandwichOrder);
+
+<i>
+"wheat, ham, cheddar, spicy mustard"
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-three">Object: методы объекта (третий способ)</button>
+            <div class="block-accordion__object-method-three object-method-three">
+              <div class="object-method-three__wrapper">
+                <p class="object-method-three__descr text">
+                  Функцию, которая является свойством объекта, называют <i>методом</i> этого объекта.
+                </p>
+                <pre class="block">
+                  <code class="block">
+let user = {
+  name: "John",
+  age: 30
+};
+
+user.sayHi = function() {
+  alert("Привет!");
+};
+
+user.sayHi(); <i>// Привет!</i>
+                  </code>
+                </pre>
+                <p class="object-method-three__descr text">
+                  Возможно вначале объявить функцию, потом присвоить функцию как свойство объекту.
+                </p>
+                <p class="object-method-three__descr text">
+                  Здесь используется ключевое слово <code>this</code>, чтобы сработал код.
+                </p>
+                <pre class="block">
+                  <code class="block">
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+<i>// вначале объявляем функцию</i>
+function sayHi() {
+  alert( this.name );
+}
+
+<i>// используем одну и ту же функцию в двух объектах</i>
+user.f = sayHi;
+admin.f = sayHi;
+
+<i>// эти вызовы имеют  разное значение this</i>
+<i>// "this" внутри функции - это объект "перед точкой"</i>
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); <i>// Admin (нет разницы между использованием точки или квадратных скобок для доступа к объекту)</i>
+                  </code>
+                </pre>
+                <p class="object-method-three__descr text">
+                  Правило простое: если вызывается <code>obj.f()</code>, то во время вызова <code>f</code>, <code>this</code> – это <code>obj</code>. Так что, в приведённом выше примере это либо <code>user</code>, либо <code>admin</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
             <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-this">Object: методы объекта, <code>this</code></button>
             <div class="block-accordion__object-method-this object-method-this">
               <div class="object-method-this__wrapper">
                 <h4 class="object-method-this__title title">Методы объекта, <code>this</code></h4>
+                <a target="_blank" class="object-method__link link" href="https://codepen.io/archicolt/pen/mdKyZmK?editors=1111">Источник на аналогичный вариант</a>
                 <pre class="block">
                   <code class="block">
 var userInfo = {
@@ -2922,28 +3123,32 @@ user.showInfo(); <i>// из-за обнуления объекта данный 
             <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="сonstructor-function">Object: функция-конструктор</button>
             <div class="block-accordion__сonstructor-function сonstructor-function">
               <div class="сonstructor-function__wrapper">
+                <p class="сonstructor-function__descr text">
+                  Обычный синтаксис создания объекта{... } позволяет создать только один объект.
+                </p><br>
+                <p class="сonstructor-function__descr text">
+                  Но зачастую нам нужно создать множество однотипных объектов, таких как пользователи, элементы меню и т.д.
+                </p><br>
+                <p class="сonstructor-function__descr text">
+                  Это можно сделать при помощи функции - конструктора и оператора 'new'.
+                </p><br>
+                <a target="_blank" class="сonstructor-function__link link" href="https://codepen.io/archicolt/pen/oNyXvbg?editors=1112">Источник аналогичного примера</a>
                 <pre class="block">
                   <code class="block">
-<i>
-/*
-Обычный синтаксис создания объекта{... } позволяет создать только один объект.
-Но зачастую нам нужно создать множество однотипных объектов, таких как пользователи, элементы меню и т.д.
-Это можно сделать при помощи функции - конструктора и оператора 'new'.
-*/
-/*
+<i>/*
 Функции - конструкторы являются обычными функциями.
 Но есть два правила:
 1 Имя функции - конструктора должно начитаться с большой буквы.
 2 Функция - конструктор должна вызываться при помощи оператора 'new'.
 */
 </i>
-function UserInfo(name) {
-  <i>//this = {}; Создаётся пустой объект (неявно) происходит само автоматически</i>
+function UserInfo(name, age) {
+  <i>//this = {}; автоматически создаётся пустой объект (неявно)</i>
 
   this.name = name;
   this.age = age;
 
-  <i>// return this; Возвращается объект (неявно) происходит само автоматически</i>
+  <i>// return this; автоматически возвращается объект (неявно) происходит</i>
 }
 
 console.log(new UserInfo("John", '45'));
@@ -2999,6 +3204,9 @@ console.log(new UserInfo("Kate", 72));
             </li>
             <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#document">document - свойтсва и их значения</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#"></a>
             </li>
             <!-- <li class="section-menu__item">
               <a class="section-menu__link reset-link" href="#"></a>
@@ -3173,6 +3381,30 @@ for (var prop in document){
   document.write(prop + ": " + document[prop] +"&lt;br&gt; ");
 }
                 </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="debugger">Команда <code>debugger</code> - остановка кода</button>
+            <div class="block-accordion__debugger debugger">
+              <div class="debugger__wrapper">
+                <p class="debugger__descr text">
+                  Выполнение кода можно приостановить с помощью команды <code>debugger</code> прямо изнутри самого кода:
+                </p>
+                <pre class="block">
+                  <code class="block">
+function hello(name) {
+  let phrase = `Привет, ${name}!`;
+
+  debugger;  <i>// &lt;-- тут отладчик остановится</i>
+
+  say(phrase);
+}
+                  </code>
+                </pre>
+                <p class="debugger__descr text">
+                  Такая команда сработает только если открыты инструменты разработки, иначе браузер ее проигнорирует.
+                </p>
               </div>
             </div>
           </div>
