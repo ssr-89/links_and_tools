@@ -2130,7 +2130,22 @@ checkPermission(..) <i>// проверяет доступ, возвращая tr
               <a class="section-menu__link reset-link" href="#object-method-this">Object: методы объекта, <code>this</code></a>
             </li>
             <li class="section-menu__item">
-              <a class="section-menu__link reset-link" href="№сonstructor-function">Object: функция-конструктор</a>
+              <a class="section-menu__link reset-link" href="#method-not-object">Object: <code>this</code> вызов без объекта</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-calc-this-method">Object: калькуляторы</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-ladder">Object: лестница</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="object-accumulator">Object: accumulator</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#сonstructor-function">Object: функция-конструктор</a>
+            </li>
+            <li class="section-menu__item">
+              <a class="section-menu__link reset-link" href="#object-constructor-method">Object: создание методов в конструкторе</a>
             </li>
             <!-- <li class="section-menu__item">
               <a class="section-menu__link reset-link" href=""></a>
@@ -2552,6 +2567,7 @@ console.log(userInfo.address.city);
           <div class="block-accordion__item">
             <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-symbol">Object: Symbol</button>
             <div class="block-accordion__object-symbol object-symbol">
+              <a target="_blank" class="object-symbol__link link" href="https://learn.javascript.ru/symbol">Источник</a>
               <div class="object-symbol__wrapper">
                 <pre class="block">
                   <code class="block">
@@ -2579,6 +2595,47 @@ console.log(userInfo);
   Symbol.iterator, Symbol.toPrimitive и т.д.
 */
 </i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-symbol__wrapper">
+                <p class="object-symbol__text text">
+                  Большинство типов данных в JavaScript могут быть неявно преобразованы в строку. Например, функция <code>alert</code> принимает практически любое значение, автоматически преобразовывает его в строку, а затем выводит это значение, не сообщая об ошибке. Символы же особенные и не
+                  преобразуются автоматически.
+                </p>
+                <br>
+                <p class="object-symbol__text text">
+                  К примеру, <code>alert</code> ниже выдаст ошибку:
+                </p>
+                <pre class="block">
+                  <code class="block">
+let id = Symbol("id");
+alert(id); <i>// TypeError: Cannot convert a Symbol value to a string</i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-symbol__wrapper">
+                <p class="object-symbol__text text">
+                  Преобразование в строку.
+                </p>
+                <pre class="block">
+                  <code class="block">
+let id = Symbol("id");
+alert(id<b>.toString</b>()); <i>// метод <code>.toString()</code> преобразует в строку и вернёт <code>Symbol(id)</code></i>
+                  </code>
+                </pre>
+              </div>
+              <br><br>
+              <div class="object-symbol__wrapper">
+                <p class="object-symbol__text text">
+                  Выведение описания.
+                </p>
+                <pre class="block">
+                  <code class="block">
+let id = Symbol("id");
+alert(id<b>.description</b>); <i>// метод <code>.description</code> вернёт только описание <code>id</code></i>
                   </code>
                 </pre>
               </div>
@@ -2617,21 +2674,35 @@ console.log(clone);
 </i>
                   </code>
                 </pre>
-                <p class="object-assign__descr text red">
-                  ВАЖНО! Если скопированное имя свойства уже существует, то оно будет перезаписано.
+                <p class="object-assign__descr text">
+                  !Обязательно указать целевой объект даже без имени!
                 </p>
                 <br>
-                <p class="object-assign__descr text red">
-                  ВАЖНО! С помощью <code>Object.assign</code> нельзя склонировать <u>объект внутри объекта</u> <code>user.size.height</code>.
+                <p class="object-assign__descr text">
+                  Если целевой объект без имени <code>Object.assign()</code> должен находиться значением переменной.
                 </p>
-                <p class="object-assign__descr text red">
+                <span class="object-assign__descr">
+                  Пример:
+                </span>
+                <code>
+                  var primer = Object.assing({}, obj1, obj2, obj3,);
+                </code>
+                <br><br>
+                <p class="object-assign__descr text">
+                  !Если скопированное имя свойства уже существует, то оно будет перезаписано.
+                </p>
+                <br>
+                <p class="object-assign__descr text">
+                  !С помощью <code>Object.assign</code> нельзя склонировать <u>объект внутри объекта</u> <code>user.size.height</code>.
+                </p>
+                <p class="object-assign__descr text">
                   Для этого необходимо использовать глубокое клонирование: <a target="_blank" class="link" href="https://lodash.com/docs/4.17.15#cloneDeep">_.cloneDeep(obj)</a>.
                 </p>
                 <pre class="block">
                   <code class="block">
 <i>
 // Синтаксис
-// Object.assign(куда{объект}, что(свойство #1), что(свойство #2), ...);
+// Object.assign(целевой объект{}, {свойство: значение,}, ...);
 </i>
 let userInfo = {
   name: "John",
@@ -2738,7 +2809,14 @@ if (userInfo.age) {
               </div>
               <br><br>
               <div class="check__wrapper">
-                <h4 class="check__title title">Провека: опциональная цепочка</h4>
+                <a target="_blank" class="check__link link" href="https://learn.javascript.ru/optional-chaining">Источник</a>
+                <h4 class="check__title title">Провека: опциональная цепочка <code>?.</code></h4>
+                <p class="check__descr text">
+                  Как мы видим, все они просты и понятны в использовании. <code>?.</code> проверяет левую часть на <code>null/undefined</code> и позволяет продолжить вычисление, если это не так.
+                </p>
+                <p class="check__descr text">
+                  Цепочка <code>?.</code> позволяет безопасно получать доступ к вложенным свойствам.
+                </p>
                 <pre class="block">
                   <code class="block">
 let userInfo = new Object();
@@ -2927,15 +3005,15 @@ var sandwich = {
   bread: "",
   condiment: "",
   makeSandwich: function (meat, cheese, bread, condiment) { <i>// параметры</i>
-    sandwich.meat = meat;
-    sandwich.cheese = cheese;
-    sandwich.bread = bread;
-    sandwich.condiment = condiment;
+    this.meat = meat;
+    this.cheese = cheese;
+    this.bread = bread;
+    this.condiment = condiment;
     var mySandwich =
-      sandwich.bread + ", " +
-      sandwich.meat +  ", " +
-      sandwich.cheese + ", " +
-      sandwich.condiment;
+      this.bread + ", " +
+      this.meat +  ", " +
+      this.cheese + ", " +
+      this.condiment;
     return mySandwich;
   }
 };
@@ -2964,7 +3042,7 @@ let user = {
   age: 30
 };
 
-user.sayHi = function() {
+user.sayHi = function() { <i>// функция вне объекта, поэтому необходимо прописать имя объекта</i>
   alert("Привет!");
 };
 
@@ -3008,6 +3086,7 @@ admin['f'](); <i>// Admin (нет разницы между использова
           <div class="block-accordion__item">
             <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-method-this">Object: методы объекта, <code>this</code></button>
             <div class="block-accordion__object-method-this object-method-this">
+              <a target="_blank" class="object-method__link link" href="https://learn.javascript.ru/object-methods#">Источник</a>
               <div class="object-method-this__wrapper">
                 <h4 class="object-method-this__title title">Методы объекта, <code>this</code></h4>
                 <a target="_blank" class="object-method__link link" href="https://codepen.io/archicolt/pen/mdKyZmK?editors=1111">Источник на аналогичный вариант</a>
@@ -3120,6 +3199,154 @@ user.showInfo(); <i>// из-за обнуления объекта данный 
             </div>
           </div>
           <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="method-not-object">Object: <code>this</code> вызов без объекта</button>
+            <div class="block-accordion__method-not-object method-not-object">
+              <div class="method-not-object__wrapper">
+                <pre class="block">
+                  <code class="block">
+function sayHi() {
+  alert(this);
+}
+
+sayHi(); <i>// undefined при "use strict"</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-calc-this-method">Object: калькуляторы значением <code>this</code> и методом</button>
+            <div class="block-accordion__object-calc-this-method object-calc-this-method">
+              <div class="object-calc-this-method__wrapper">
+                <pre class="block">
+                  <code class="block">
+var calc = {
+  read() {
+    this.num1 = +prompt("num1?", 0);
+    this.num2 = +prompt("num2?", 0);
+  },
+  sum() {
+    return this.num1 + this.num2;
+  },
+  mul() {
+    return this.num1 * this.num2;
+  }
+};
+
+calc.read();
+console.log(calc.sum()); <i>// выведет сумму введённых чисел</i>
+console.log(calc.mul()); <i>// выведет произведение введённых чисел</i>
+                  </code>
+                </pre>
+                <p class="object-calc-this-method__descr accordion-descr text"></p>
+                <p class="object-calc-this-method__descr text"></p>
+              </div>
+              <br><br>
+              <div class="object-calc-this-method__wrapper">
+                <p class="object-calc-this-method__descr text">
+                  Калькулятор с помощью конструктора
+                </p>
+                <pre class="block">
+                  <code class="block">
+function Calculator() {
+
+  this.read = function() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  };
+
+  this.sum = function() {
+    return this.a + this.b;
+  };
+
+  this.mul = function() {
+    return this.a * this.b;
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+console.log( "Sum=" + calculator.sum() );
+console.log( "Mul=" + calculator.mul() );
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-ladder">Object: лестница</button>
+            <div class="block-accordion__object-ladder object-ladder">
+              <div class="object-ladder__wrapper">
+                <pre class="block">
+                  <code class="block">
+let ladder = {
+  step: 0,
+  up() {
+    <u class="red">this</u>.step++;
+    <u class="red">return this;</u>
+  },
+  down() {
+    <u class="red">this</u>.step--;
+    <u class="red">return this;</u>
+  },
+  showStep() {
+    console.log( <u class="red">this</u>.step );
+    <u class="red">return this;</u>
+  }
+};
+
+ladder.up().up().down().showStep().down().showStep(); <i>// показывает 1 затем 0</i>
+
+<i>
+// Данный способ построения цепочки возможен благодаря <code>return this;</code>
+</i>
+<i>
+// ВМЕСТО
+/*
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1
+ladder.down();
+ladder.showStep(); // 0
+*/
+</i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-accumulator">Object: accumulator</button>
+            <div class="block-accordion__object-accumulator object-accumulator">
+              <div class="object-accumulator__wrapper">
+                <p class="object-accumulator__descr text">
+                  Свойство value представляет собой сумму всех введённых пользователем значений, с учётом начального значения <code>startingValue</code>.
+                </p>
+                <pre class="block">
+                  <code class="block">
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('Сколько нужно добавить?', 0);
+  };
+
+}
+
+let accumulator = new Accumulator(1);
+
+accumulator.read(); <i>// прибавляет введённое пользователем значение к текущему значению</i>
+accumulator.read(); <i>// прибавляет введённое пользователем значение к текущему значению</i>
+
+console.log(accumulator.value);
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
             <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="сonstructor-function">Object: функция-конструктор</button>
             <div class="block-accordion__сonstructor-function сonstructor-function">
               <div class="сonstructor-function__wrapper">
@@ -3142,7 +3369,7 @@ user.showInfo(); <i>// из-за обнуления объекта данный 
 2 Функция - конструктор должна вызываться при помощи оператора 'new'.
 */
 </i>
-function UserInfo(name, age) {
+function User(name, age) {
   <i>//this = {}; автоматически создаётся пустой объект (неявно)</i>
 
   this.name = name;
@@ -3151,7 +3378,14 @@ function UserInfo(name, age) {
   <i>// return this; автоматически возвращается объект (неявно) происходит</i>
 }
 
-console.log(new UserInfo("John", '45'));
+console.log(new User("John", '45')); <i>// при вызове функции-конструктора необходимо указать оператор <code>new</code> для обозначения объекта</i>
+<b class="red">
+Когда функция вызывается как new <code>User(...)</code>, происходит следующее:
+
+1. Создаётся новый пустой объект, и он присваивается <code>this</code>.
+2. Выполняется тело функции. Обычно оно модифицирует <code>this</code>, добавляя туда новые свойства.
+3. Возвращается значение <code>this</code>.
+</b>
 <i>
 {
   'name': 'John',
@@ -3160,13 +3394,42 @@ console.log(new UserInfo("John", '45'));
 </i>
 
 
-console.log(new UserInfo("Kate", 72));
+console.log(new User("Kate", 72));
 <i>
 {
   'name': 'Kate',
   'age': 72
 }
 </i>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="block-accordion__item">
+            <button tabindex="-1" type="button" data-spoller class="block-accordion__btn btn" id="object-constructor-method">Object: создание методов в конструкторе</button>
+            <div class="block-accordion__object-constructor-method object-constructor-method">
+              <div class="object-constructor-method__wrapper">
+                <pre class="block">
+                  <code class="block">
+function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    console.log( "Меня зовут: " + this.name );
+  };
+}
+
+let john = new User("John");
+
+john.sayHi(); // Меня зовут: John
+
+/*
+john = {
+   name: "John",
+   sayHi: function() { ... }
+}
+*/
                   </code>
                 </pre>
               </div>

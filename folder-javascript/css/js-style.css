@@ -433,9 +433,15 @@ i {
 .object-change,
 .object-delete,
 .object-copy,
+.object-clone,
 .object-method-one,
 .object-method-two,
-.object-method-three {
+.object-method-three,
+.object-calc-this-method,
+.object-ladder,
+.object-constructor-method,
+.method-not-object,
+.object-accumulator {
   padding: 20px;
   width: 70%;
   background-color: rgba(176, 224, 230, 0.5);
